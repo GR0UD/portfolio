@@ -1,0 +1,29 @@
+// Colors
+$color-white: #ffffff;
+$color-light: #eaeaea;
+$color-header-bg: rgba(15, 15, 15, 0.4);
+$color-header-border: rgba(255, 255, 255, 0.06);
+$color-shadow: rgba(0, 0, 0, 0.05);
+$color-button-bg: rgba(255, 255, 255, 0.06);
+$color-button-bg-hover: rgba(255, 255, 255, 0.12);
+$color-button-border: rgba(255, 255, 255, 0.12);
+$color-button-border-hover: rgba(255, 255, 255, 0.25);
+
+// Typography
+$font-size-logo: 2.5rem;
+$font-size-nav: 1rem;
+$font-weight-logo: 600;
+$font-weight-regular: 500;
+$letter-spacing-logo: -0.5px;
+
+// Layout
+$container-max-width: 1200px;
+$container-padding: 1.25rem 2rem;
+$button-padding: 0.5rem 1.5rem;
+$border-radius: 8px;
+
+// Effects
+$backdrop-blur-header: blur(16px);
+$backdrop-blur-button: blur(4px);
+$transition-fast: 0.25s ease;
+$transition-default: 0.3s ease;

@@ -1,0 +1,121 @@
+#about {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  background-color: #fff;
+  z-index: 2;
+}
+
+.about-wrapper {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.about-bottom {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.about-bottom h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.about-bottom p {
+  line-height: 1.6;
+  color: #555;
+}
+
+.about-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.about-left,
+.about-right {
+  flex: 1;
+  min-width: 280px;
+}
+
+.about-left h3,
+.about-right h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.about-left p,
+.about-right p {
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Skills */
+.skills-columns {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.skills-columns h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.skills-columns ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skills-columns li {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #444;
+}
+
+.skills-columns li i {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.hero-divider-top {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .skills-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 2rem; // optional spacing between grid items
+  }
+}

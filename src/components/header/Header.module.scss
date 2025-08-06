@@ -1,0 +1,115 @@
+@use "../../styles/base/variables.scss" as vars;
+
+.header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color vars.$transition-default,
+    backdrop-filter vars.$transition-default;
+  backdrop-filter: none;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 1.5rem 2rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.logo {
+  position: relative;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  user-select: none;
+  padding: 0 1rem;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 47.5%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-weight: 200;
+    font-size: 1.6rem;
+    transition: all 0.25s ease;
+    pointer-events: none;
+  }
+
+  &::before {
+    content: "{ ";
+    left: 0rem;
+  }
+
+  &::after {
+    content: " }";
+    right: 0rem;
+  }
+
+  &:hover::before {
+    content: "{";
+    left: 0.3rem;
+  }
+
+  &:hover::after {
+    content: "}";
+    right: 0.3rem;
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .navLinks {
+    display: flex;
+    gap: 2rem;
+
+    li {
+      list-style: none;
+
+      a {
+        position: relative;
+        color: #ffffff;
+        font-weight: 4 00;
+        font-size: 1rem;
+        text-decoration: none;
+        padding: 0.25rem 0;
+        opacity: 0.95;
+        transition: opacity 0.3s ease, color 0.3s ease;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          width: 0%;
+          height: 1.25px;
+          background-color: #eaeaea;
+          transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+
+    &:hover a {
+      opacity: 0.4;
+    }
+
+    &:hover a:hover {
+      opacity: 1;
+      color: #ffffff;
+    }
+  }
+}

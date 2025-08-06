@@ -1,0 +1,139 @@
+#projects {
+  position: relative;
+  padding: 6rem 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+
+  &:hover .projects-overlay {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  .projects-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    z-index: 1;
+  }
+
+  .hero-divider-top,
+  .hero-divider-bot {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 0;
+    pointer-events: none;
+    user-select: none;
+    object-fit: cover;
+    z-index: 2;
+
+    &.hero-divider-top {
+      top: 0;
+    }
+
+    &.hero-divider-bot {
+      bottom: -2px;
+    }
+  }
+
+  .projects-wrapper {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .projects-header {
+    margin-bottom: 3rem;
+
+    .projects-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #fff;
+      text-transform: uppercase;
+    }
+  }
+
+  .projects-body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .project-card {
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #eaeaea;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 1rem;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: background-color 0.3s ease, border-color 0.3s ease,
+      transform 0.25s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .project-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      padding: 0.5rem;
+
+      img.project-image {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+        color: #fff;
+        text-align: left;
+      }
+
+      p {
+        font-size: 0.95rem;
+        color: #fff;
+        opacity: 0.75;
+        font-weight: 400;
+        line-height: 1.4;
+        text-align: left;
+      }
+
+      .project-tech-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1rem;
+
+        span {
+          background-color: rgba(255, 255, 255, 0.08);
+          color: #fff;
+          padding: 0.4rem 0.85rem;
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          border-radius: 8px;
+          font-weight: 500;
+          letter-spacing: 0.05rem;
+          font-size: 0.875rem;
+          backdrop-filter: blur(6px);
+          -webkit-backdrop-filter: blur(6px);
+          transition: background-color 0.3s ease, border-color 0.3s ease;
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+          }
+        }
+      }
+    }
+  }
+}
