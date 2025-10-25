@@ -1,29 +1,162 @@
-// Colors
+// ==================== COLORS ====================
+
+// Primary Colors
 $color-white: #ffffff;
-$color-light: #eaeaea;
+$color-black: #000000;
+$color-light: #c0c0c0;
+$color-dark: #1b1b1b;
+
+// Background Colors
+$color-bg-light: #fff;
+$color-bg-medium: #f9f9f9;
 $color-header-bg: rgba(15, 15, 15, 0.4);
+$color-hero-overlay: rgba(0, 0, 0, 0.225);
+$color-projects-overlay: rgba(0, 0, 0, 0.225);
+
+// Border Colors
 $color-header-border: rgba(255, 255, 255, 0.06);
-$color-shadow: rgba(0, 0, 0, 0.05);
-$color-button-bg: rgba(255, 255, 255, 0.06);
-$color-button-bg-hover: rgba(255, 255, 255, 0.12);
 $color-button-border: rgba(255, 255, 255, 0.12);
 $color-button-border-hover: rgba(255, 255, 255, 0.25);
+$color-input-border: rgba(255, 255, 255, 0.12);
+$color-input-border-focus: rgba(255, 255, 255, 0.5);
+$color-divider: rgba(0, 0, 0, 0.1);
 
-// Typography
-$font-size-logo: 2.5rem;
+// Button Colors
+$color-button-bg: rgba(255, 255, 255, 0.06);
+$color-button-bg-hover: rgba(255, 255, 255, 0.12);
+$color-button-bg-dark-hover: rgba(0, 0, 0, 0.5);
+
+// Text Colors
+$color-text-dark: #222;
+$color-text-medium: #555;
+$color-text-light: #666;
+$color-text-muted: #444;
+$color-shadow: rgba(0, 0, 0, 0.05);
+
+// Form Input Colors
+$color-input-bg: rgba(255, 255, 255, 0.06);
+$color-input-text: rgba(255, 255, 255, 0.95);
+$color-input-placeholder: rgba(255, 255, 255, 0.5);
+
+// Social Media Colors
+$color-github: #ffffff;
+$color-github-hover: #333;
+$color-codepen: hsl(139.41deg 58.62% 54.51%);
+$color-linkedin: #0077b5;
+$color-instagram-start: #fdf497;
+$color-instagram-mid: #fd5949;
+$color-instagram-accent: #d6249f;
+$color-instagram-end: #285aeb;
+
+// Project Card Colors
+$color-project-tag-bg: rgba(255, 255, 255, 0.08);
+$color-project-tag-bg-hover: rgba(255, 255, 255, 0.15);
+
+// ==================== TYPOGRAPHY ====================
+
+// Font Sizes
+$font-size-h1: 3.5rem;
+$font-size-h2: 2rem;
+$font-size-h3: 1.5rem;
+$font-size-h4: 1.2rem;
+$font-size-title: 2.5rem;
+$font-size-subtitle: 1.4rem;
+$font-size-body: 1rem;
+$font-size-small: 0.95rem;
+$font-size-tiny: 0.875rem;
 $font-size-nav: 1rem;
-$font-weight-logo: 600;
-$font-weight-regular: 500;
-$letter-spacing-logo: -0.5px;
+$font-size-logo: 2.5rem;
+$font-size-logo-small: 1.6rem;
+$font-size-footer: 1.5rem;
+$font-size-icon: 1.2rem;
 
-// Layout
+// Font Weights
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-logo: 600;
+
+// Letter Spacing
+$letter-spacing-logo: -0.5px;
+$letter-spacing-normal: 1px;
+$letter-spacing-wide: 2px;
+$letter-spacing-tag: 0.05rem;
+
+// Line Height
+$line-height-tight: 1.4;
+$line-height-normal: 1.6;
+
+// ==================== LAYOUT ====================
+
+// Container
 $container-max-width: 1200px;
 $container-padding: 1.25rem 2rem;
-$button-padding: 0.5rem 1.5rem;
-$border-radius: 8px;
+$container-padding-large: 3rem 2rem;
+$container-padding-section: 7rem 2rem;
 
-// Effects
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 2.5rem;
+$spacing-xxl: 3rem;
+
+// Button/Input
+$button-padding: 0.5rem 1.5rem;
+$input-padding: 0.75rem 1rem;
+$icon-size: 1.2rem;
+$icon-size-large: 1.5rem;
+
+// Sizing
+$border-radius: 8px;
+$border-radius-lg: 12px;
+$border-radius-full: 50%;
+$blob-width: 400px;
+$blob-height: 400px;
+
+// Hero Section
+$hero-height: 100dvh;
+$hero-header-gap: 2rem;
+
+// Image Heights
+$project-height: auto;
+$blob-image-scale: 130%;
+$hero-video-z-index: -100;
+$hero-overlay-z-index: -1;
+
+// ==================== EFFECTS ====================
+
+// Backdrop Filter
 $backdrop-blur-header: blur(16px);
 $backdrop-blur-button: blur(4px);
+$backdrop-blur-project: blur(8px);
+$backdrop-blur-input: blur(8px);
+$backdrop-blur-blob: blur(2.5px);
+
+// Transitions
 $transition-fast: 0.25s ease;
 $transition-default: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Box Shadows
+$shadow-small: 0 8px 20px rgba(0, 0, 0, 0.05);
+$shadow-medium: 0 12px 24px rgba(0, 0, 0, 0.08);
+$shadow-glow-dark: 0 0 10px rgba(0, 0, 0, 0.3);
+$shadow-glow-code: 0 0 12px rgba(51, 51, 51, 0.5);
+$shadow-glow-linkedin: 0 0 12px rgba(0, 119, 181, 0.6);
+$shadow-glow-instagram: 0 0 14px rgba(253, 94, 137, 0.8);
+
+// Animations
+$animation-blob: 8s infinite ease-in-out;
+$animation-fade: 0.5s ease-in-out;
+
+// Z-Index
+$z-intro: 9999;
+$z-intro-divider: 10000;
+$z-header: 1000;
+$z-hero: 2;
+$z-content: 2;

@@ -1,23 +1,25 @@
+@use "../base/variables" as *;
+
 #about {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3rem 2rem;
-  background-color: #fff;
-  z-index: 2;
+  padding: $container-padding-large;
+  background-color: $color-bg-light;
+  z-index: $z-content;
 }
 
 .about-wrapper {
-  max-width: 1200px;
+  max-width: $container-max-width;
   width: 100%;
 }
 
 .about-title {
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 2.5rem;
+  font-size: $font-size-title;
+  font-weight: $font-weight-semibold;
+  margin-bottom: $spacing-xl;
   text-align: center;
   text-transform: uppercase;
   user-select: none;
@@ -25,24 +27,25 @@
 
 .about-bottom {
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: $spacing-lg;
 }
+
 .about-bottom h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #222;
+  font-size: $font-size-h3;
+  margin-bottom: $spacing-xs;
+  color: $color-text-dark;
 }
 
 .about-bottom p {
-  line-height: 1.6;
-  color: #555;
+  line-height: $line-height-normal;
+  color: $color-text-medium;
 }
 
 .about-body {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-xxl;
 }
 
 .about-left,
@@ -53,29 +56,31 @@
 
 .about-left h3,
 .about-right h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #222;
+  font-size: $font-size-h3;
+  margin-bottom: $spacing-xs;
+  color: $color-text-dark;
 }
 
 .about-left p,
 .about-right p {
-  line-height: 1.6;
-  color: #555;
+  line-height: $line-height-normal;
+  color: $color-text-medium;
+  word-spacing: 0.1em;
+  letter-spacing: 0.3px;
 }
 
 /* Skills */
 .skills-columns {
   display: flex;
-  gap: 2rem;
+  gap: $spacing-lg;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .skills-columns h4 {
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-  font-weight: 600;
+  margin-bottom: $spacing-xs;
+  font-size: $font-size-h4;
+  font-weight: $font-weight-semibold;
 }
 
 .skills-columns ul {
@@ -85,17 +90,44 @@
 
 .skills-columns li {
   display: flex;
-  gap: 0.5rem;
+  gap: $spacing-xs;
   align-items: center;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  color: #444;
+  margin-bottom: $spacing-xs;
+  font-size: $font-size-body;
+  color: $color-text-muted;
 }
 
 .skills-columns li i {
-  margin-right: 0.5rem;
-  font-size: 1.2rem;
-  color: #333;
+  margin-right: $spacing-xs;
+  font-size: $font-size-icon;
+  color: $color-text-dark;
+}
+
+/* Skill Links */
+.skill-link {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  color: inherit;
+  text-decoration: none;
+  transition: text-decoration 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+    color: var(--skill-color);
+  }
+
+  .tech-icon {
+    display: inline-block;
+    font-size: $font-size-icon;
+    color: $color-text-dark;
+    transition: color 0.2s ease;
+  }
+
+  &:hover .tech-icon {
+    color: var(--skill-color);
+  }
 }
 
 .hero-divider-top {
@@ -105,7 +137,7 @@
   left: 0;
   width: 100%;
   height: auto;
-  z-index: 2;
+  z-index: $z-hero;
   pointer-events: none;
   user-select: none;
   object-fit: cover;
@@ -116,6 +148,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, auto);
-    gap: 2rem; // optional spacing between grid items
+    gap: $spacing-lg;
   }
 }

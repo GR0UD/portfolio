@@ -1,7 +1,166 @@
 import Header from "../components/header/header.jsx";
 import Footer from "../components/footer/footer.jsx";
 import Intro from "../components/intro/intro.jsx";
+import ContactForm from "../components/contact-form/contact-form.jsx";
 import { Icons } from "../utilities/icons.js";
+
+// Skill data with website links and brand colors
+const skillsData = {
+  development: [
+    {
+      icon: Icons.html,
+      name: "HTML",
+      url: "https://html.spec.whatwg.org/",
+      color: "#E34C26",
+    },
+    {
+      icon: Icons.css,
+      name: "CSS",
+      url: "https://www.w3.org/Style/CSS/",
+      color: "#1572B6",
+    },
+    {
+      icon: Icons.js,
+      name: "JavaScript",
+      url: "https://www.javascript.com/",
+      color: "#F7DF1E",
+    },
+    {
+      icon: Icons.jsx,
+      name: "JSX",
+      url: "https://react.dev/",
+      color: "#61DAFB",
+    },
+    {
+      icon: Icons.php,
+      name: "PHP",
+      url: "https://www.php.net/",
+      color: "#777BB4",
+    },
+  ],
+  frontend: [
+    {
+      icon: Icons.react,
+      name: "React (Vite)",
+      url: "https://react.dev/",
+      color: "#61DAFB",
+    },
+    {
+      icon: Icons.next,
+      name: "Next.js",
+      url: "https://nextjs.org/",
+      color: "#000000",
+    },
+    {
+      icon: Icons.tailwind,
+      name: "Tailwind CSS",
+      url: "https://tailwindcss.com/",
+      color: "#06B6D4",
+    },
+    {
+      icon: Icons.sass,
+      name: "SASS / SCSS",
+      url: "https://sass-lang.com/",
+      color: "#CC6699",
+    },
+  ],
+  backend: [
+    {
+      icon: Icons.mysql,
+      name: "MySQL",
+      url: "https://www.mysql.com/",
+      color: "#00758F",
+    },
+    {
+      icon: Icons.json,
+      name: "JSON",
+      url: "https://www.json.org/",
+      color: "#F4EFE5",
+    },
+    {
+      icon: Icons.fetch,
+      name: "Fetch API",
+      url: "https://fetch.spec.whatwg.org/",
+      color: "#F7DF1E",
+    },
+    {
+      icon: Icons.webpack,
+      name: "Webpack",
+      url: "https://webpack.js.org/",
+      color: "#8DD6F9",
+    },
+    {
+      icon: Icons.npm,
+      name: "npm",
+      url: "https://www.npmjs.com/",
+      color: "#CB3837",
+    },
+    {
+      icon: Icons.jest,
+      name: "Jest",
+      url: "https://jestjs.io/",
+      color: "#C21325",
+    },
+  ],
+  tools: [
+    {
+      icon: Icons.wordpress,
+      name: "WordPress",
+      url: "https://wordpress.org/",
+      color: "#0073AA",
+    },
+    {
+      icon: Icons.mamp,
+      name: "MAMP",
+      url: "https://www.mamp.info/",
+      color: "#9B4D96",
+    },
+    {
+      icon: Icons.localwp,
+      name: "LocalWP",
+      url: "https://localwp.com/",
+      color: "#11A5A7",
+    },
+    {
+      icon: Icons.vscode,
+      name: "VS Code",
+      url: "https://code.visualstudio.com/",
+      color: "#007ACC",
+    },
+    {
+      icon: Icons.figma,
+      name: "Figma",
+      url: "https://www.figma.com/",
+      color: "#F24E1E",
+    },
+    {
+      icon: Icons.git,
+      name: "Git",
+      url: "https://git-scm.com/",
+      color: "#F1502F",
+    },
+    {
+      icon: Icons.github,
+      name: "GitHub",
+      url: "https://github.com/",
+      color: "#181717",
+    },
+  ],
+};
+
+const SkillLink = ({ icon: Icon, name, url, color }) => (
+  <li>
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="skill-link"
+      style={{ "--skill-color": color }}
+    >
+      <Icon className="tech-icon" /> {name}
+    </a>
+  </li>
+);
 
 export default function Home() {
   return (
@@ -10,173 +169,139 @@ export default function Home() {
       <Header />
 
       <main>
+        <h1 style={{ position: "absolute", left: "-9999px" }}>
+          Mark Galkins - Full Stack Developer Portfolio
+        </h1>
         {/* HERO SECTION */}
-        <section id='hero'>
-          <div className='hero-background'>
-            <div className='hero-overlay'></div>
+        <section id="hero">
+          <div className="hero-background">
+            <div className="hero-overlay"></div>
             <video
-              className='hero-video'
-              src='/video/hero.mp4'
+              className="hero-video"
+              src="/video/hero.webm"
               autoPlay
               muted
               loop
               playsInline
-              aria-hidden='true'
+              aria-hidden="true"
+              controls={false}
             />
           </div>
-          <header className='hero-header'>
-            <div className='hero-content'>
-              <h1>
-                <span>Hey, I'm</span> Mark 👋
-              </h1>
-              <h2>A Front-End Developer</h2>
+          <header className="hero-header">
+            <div className="hero-content">
+              <h2>
+                <span>Hey, I'm</span> <strong>Mark</strong> 👋
+              </h2>
+              <h3>A Front-End Developer</h3>
               <p>
                 Based in Denmark — I build clean, fast, and user-focused web
                 experiences.
               </p>
-              <a href='#projects' className='btn'>
+              <a href="#projects" className="btn">
                 Explore My Work
               </a>
             </div>
-            <a href='#about' className='hero-blob'>
-              <img src='/images/me.png' alt='A beautiful image of me :)' />
+            <a href="#about" className="hero-blob">
+              <img src="/images/me.png" alt="A beautiful image of me :)" />
             </a>
           </header>
           <img
-            className='hero-divider'
-            src='/images/divider-bot.png'
-            alt='section divider'
+            className="hero-divider"
+            src="/images/divider-bot.png"
+            alt="section divider"
           />
         </section>
-
         {/* ABOUT SECTION */}
-        <section id='about'>
-          <div className='about-wrapper'>
-            <header className='about-header'>
-              <h2 className='about-title'>About</h2>
+        <section id="about">
+          <div className="about-wrapper">
+            <header className="about-header">
+              <h2 className="about-title">About</h2>
             </header>
 
-            <div className='about-body'>
-              <article className='about-left'>
-                <h3>How I Got Here</h3>
-                <p>
-                  Ever since I was a kid, I’ve been endlessly curious—always
-                  taking things apart, exploring new ideas, and diving headfirst
-                  into challenges just to figure out how they work. That mindset
-                  eventually led me to the world of web development. After
-                  experimenting with basic HTML and styling as a teen, I started
-                  building real projects—from small static pages to full
-                  CMS-powered sites. Over time, I sharpened my coding skills,
-                  got hands-on with frameworks, and grew passionate about
-                  creating digital experiences that feel as smooth as they look.
-                </p>
-              </article>
+            <div className="about-body">
+              <div className="about-body">
+                <article className="about-left">
+                  <h3>How I Got Here</h3>
+                  <p>
+                    I've always been fascinated by technology. It started with
+                    drawing as a kid — sketching ideas and imagining how things
+                    could look and move. Around the age of ten, I discovered
+                    computers, and that curiosity evolved fast.
+                    <br />
+                    <br />
+                    I got into Photoshop, started editing videos in Adobe
+                    Premiere, then moved on to game development and coding.
+                    Eventually, I found myself drawn to UI design — the bridge
+                    between creativity and logic.
+                    <br />
+                    <br />
+                    When I combined both worlds, everything clicked: web
+                    development and software development became my way to turn
+                    imagination into something real, functional, and
+                    interactive.
+                  </p>
+                </article>
 
-              <article className='about-right'>
-                <h3>What I Do</h3>
-                <p>
-                  I build responsive, accessible, and scalable web applications
-                  with clean, maintainable code and a minimalist design
-                  approach. I focus on front-end development with a solid
-                  understanding of full-stack workflows. My work combines
-                  structure, performance, and design thinking. Whether I’m
-                  building in React, styling with Tailwind, or setting up
-                  Next.js routing, I aim for clarity, efficiency, and user-first
-                  functionality.
-                </p>
-              </article>
+                <article className="about-right">
+                  <h3>What I Do</h3>
+                  <p>
+                    I build responsive, accessible, and scalable web
+                    applications with clean, maintainable code and a refined,
+                    minimalist design philosophy. I'm drawn to minimalism — I
+                    love the clarity it brings, and I always make sure there's
+                    structure and order in everything I create.
+                    <br />
+                    <br />
+                    My focus is front-end development, grounded in a solid
+                    understanding of full-stack workflows. I combine design
+                    thinking, performance, and precision to craft seamless
+                    digital experiences.
+                    <br />
+                    <br />
+                    Whether I'm working in React, styling with Tailwind, or
+                    structuring routes in Next.js, I aim for clarity,
+                    efficiency, and a user-first flow.
+                  </p>
+                </article>
+              </div>
             </div>
 
-            <div className='about-bottom'>
-              <div className='skills-section'>
-                <div className='skills-columns'>
+            <div className="about-bottom">
+              <div className="skills-section">
+                <div className="skills-columns">
                   <div>
                     <h4>Development</h4>
                     <ul>
-                      <li>
-                        <Icons.html className='tech-icon' /> HTML
-                      </li>
-                      <li>
-                        <Icons.css className='tech-icon' /> CSS
-                      </li>
-                      <li>
-                        <Icons.js className='tech-icon' /> JavaScript
-                      </li>
-                      <li>
-                        <Icons.jsx className='tech-icon' /> JSX
-                      </li>
-                      <li>
-                        <Icons.php className='tech-icon' /> PHP
-                      </li>
+                      {skillsData.development.map((skill) => (
+                        <SkillLink key={skill.name} {...skill} />
+                      ))}
                     </ul>
                   </div>
 
                   <div>
                     <h4>Front-End / Styling</h4>
                     <ul>
-                      <li>
-                        <Icons.react className='tech-icon' /> React (Vite)
-                      </li>
-                      <li>
-                        <Icons.next className='tech-icon' /> Next.js
-                      </li>
-                      <li>
-                        <Icons.tailwind className='tech-icon' /> Tailwind CSS
-                      </li>
-                      <li>
-                        <Icons.sass className='tech-icon' /> SASS / SCSS
-                      </li>
+                      {skillsData.frontend.map((skill) => (
+                        <SkillLink key={skill.name} {...skill} />
+                      ))}
                     </ul>
                   </div>
 
                   <div>
                     <h4>Backend / Tooling</h4>
                     <ul>
-                      <li>
-                        <Icons.mysql className='tech-icon' /> MySQL
-                      </li>
-                      <li>
-                        <Icons.json className='tech-icon' /> JSON
-                      </li>
-                      <li>
-                        <Icons.fetch className='tech-icon' /> Fetch API
-                      </li>
-                      <li>
-                        <Icons.webpack className='tech-icon' /> Webpack
-                      </li>
-                      <li>
-                        <Icons.npm className='tech-icon' /> npm
-                      </li>
-                      <li>
-                        <Icons.jest className='tech-icon' /> Jest
-                      </li>
+                      {skillsData.backend.map((skill) => (
+                        <SkillLink key={skill.name} {...skill} />
+                      ))}
                     </ul>
                   </div>
 
                   <div>
                     <h4>CMS / Dev Tools</h4>
                     <ul>
-                      <li>
-                        <Icons.wordpress className='tech-icon' /> WordPress
-                      </li>
-                      <li>
-                        <Icons.mamp className='tech-icon' /> MAMP
-                      </li>
-                      <li>
-                        <Icons.localwp className='tech-icon' /> LocalWP
-                      </li>
-                      <li>
-                        <Icons.vscode className='tech-icon' /> VS Code
-                      </li>
-                      <li>
-                        <Icons.figma className='tech-icon' /> Figma
-                      </li>
-                      <li>
-                        <Icons.git className='tech-icon' /> Git
-                      </li>
-                      <li>
-                        <Icons.github className='tech-icon' /> GitHub
-                      </li>
+                      {skillsData.tools.map((skill) => (
+                        <SkillLink key={skill.name} {...skill} />
+                      ))}
                     </ul>
                   </div>
                 </div>
@@ -184,41 +309,40 @@ export default function Home() {
             </div>
           </div>
         </section>
-
         {/* PROJECTS SECTION */}
-        <section id='projects'>
+        <section id="projects">
           <img
-            className='hero-divider-top'
-            src='/images/divider-top.png'
-            alt='section divider'
+            className="hero-divider-top"
+            src="/images/divider-top.png"
+            alt="section divider"
           />
-          <div className='projects-overlay'></div>
-          <div className='projects-wrapper'>
-            <header className='projects-header'>
-              <h2 className='projects-title'>Projects</h2>
+          <div className="projects-overlay"></div>
+          <div className="projects-wrapper">
+            <header className="projects-header">
+              <h2 className="projects-title">Projects</h2>
             </header>
 
-            <div className='projects-body'>
-              <article className='project-card'>
+            <div className="projects-body">
+              <article className="project-card">
                 <a
-                  href='https://projekt-moviez-gr0ud.onrender.com'
-                  className='project-link'
+                  href="https://projekt-moviez-gr0ud.onrender.com"
+                  className="project-link"
                 >
                   <img
-                    src='/images/project1.png'
-                    alt='MyMoviez'
-                    className='project-image'
+                    src="/images/project1.png"
+                    alt="MyMoviez"
+                    className="project-image"
                   />
 
-                  <h3>MyMoviez</h3>
+                  <h4>MyMoviez</h4>
 
                   <p>
-                    Vores første mobilfokuserede filmapp lavet i React. Den
+                    Vores første mobilfokuserede filmapp lavet i React . Den
                     viser dynamisk indhold, modulære komponenter og bruger data
                     fra en lokal JSON-database.
                   </p>
 
-                  <div className='project-tech-tags'>
+                  <div className="project-tech-tags">
                     <span>React</span>
                     <span>Vite</span>
                     <span>JavaScript</span>
@@ -230,23 +354,23 @@ export default function Home() {
                 </a>
               </article>
 
-              <article className='project-card'>
+              <article className="project-card">
                 <a
-                  href='https://praktik-din-m-gler-team-2.onrender.com'
-                  className='project-link'
+                  href="https://praktik-din-m-gler-team-2.onrender.com"
+                  className="project-link"
                 >
                   <img
-                    src='/images/project2.png'
-                    alt='Din maegler'
-                    className='project-image'
+                    src="/images/project2.png"
+                    alt="Din maegler"
+                    className="project-image"
                   />
                   <h3>Din maegler</h3>
                   <p>
                     Et ejendomsmægler-site lavet i React med mock-data fra en
-                    lokal JSON-API. Projektet viser dynamisk indhold og
+                    lokal JSON-API . Projektet viser dynamisk indhold og
                     responsivt design med fokus på moderne frontend-teknologier.
                   </p>{" "}
-                  <div className='project-tech-tags'>
+                  <div className="project-tech-tags">
                     <span>React</span>
                     <span>Vite</span>
                     <span>JavaScript</span>
@@ -258,15 +382,15 @@ export default function Home() {
                 </a>
               </article>
 
-              <article className='project-card'>
+              <article className="project-card">
                 <a
-                  href='https://movie-ticket-app-burgerking.onrender.com/'
-                  className='project-link'
+                  href="https://movie-ticket-app-burgerking.onrender.com/"
+                  className="project-link"
                 >
                   <img
-                    src='/images/project3.png'
-                    alt='Project 3'
-                    className='project-image'
+                    src="/images/project3.png"
+                    alt="Project 3"
+                    className="project-image"
                   />
                   <h3>Tickets App</h3>
                   <p>
@@ -274,7 +398,7 @@ export default function Home() {
                     built with React + Vite featuring seat selection and smooth
                     payment flow.
                   </p>
-                  <div className='project-tech-tags'>
+                  <div className="project-tech-tags">
                     <span>React</span>
                     <span>Vite</span>
                     <span>JavaScript</span>
@@ -288,142 +412,25 @@ export default function Home() {
             </div>
           </div>
           <img
-            className='hero-divider-bot'
-            src='/images/divider-bot.png'
-            alt='section divider'
+            className="hero-divider-bot"
+            src="/images/divider-bot.png"
+            alt="section divider"
           />
         </section>
-
         {/* CONTACT SECTION */}
-        <section id='contact'>
-          <header className='contact-header'>
-            <h2 className='contact-title'>Contact</h2>
+        <section id="contact">
+          <header className="contact-header">
+            <h2 className="contact-title">Contact</h2>
           </header>
 
-          <div className='contact-wrapper'>
-            <form id='contact-form' className='form-horizontal' role='form'>
-              <div className='form-group'>
-                <input
-                  type='text'
-                  className='form-control'
-                  id='name'
-                  placeholder='Name'
-                  name='name'
-                  required
-                />
-              </div>
+          <div className="contact-wrapper">
+            <ContactForm />
 
-              <div className='form-group'>
-                <input
-                  type='email'
-                  className='form-control'
-                  id='email'
-                  placeholder='Email'
-                  name='email'
-                  required
-                />
-              </div>
-
-              <textarea
-                className='form-control'
-                rows='10'
-                placeholder='Drop your message here'
-                name='message'
-                required
-              ></textarea>
-
-              <button
-                className='btn btn-primary send-button'
-                id='submit'
-                type='submit'
-              >
-                <div className='alt-send-button'>
-                  <i className='fa fa-paper-plane'></i>
-                  <span className='send-text'>SEND</span>
-                </div>
-              </button>
-            </form>
-
-            <div className='direct-contact-container'>
-              <ul className='contact-list'>
-                <li className='list-item'>
-                  <Icons.location className='tech-icon' />
-                  <span className='contact-text location'>
-                    <a
-                      href='https://www.google.dk/maps/place/4000+Roskilde/@55.6700326,11.9161574,32811m/data=!3m2!1e3!4b1!4m6!3m5!1s0x46525fc995012f29:0xa00afcc1d507710!8m2!3d55.64191!4d12.087845!16zL20vMGtzcHc?hl=da&entry=ttu&g_ep=EgoyMDI1MDYwMS4wIKXMDSoASAFQAw%3D%3D'
-                      title='Find me here in roskilde'
-                    >
-                      Roskilde, Denmark
-                    </a>
-                  </span>
-                </li>
-                <li className='list-item'>
-                  <Icons.phone className='tech-icon' />
-                  <span className='contact-text phone'>
-                    <a href='tel:+4591953139' title='Call me'>
-                      (+45) 91 95 31 39
-                    </a>
-                  </span>
-                </li>
-                <li className='list-item'>
-                  <Icons.email className='tech-icon' />
-                  <span className='contact-text gmail'>
-                    <a href='mailto:marksgalkins@gmail.com'>
-                      marksgalkins@gmail.com
-                    </a>
-                  </span>
-                </li>
-              </ul>
-
+            <div className="contact-note">
               <hr />
-
-              <ul className='social-media-list'>
-                <li className='github'>
-                  <a
-                    href='https://github.com/GR0UD'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    aria-label='GitHub'
-                  >
-                    <Icons.github className='tech-icon' />
-                  </a>
-                </li>
-                <li className='codepen'>
-                  <a
-                    href='https://codepen.io/GROUD-the-solid'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    aria-label='CodePen'
-                  >
-                    <Icons.codepen className='tech-icon' />
-                  </a>
-                </li>
-                <li className='linkedin'>
-                  <a
-                    href='https://www.linkedin.com/in/mark-galkins-7252092b0/'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    aria-label='LinkedIn'
-                  >
-                    <Icons.linkedin className='tech-icon' />
-                  </a>
-                </li>
-                <li className='instagram'>
-                  <a
-                    href='https://www.instagram.com/gr0ud/'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    aria-label='Instagram'
-                  >
-                    <Icons.instagram className='tech-icon' />
-                  </a>
-                </li>
-              </ul>
-
-              <hr />
-              <div className='copyright'>
-                &copy; {new Date().getFullYear()} Mark Galkins. All rights
-                reserved.
+              <div className="contact-note__content">
+                <span>Available for freelance & full-time opportunities</span>
+                <span>(CET)</span>
               </div>
             </div>
           </div>

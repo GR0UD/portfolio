@@ -1,19 +1,18 @@
-import { useEffect, useRef } from "react";
 import { useRoutes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import routes from "~react-pages";
-import { startFaviconSwitcher } from "./utilities/startFaviconSwitcher.js";
+import BackupScroll from "./components/backup/backup.jsx";
 
 function App() {
-  const intervalId = useRef(null);
-
-  useEffect(() => {
-    if (!intervalId.current) {
-      intervalId.current = startFaviconSwitcher(1000);
-    }
-  }, []);
-
   const element = useRoutes(routes);
-  return element;
+  return (
+    <>
+      {element}
+      <BackupScroll />
+      <ToastContainer />
+    </>
+  );
 }
 
 export default App;

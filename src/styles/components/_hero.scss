@@ -1,15 +1,15 @@
-@use "../base/variables" as vars;
+@use "../base/variables" as *;
 
 #hero {
   position: relative;
-  height: 90dvh;
+  height: $hero-height;
   width: 100%;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: vars.$color-header-bg;
-  color: vars.$color-white;
+  background-color: $color-header-bg;
+  color: $color-white;
   z-index: 1;
 }
 
@@ -26,16 +26,20 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -100;
+  z-index: $hero-video-z-index;
   pointer-events: none;
+
+  &::-webkit-media-controls {
+    display: none !important;
+  }
 }
 
 .hero-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.225);
-  transition: background-color 0.3s ease;
-  z-index: -1;
+  background-color: $color-hero-overlay;
+  transition: background-color $transition-default;
+  z-index: $hero-overlay-z-index;
   height: 100%;
   width: 100%;
   top: 0;
@@ -46,36 +50,47 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: $hero-header-gap;
+  padding: 0 $spacing-lg;
 }
 
 .hero-content {
-  text-align: center;
+  text-align: left;
   max-width: 700px;
-  padding: 0 1.5rem;
-  z-index: 2;
+  z-index: $z-hero;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 
   h1 {
-    font-size: 3.5rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-size: $font-size-h1;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-xs;
 
     span {
-      font-weight: 300;
+      font-weight: $font-weight-light;
       opacity: 0.8;
-      margin-right: 0.5rem;
+      margin-right: $spacing-xs;
     }
   }
 
   h2 {
-    font-size: 2rem;
-    font-weight: 400;
-    color: vars.$color-light;
-    margin-bottom: 1rem;
+    font-size: $font-size-h2;
+    font-weight: $font-weight-regular;
+    color: $color-white;
+    margin-bottom: $spacing-sm;
+
+    strong {
+      font-weight: $font-weight-semibold;
+    }
+  }
+
+  h3 {
+    font-size: $font-size-h2;
+    font-weight: $font-weight-regular;
+    color: $color-white;
+    margin-bottom: $spacing-sm;
     position: relative;
     padding-left: 6rem;
 
@@ -84,7 +99,7 @@
       position: absolute;
       width: 80px;
       height: 2px;
-      background-color: vars.$color-light;
+      background-color: $color-white;
       left: 0;
       top: 1.5rem;
     }
@@ -92,28 +107,28 @@
 
   p {
     font-size: 1.125rem;
-    color: vars.$color-light;
-    line-height: 1.6;
-    margin-bottom: 2rem;
+    color: $color-light;
+    line-height: $line-height-normal;
+    margin-bottom: $spacing-lg;
     text-align: left;
   }
 
   .btn {
-    background-color: vars.$color-button-bg;
-    color: vars.$color-light;
-    padding: vars.$button-padding;
-    border: 1px solid vars.$color-button-border;
-    border-radius: vars.$border-radius;
-    font-weight: vars.$font-weight-regular;
-    font-size: vars.$font-size-nav;
-    backdrop-filter: vars.$backdrop-blur-button;
-    transition: background-color vars.$transition-default,
-      border-color vars.$transition-default, transform vars.$transition-fast;
+    background-color: $color-button-bg;
+    color: $color-white;
+    padding: $button-padding;
+    border: 1px solid $color-button-border;
+    border-radius: $border-radius;
+    font-weight: $font-weight-regular;
+    font-size: $font-size-nav;
+    backdrop-filter: $backdrop-blur-project;
+    transition: background-color $transition-default,
+      border-color $transition-default, transform $transition-fast;
 
     &:hover {
-      background-color: vars.$color-button-bg-hover;
-      border-color: vars.$color-button-border-hover;
-      color: vars.$color-white;
+      background-color: $color-button-bg-hover;
+      border-color: $color-button-border-hover;
+      color: $color-white;
       transform: scale(1.04);
     }
   }
@@ -126,7 +141,7 @@
   left: 0;
   width: 100%;
   height: auto;
-  z-index: 2;
+  z-index: $z-hero;
   pointer-events: none;
   user-select: none;
   object-fit: cover;
@@ -144,32 +159,31 @@
 }
 
 .hero-blob {
-  width: 400px;
-  height: 400px;
+  width: $blob-width;
+  height: $blob-height;
   border-radius: var(--radius-1) var(--radius-2) var(--radius-3) var(--radius-4) /
     var(--radius-5) var(--radius-6) var(--radius-7) var(--radius-8);
-  background-color: vars.$color-button-bg;
-  border: 1px solid vars.$color-button-border;
-  font-weight: vars.$font-weight-regular;
-  font-size: vars.$font-size-nav;
-  backdrop-filter: blur(2.5px);
-  transition: background-color vars.$transition-default,
-    border-color vars.$transition-default, transform vars.$transition-fast;
+  background-color: $color-button-bg;
+  border: 1px solid $color-button-border;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-nav;
+  backdrop-filter: $backdrop-blur-blob;
+  transition: background-color $transition-default,
+    border-color $transition-default, transform $transition-fast;
   overflow: hidden;
   display: flex;
   align-items: end;
   justify-content: center;
-  animation: blob-animation 8s infinite ease-in-out;
-
+  animation: $animation-blob;
   &:hover {
-    background-color: vars.$color-button-bg-hover;
-    border-color: vars.$color-button-border-hover;
-    color: vars.$color-white;
+    background-color: $color-button-bg-hover;
+    border-color: $color-button-border-hover;
+    color: $color-white;
   }
 
   img {
     width: auto;
-    height: 130%;
+    height: $blob-image-scale;
     object-fit: cover;
     filter: drop-shadow(-25px 25px 5px hsla(0, 0%, 0%, 0.6));
     filter: grayscale(1);
@@ -196,8 +210,44 @@
 }
 
 @media screen and (max-width: 768px) {
+  #hero {
+    padding: $spacing-xxl 0;
+  }
+
+  .hero-blob {
+    display: none;
+  }
+
   .hero-header {
     flex-direction: column-reverse;
     padding-bottom: 3rem;
+  }
+
+  .hero-content {
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      padding-left: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      padding-left: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    p {
+      font-size: 1rem;
+    }
   }
 }

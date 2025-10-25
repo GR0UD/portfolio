@@ -1,18 +1,17 @@
+@use "../base/variables" as *;
+
 #projects {
   position: relative;
-  padding: 6rem 2rem;
-  background-color: #f9f9f9;
+  padding: $container-padding-section;
+  background-color: $color-bg-medium;
   text-align: center;
-
-  &:hover .projects-overlay {
-    background-color: rgba(0, 0, 0, 0.25);
-  }
 
   .projects-overlay {
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
+    backdrop-filter: $backdrop-blur-header;
+    background-color: rgba(0, 0, 0, 0.25);
+    transition: background-color $transition-default;
     z-index: 1;
   }
 
@@ -26,7 +25,7 @@
     pointer-events: none;
     user-select: none;
     object-fit: cover;
-    z-index: 2;
+    z-index: $z-hero;
 
     &.hero-divider-top {
       top: 0;
@@ -39,18 +38,18 @@
 
   .projects-wrapper {
     position: relative;
-    z-index: 2;
-    max-width: 1200px;
+    z-index: $z-hero;
+    max-width: $container-max-width;
     margin: 0 auto;
   }
 
   .projects-header {
-    margin-bottom: 3rem;
+    margin-bottom: $spacing-xxl;
 
     .projects-title {
-      font-size: 2.5rem;
-      font-weight: 600;
-      color: #fff;
+      font-size: $font-size-title;
+      font-weight: $font-weight-semibold;
+      color: $color-white;
       text-transform: uppercase;
     }
   }
@@ -58,81 +57,139 @@
   .projects-body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    gap: $spacing-lg;
   }
 
   .project-card {
-    background-color: rgba(255, 255, 255, 0.06);
-    color: #eaeaea;
-    padding: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 12px;
-    font-weight: 500;
-    font-size: 1rem;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    background-color: $color-button-bg;
+    color: $color-light;
+    padding: $spacing-sm;
+    border: 1px solid $color-button-border;
+    border-radius: $border-radius-lg;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-nav;
+    backdrop-filter: $backdrop-blur-project;
+    -webkit-backdrop-filter: $backdrop-blur-project;
+    box-shadow: $shadow-small;
     overflow: hidden;
-    transition: background-color 0.3s ease, border-color 0.3s ease,
-      transform 0.25s ease;
+    transition: background-color $transition-default,
+      border-color $transition-default, transform $transition-fast;
 
     &:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+      box-shadow: $shadow-medium;
     }
 
     .project-link {
       display: block;
       text-decoration: none;
       color: inherit;
-      padding: 0.5rem;
+      padding: $spacing-xs;
 
       img.project-image {
         width: 100%;
         height: auto;
-        border-radius: 8px;
-        margin-bottom: 1rem;
+        border-radius: $border-radius;
+        margin-bottom: $spacing-sm;
       }
 
       h3 {
-        font-size: 1.4rem;
-        margin-bottom: 0.5rem;
-        color: #fff;
+        font-size: $font-size-subtitle;
+        margin-bottom: $spacing-xs;
+        color: $color-white;
         text-align: left;
       }
 
       p {
-        font-size: 0.95rem;
-        color: #fff;
+        font-size: $font-size-small;
+        color: $color-white;
         opacity: 0.75;
-        font-weight: 400;
-        line-height: 1.4;
+        font-weight: $font-weight-light;
+        line-height: $line-height-tight;
         text-align: left;
       }
 
       .project-tech-tags {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-top: 1rem;
+        gap: $spacing-xs;
+        margin-top: $spacing-sm;
 
         span {
-          background-color: rgba(255, 255, 255, 0.08);
-          color: #fff;
+          background-color: $color-project-tag-bg;
+          color: $color-white;
           padding: 0.4rem 0.85rem;
-          border: 1px solid rgba(255, 255, 255, 0.15);
-          border-radius: 8px;
-          font-weight: 500;
-          letter-spacing: 0.05rem;
-          font-size: 0.875rem;
-          backdrop-filter: blur(6px);
-          -webkit-backdrop-filter: blur(6px);
-          transition: background-color 0.3s ease, border-color 0.3s ease;
+          border: 1px solid $color-button-border;
+          border-radius: $border-radius;
+          font-weight: $font-weight-medium;
+          letter-spacing: $letter-spacing-tag;
+          font-size: $font-size-tiny;
+          backdrop-filter: $backdrop-blur-project;
+          -webkit-backdrop-filter: $backdrop-blur-project;
+          transition: background-color $transition-default,
+            border-color $transition-default;
 
           &:hover {
-            background-color: rgba(255, 255, 255, 0.15);
+            background-color: $color-project-tag-bg-hover;
           }
         }
+      }
+    }
+  }
+}
+
+// ==================== RESPONSIVE DESIGN ====================
+
+@media screen and (max-width: 1024px) {
+  #projects {
+    padding: 4rem 2rem;
+  }
+
+  .projects-header {
+    .projects-title {
+      font-size: 2rem;
+    }
+  }
+
+  .projects-body {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $spacing-md;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #projects {
+    padding: 3rem 1.5rem;
+  }
+
+  .projects-header {
+    margin-bottom: $spacing-lg;
+
+    .projects-title {
+      font-size: 1.5rem;
+    }
+  }
+
+  .projects-body {
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+  }
+
+  .project-card {
+    padding: $spacing-sm;
+
+    .project-link {
+      img.project-image {
+        margin-bottom: $spacing-xs;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        margin-bottom: $spacing-xs;
+      }
+
+      p {
+        font-size: 0.9rem;
       }
     }
   }
