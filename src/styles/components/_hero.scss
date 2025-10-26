@@ -174,7 +174,7 @@
   display: flex;
   align-items: end;
   justify-content: center;
-  animation: $animation-blob;
+  animation: blob-animation $animation-blob;
   &:hover {
     background-color: $color-button-bg-hover;
     border-color: $color-button-border-hover;
