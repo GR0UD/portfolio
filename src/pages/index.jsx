@@ -193,7 +193,7 @@ export default function Home() {
               <h2>
                 <span>Hey, I'm</span> <strong>Mark</strong> 👋
               </h2>
-              <h3>A Front-End Developer</h3>
+              <h3>A Full-Stack Developer</h3>
               <p>
                 Based in Denmark — I build clean, fast, and user-focused web
                 experiences.
