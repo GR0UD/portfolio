@@ -29,6 +29,7 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
     "sass": "^1.87.0",
+    "terser": "^5.44.0",
     "unplugin-auto-import": "^19.1.2",
     "vite": "^6.3.5"
   }
