@@ -179,6 +179,7 @@ export default function Home() {
             <video
               className="hero-video"
               src="/video/hero.webm"
+              poster="/video/hero.jpg"
               autoPlay
               muted
               loop
@@ -329,7 +330,7 @@ export default function Home() {
                   className="project-link"
                 >
                   <img
-                    src="/images/project1.png"
+                    src="/images/project1.avif"
                     alt="MyMoviez"
                     className="project-image"
                   />
@@ -360,7 +361,7 @@ export default function Home() {
                   className="project-link"
                 >
                   <img
-                    src="/images/project2.png"
+                    src="/images/project2.avif"
                     alt="Din maegler"
                     className="project-image"
                   />
@@ -388,7 +389,7 @@ export default function Home() {
                   className="project-link"
                 >
                   <img
-                    src="/images/project3.png"
+                    src="/images/project3.avif"
                     alt="Project 3"
                     className="project-image"
                   />
