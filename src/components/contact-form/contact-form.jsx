@@ -112,7 +112,12 @@ export default function ContactForm() {
         )}
       </div>
 
-      <button className="btn btn-primary send-button" id="submit" type="submit">
+      <button
+        className="btn btn-primary send-button"
+        id="submit"
+        type="submit"
+        disabled={isPending}
+      >
         <div className="alt-send-button">
           <i className="fa fa-paper-plane"></i>
           <span className="send-text">{isPending ? "SENDING..." : "SEND"}</span>

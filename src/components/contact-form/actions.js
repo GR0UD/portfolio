@@ -52,17 +52,27 @@ export async function submitContactForm(prevState, formData) {
   }
 
   try {
-    const contactData = {
-      name: name.trim(),
-      email: email.trim(),
-      message: message.trim(),
-      submittedAt: new Date().toISOString(),
-    };
+    // Prepare Web3Forms submission
+    const web3FormData = new FormData();
+    web3FormData.append(
+      "access_key",
+      import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
+    );
+    web3FormData.append("name", name.trim());
+    web3FormData.append("email", email.trim());
+    web3FormData.append("message", message.trim());
 
-    console.log("Contact Form Submission:", contactData);
+    // Submit to Web3Forms
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: web3FormData,
+    });
 
-    // Simulate API call with delay
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const data = await response.json();
+
+    if (!data.success) {
+      throw new Error("Failed to send message");
+    }
 
     return { success: true };
   } catch (err) {
