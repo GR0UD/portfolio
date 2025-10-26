@@ -75,7 +75,7 @@ const skillsData = {
       icon: Icons.json,
       name: "JSON",
       url: "https://www.json.org/",
-      color: "#F4EFE5",
+      color: "#000000",
     },
     {
       icon: Icons.fetch,
