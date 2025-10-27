@@ -9,18 +9,8 @@
   pointer-events: none;
   animation: slideOut 1s ease-in-out 2.25s forwards;
   opacity: 1;
-
-  img {
-    position: absolute;
-    bottom: -25px;
-    left: 0;
-    width: 100%;
-    height: auto;
-    z-index: 10000;
-    pointer-events: none;
-    user-select: none;
-    object-fit: cover;
-  }
+  height: 100dvh;
+  width: 100%;
 
   .container {
     h1 {
@@ -47,18 +37,6 @@
         animation: fadeText 0.5s ease-in-out 1.5s forwards;
       }
     }
-  }
-
-  .intro-divider {
-    position: absolute;
-    top: -25px;
-    left: 0;
-    width: 100%;
-    height: auto;
-    pointer-events: none;
-    user-select: none;
-    object-fit: cover;
-    z-index: 10000;
   }
 }
 
