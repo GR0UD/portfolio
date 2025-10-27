@@ -1,63 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Loading State Transition -->
+    <style>
+      body {
+        transition: opacity ease-in 0.2s;
+      }
+      body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+    </style>
+
     <!-- Charset & Viewport -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Transparent Safari / iPhone UI -->
-    <meta name="theme-color" content="transparent" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="white-translucent"
-    />
-
-    <!-- Primary Meta -->
+    <meta charset="utf-8" />
     <title>Mark Galkin | Full-Stack Developer</title>
-    <meta name="title" content="Mark Galkin | Full-Stack Developer" />
-    <meta
-      name="description"
-      content="Full-stack developer portfolio showcasing modern web development projects, UI/UX design, and creative front-end solutions."
-    />
-    <meta
-      name="keywords"
-      content="Mark Galkin, portfolio, web developer, full-stack, React, JavaScript, Next.js, frontend, UI, UX, Denmark"
-    />
-    <meta name="author" content="Mark Galkin" />
-    <link rel="canonical" href="https://galkin.vercel.app/" />
+    <link rel="icon" href="/logo.png" type="image/png" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://galkin.vercel.app/" />
-    <meta property="og:title" content="Mark Galkin | Full-Stack Developer" />
+    <meta content="Mark Galkin | Full-Stack Developer" property="og:title" />
+    <meta content="website" property="og:type" />
+    <meta content="https://galkin.vercel.app/preview.png" property="og:image" />
+    <meta content="https://galkin.vercel.app/" property="og:url" />
     <meta
+      content="Full-stack developer portfolio showcasing modern web development projects, UI/UX design, and creative front-end solutions."
       property="og:description"
-      content="Explore projects, design work, and creative code by Mark Galkin – Full-Stack Developer based in Denmark."
     />
-    <meta property="og:image" content="https://galkin.vercel.app/preview.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="en_US" />
+    <meta content="Mark Galkin" property="og:site_name" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://galkin.vercel.app/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@markgalkin" />
+    <meta name="twitter:creator" content="@markgalkin" />
+    <meta name="twitter:title" content="Mark Galkin | Full-Stack Developer" />
     <meta
-      property="twitter:title"
-      content="Mark Galkin | Full-Stack Developer"
-    />
-    <meta
-      property="twitter:description"
+      name="twitter:description"
       content="Full-stack developer portfolio showcasing web development projects and skills."
     />
     <meta
-      property="twitter:image"
+      name="twitter:image"
       content="https://galkin.vercel.app/preview.png"
     />
+    <meta name="twitter:url" content="https://galkin.vercel.app" />
 
-    <!-- Favicon / App Icons -->
-    <link rel="icon" href="/logo.png" type="image/png" />
+    <!-- Canonical & Description -->
+    <link href="https://galkin.vercel.app/" rel="canonical" />
+    <meta
+      content="Full-stack developer portfolio showcasing modern web development projects, UI/UX design, and creative front-end solutions."
+      name="description"
+      property="description"
+    />
+
+    <!-- Preload Critical Assets -->
+    <meta charset="utf-8" />
+    <link rel="preload" href="/logo.png" as="image" fetchpriority="high" />
+
+    <!-- App Icons -->
     <link rel="apple-touch-icon" href="/logo.png" />
     <link rel="manifest" href="/manifest.json" />
 
@@ -70,7 +72,7 @@
     />
   </head>
 
-  <body>
+  <body unresolved>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
