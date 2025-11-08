@@ -225,14 +225,14 @@ export default function Home() {
                   <h3>How I Got Here</h3>
                   <p>
                     I've always been fascinated by technology. It started with
-                    drawing as a kid — sketching ideas and imagining how things
+                    drawing as a kid sketching ideas and imagining how things
                     could look and move. Around the age of ten, I discovered
                     computers, and that curiosity evolved fast.
                     <br />
                     <br />
                     I got into Photoshop, started editing videos in Adobe
                     Premiere, then moved on to game development and coding.
-                    Eventually, I found myself drawn to UI design — the bridge
+                    Eventually, I found myself drawn to UI design the bridge
                     between creativity and logic.
                     <br />
                     <br />
@@ -248,8 +248,8 @@ export default function Home() {
                   <p>
                     I build responsive, accessible, and scalable web
                     applications with clean, maintainable code and a refined,
-                    minimalist design philosophy. I'm drawn to minimalism — I
-                    love the clarity it brings, and I always make sure there's
+                    minimalist design philosophy. I'm drawn to minimalism I love
+                    the clarity it brings, and I always make sure there's
                     structure and order in everything I create.
                     <br />
                     <br />
