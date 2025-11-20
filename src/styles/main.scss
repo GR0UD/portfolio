@@ -1,7 +1,7 @@
 @use "./base/globals.scss" as *;
-@use "./components/hero.scss" as *;
-@use "./components/about.scss" as *;
-@use "./components/projects.scss" as *;
-@use "./components/contact" as *;
+@use "./sections/hero.scss" as *;
+@use "./sections/about.scss" as *;
+@use "./sections/projects.scss" as *;
+@use "./sections/contact.scss" as *;
 
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
