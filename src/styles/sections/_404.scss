@@ -61,8 +61,6 @@
     .not-found-title {
       font-size: 12rem;
       font-weight: $font-weight-bold;
-      margin: $spacing-xs - $spacing-xs;
-      line-height: $line-height-tight;
 
       @media (max-width: 768px) {
         font-size: 8rem;
