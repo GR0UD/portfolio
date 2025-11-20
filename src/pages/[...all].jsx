@@ -6,7 +6,7 @@ const NotFound = () => {
       <div className="hero-video-container">
         <video
           className="hero-video"
-          src="/video/background.webm"
+          src="/video/hero.webm"
           autoPlay
           loop
           muted
