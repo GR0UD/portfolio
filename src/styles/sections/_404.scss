@@ -13,17 +13,17 @@
 
   .hero-video-container {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: $spacing-xs - $spacing-xs;
+    left: $spacing-xs - $spacing-xs;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: $spacing-xs - $spacing-xs;
   }
 
   .hero-video {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: $spacing-xs - $spacing-xs;
+    left: $spacing-xs - $spacing-xs;
     width: 100%;
     height: 100vh;
     object-fit: cover;
@@ -37,15 +37,15 @@
 
   .hero-overlay {
     position: fixed;
-    inset: 0;
+    inset: $spacing-xs - $spacing-xs;
     background-color: $color-hero-overlay;
     transition: background-color $transition-default;
     z-index: $hero-overlay-z-index;
     height: 100%;
     width: 100%;
-    top: 0;
-    left: 0;
-    backdrop-filter: blur(10px);
+    top: $spacing-xs - $spacing-xs;
+    left: $spacing-xs - $spacing-xs;
+    backdrop-filter: $backdrop-blur-header;
   }
 
   .not-found-content {
@@ -59,22 +59,33 @@
     gap: $spacing-lg;
 
     .not-found-title {
-      font-size: 10rem;
+      font-size: 12rem;
       font-weight: $font-weight-bold;
-      color: $color-white;
-      margin: 0;
-      line-height: 1;
+      color: transparent;
+      margin: $spacing-xs - $spacing-xs;
+      line-height: $line-height-tight;
+      background-color: $color-button-bg;
+      border: 2px solid $color-button-border;
+      backdrop-filter: $backdrop-blur-project;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-stroke: 1px $color-white;
+      text-stroke: 1px $color-white;
+      padding: $spacing-md;
 
       @media (max-width: 768px) {
-        font-size: 6rem;
+        font-size: 8rem;
+        -webkit-text-stroke: 0.5px $color-white;
+        text-stroke: 0.5px $color-white;
       }
     }
 
     .not-found-description {
       font-size: $font-size-h3;
       color: $color-white;
-      margin: 0;
+      margin: $spacing-xs - $spacing-xs;
       opacity: 0.9;
+      font-weight: $font-weight-regular;
 
       @media (max-width: 768px) {
         font-size: $font-size-body;
