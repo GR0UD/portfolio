@@ -1,0 +1,106 @@
+@use "../base/variables" as *;
+
+.not-found {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-header-bg;
+  color: $color-white;
+
+  .hero-video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .hero-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: $hero-video-z-index;
+    pointer-events: none;
+
+    &::-webkit-media-controls {
+      display: none !important;
+    }
+  }
+
+  .hero-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: $color-hero-overlay;
+    transition: background-color $transition-default;
+    z-index: $hero-overlay-z-index;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(10px);
+  }
+
+  .not-found-content {
+    position: relative;
+    z-index: $z-hero;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-lg;
+
+    .not-found-title {
+      font-size: 10rem;
+      font-weight: $font-weight-bold;
+      color: $color-white;
+      margin: 0;
+      line-height: 1;
+
+      @media (max-width: 768px) {
+        font-size: 6rem;
+      }
+    }
+
+    .not-found-description {
+      font-size: $font-size-h3;
+      color: $color-white;
+      margin: 0;
+      opacity: 0.9;
+
+      @media (max-width: 768px) {
+        font-size: $font-size-body;
+      }
+    }
+
+    .btn {
+      background-color: $color-button-bg;
+      color: $color-white;
+      padding: $button-padding;
+      border: 1px solid $color-button-border;
+      border-radius: $border-radius;
+      font-weight: $font-weight-regular;
+      font-size: $font-size-nav;
+      backdrop-filter: $backdrop-blur-project;
+      transition: background-color $transition-default,
+        border-color $transition-default, transform $transition-fast;
+      text-decoration: none;
+      display: inline-block;
+
+      &:hover {
+        background-color: $color-button-bg-hover;
+        border-color: $color-button-border-hover;
+        color: $color-white;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
