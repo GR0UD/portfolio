@@ -64,19 +64,11 @@
       color: transparent;
       margin: $spacing-xs - $spacing-xs;
       line-height: $line-height-tight;
-      background-color: $color-button-bg;
-      border: 2px solid $color-button-border;
-      backdrop-filter: $backdrop-blur-project;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-stroke: 1px $color-white;
-      text-stroke: 1px $color-white;
-      padding: $spacing-md;
+      -webkit-text-stroke: 1px $color-button-border;
+      text-stroke: 1px $color-button-border;
 
       @media (max-width: 768px) {
         font-size: 8rem;
-        -webkit-text-stroke: 0.5px $color-white;
-        text-stroke: 0.5px $color-white;
       }
     }
 
