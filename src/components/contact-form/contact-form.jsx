@@ -1,14 +1,17 @@
-import { useActionState, useEffect } from "react";
+import React from "react";
 import { toast } from "react-toastify";
 import { submitContactForm } from "./actions.js";
 
 export default function ContactForm() {
-  const [state, formAction, isPending] = useActionState(submitContactForm, {
-    error: null,
-    success: false,
-  });
+  const [state, formAction, isPending] = React.useActionState(
+    submitContactForm,
+    {
+      error: null,
+      success: false,
+    }
+  );
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (state?.success) {
       toast.success("Thank you! Your message has been sent successfully.", {
         position: "bottom-right",

@@ -1,4 +1,4 @@
-@use "../base/variables" as *;
+@use "@styles/base/variables" as *;
 
 #contact {
   position: relative;
@@ -19,6 +19,7 @@
       color: $color-black;
       text-transform: uppercase;
       text-align: center;
+      user-select: none;
     }
   }
 

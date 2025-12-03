@@ -1,7 +1,7 @@
-@use "../../styles/base/variables.scss" as *;
+@use "@styles/base/variables.scss" as *;
 
 .header {
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -13,13 +13,12 @@
 
 .container {
   max-width: $container-max-width;
-  padding: $spacing-md $spacing-lg;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  gap: $spacing-sm;
+  padding: $spacing-sm 0;
 }
 
 .logo {
@@ -29,12 +28,32 @@
   justify-content: center;
   transition: all $transition-default;
   user-select: none;
-  padding: 0 $spacing-sm;
-  z-index: 10;
+  padding: $spacing-sm;
   text-decoration: none;
+  backdrop-filter: none;
+  background-color: transparent;
+  border-radius: 50%;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+  height: 75px;
 
-  &:hover {
-    transform: scale(1.05);
+  &.scrolled {
+    background-color: $color-button-bg;
+    color: $color-white;
+    backdrop-filter: $backdrop-blur-project;
+    transition: background-color $transition-default,
+      border-color $transition-default, transform $transition-fast;
+    border: 1px solid $color-button-border;
+    border-radius: $border-radius-lg;
+
+    &:hover {
+      background-color: $color-button-bg-hover;
+      border-color: $color-button-border-hover;
+      color: $color-white;
+    }
+
+    &.onDark {
+      background-color: $color-ondark-bg-scrolled;
+    }
   }
 }
 
@@ -43,20 +62,42 @@
   width: auto;
   object-fit: contain;
   transition: all $transition-default;
-
-  &:hover {
-    filter: brightness(0.9);
-  }
 }
 
 .nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: $spacing-md $spacing-lg;
+  backdrop-filter: none;
+  background-color: transparent;
+  border-radius: 12px;
+  transition: all $transition-default;
+  height: 75px;
+
+  &.scrolled {
+    background-color: $color-button-bg;
+    color: $color-white;
+    backdrop-filter: $backdrop-blur-project;
+    transition: background-color $transition-default,
+      border-color $transition-default, transform $transition-fast;
+    border: 1px solid $color-button-border;
+    border-radius: $border-radius-lg;
+
+    &:hover {
+      background-color: $color-button-bg-hover;
+      border-color: $color-button-border-hover;
+      color: $color-white;
+    }
+
+    &.onDark {
+      background-color: $color-ondark-bg-scrolled;
+    }
+  }
 
   .navLinks {
     display: flex;
-    gap: $spacing-lg;
+    gap: 1.77rem;
 
     li {
       list-style: none;

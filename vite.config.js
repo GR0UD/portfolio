@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import Pages from "vite-plugin-pages";
+import path from "path";
 
 export default defineConfig({
   plugins: [
@@ -10,6 +11,12 @@ export default defineConfig({
       extensions: ["jsx"],
     }),
   ],
+  resolve: {
+    alias: {
+      "@styles": path.resolve(__dirname, "./src/styles"),
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
   build: {
     target: "ES2020",
     minify: "terser",
@@ -28,7 +35,12 @@ export default defineConfig({
     },
   },
   server: {
+    host: "127.0.0.1",
     port: 3000,
+    strictPort: true,
+    hmr: {
+      overlay: true,
+    },
     headers: {
       "Cache-Control": "public, max-age=31536000",
     },

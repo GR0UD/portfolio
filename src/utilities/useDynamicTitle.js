@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import React from "react";
 
 export function useDynamicTitle(titles, interval = 2000) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = React.useState(0);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % titles.length);
     }, interval);
@@ -11,7 +11,7 @@ export function useDynamicTitle(titles, interval = 2000) {
     return () => clearInterval(timer);
   }, [titles.length, interval]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     document.title = titles[currentIndex];
   }, [currentIndex, titles]);
 
