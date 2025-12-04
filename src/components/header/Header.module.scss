@@ -43,6 +43,7 @@
       border-color $transition-default, transform $transition-fast;
     border: 1px solid $color-button-border;
     border-radius: $border-radius-lg;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
 
     &:hover {
       background-color: $color-button-bg-hover;

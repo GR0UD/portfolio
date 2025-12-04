@@ -21,10 +21,8 @@ export default function BackupScroll() {
         setIsVisible(false);
       }
 
-      // Get button's position (bottom right corner where it's fixed)
       const buttonBottom = window.innerHeight - 16 - 37.5; // innerHeight - bottom offset - half button height
 
-      // Check which section the button is overlapping
       const sections = ["hero", "about", "projects", "contact", "footer"];
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -32,7 +30,6 @@ export default function BackupScroll() {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          // Check if button center is within this section
           if (buttonBottom >= rect.top && buttonBottom <= rect.bottom) {
             setCurrentSection(section);
             break;
