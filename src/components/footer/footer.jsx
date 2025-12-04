@@ -6,7 +6,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className={styles.footer}>
+    <footer id="footer" className={styles.footer}>
       <img
         className={styles.dividerTop}
         src="/images/divider-top.png"

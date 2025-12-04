@@ -25,7 +25,7 @@ export default function BackupScroll() {
       const buttonBottom = window.innerHeight - 16 - 37.5; // innerHeight - bottom offset - half button height
 
       // Check which section the button is overlapping
-      const sections = ["hero", "about", "projects", "contact"];
+      const sections = ["hero", "about", "projects", "contact", "footer"];
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
