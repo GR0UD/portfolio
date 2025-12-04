@@ -77,8 +77,8 @@
       border-color $transition-default, transform $transition-fast;
 
     &:hover {
-      transform: translateY(-3px);
-      box-shadow: $shadow-medium;
+      background-color: $color-button-bg-hover;
+      border-color: $color-button-border-hover;
     }
 
     .project-link {

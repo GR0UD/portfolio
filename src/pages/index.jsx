@@ -348,7 +348,7 @@ export default function Home() {
                     className="project-image"
                   />
 
-                  <h4>MyMoviez</h4>
+                  <h3>MyMoviez</h3>
 
                   <p>
                     Vores første mobilfokuserede filmapp lavet i React . Den
