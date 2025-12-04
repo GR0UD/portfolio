@@ -50,8 +50,7 @@
 
 .hero-header {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 1200px;
   gap: $hero-header-gap;
   padding: 0 $spacing-lg;
 }
