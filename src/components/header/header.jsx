@@ -10,7 +10,6 @@ const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
-      // Detect current section based on header position
       const sections = ["hero", "about", "projects", "contact"];
       const headerHeight = 107;
 

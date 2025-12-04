@@ -1,8 +1,10 @@
+import { useRef } from "react";
 import Header from "../components/header/header.jsx";
 import Footer from "../components/footer/footer.jsx";
 import Intro from "../components/intro/intro.jsx";
 import ContactForm from "../components/contact-form/contact-form.jsx";
 import { Icons } from "../utilities/icons.js";
+import useMousePosition from "../utilities/useMousePosition.js";
 
 // Skill data with website links and brand colors
 const skillsData = {
@@ -163,6 +165,16 @@ const SkillLink = ({ icon: Icon, name, url, color }) => (
 );
 
 export default function Home() {
+  const videoRef = useRef(null);
+
+  useMousePosition((moveX, moveY) => {
+    if (videoRef.current) {
+      const translateX = moveX * 10;
+      const translateY = moveY * 10;
+      videoRef.current.style.transform = `translate(${translateX}px, ${translateY}px) scale(1.05)`;
+    }
+  }, 0.05);
+
   return (
     <>
       <Intro />
@@ -177,6 +189,7 @@ export default function Home() {
           <div className="hero-background">
             <div className="hero-overlay"></div>
             <video
+              ref={videoRef}
               className="hero-video"
               src="/video/hero.webm"
               poster="/video/hero.jpg"
