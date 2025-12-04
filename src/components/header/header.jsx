@@ -88,6 +88,8 @@ const Header = () => {
         <button
           className={`${styles.hamburger} ${
             menuOpen ? styles.hamburgerOpen : ""
+          } ${isScrolled && !menuOpen ? styles.scrolled : ""} ${
+            isDarkSection && !menuOpen ? styles.onDark : ""
           }`}
           onClick={toggleMenu}
           aria-label="Toggle navigation menu"

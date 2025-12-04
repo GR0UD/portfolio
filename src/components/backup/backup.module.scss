@@ -2,33 +2,45 @@
 
 .backupButton {
   position: fixed;
-  bottom: 1rem;
+  bottom: 1.5rem;
   right: 1.5rem;
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 50%;
-  border: 1px solid white;
-  backdrop-filter: $backdrop-blur-header;
-  -webkit-backdrop-filter: $backdrop-blur-header;
-  background-color: rgba(0, 0, 0, 0.25);
+  width: 75px;
+  height: 75px;
+  padding: $spacing-sm;
+  border-radius: $border-radius-lg;
+  background-color: $color-button-bg;
+  color: $color-white;
+  backdrop-filter: $backdrop-blur-project;
+  -webkit-backdrop-filter: $backdrop-blur-project;
+  border: 1px solid $color-button-border;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all $transition-default;
   z-index: 1000;
   opacity: 0;
   pointer-events: none;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
 
   &.visible {
     opacity: 1;
     pointer-events: auto;
   }
 
+  &:hover {
+    background-color: $color-button-bg-hover;
+    border-color: $color-button-border-hover;
+    color: $color-white;
+  }
+
+  &.onDark {
+    background-color: $color-ondark-bg-scrolled;
+  }
+
   .icon {
-    font-size: 1.5rem;
+    font-size: 3rem;
     color: white;
     transition: filter 0.3s ease;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
   }
 }

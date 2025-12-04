@@ -153,33 +153,60 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
+  padding: $spacing-sm;
   z-index: 11;
   position: relative;
-  width: 35px;
-  height: 35px;
+  width: 75px;
+  height: 75px;
   justify-content: center;
+  align-items: center;
+  backdrop-filter: none;
+  background-color: transparent;
+  border-radius: 12px;
+  transition: all $transition-default;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
 
   &:focus {
     outline: none;
   }
 
+  &.scrolled {
+    background-color: $color-button-bg;
+    color: $color-white;
+    backdrop-filter: $backdrop-blur-project;
+    transition: background-color $transition-default,
+      border-color $transition-default, transform $transition-fast;
+    border: 1px solid $color-button-border;
+    border-radius: $border-radius-lg;
+
+    &:hover {
+      background-color: $color-button-bg-hover;
+      border-color: $color-button-border-hover;
+      color: $color-white;
+    }
+
+    &.onDark {
+      background-color: $color-ondark-bg-scrolled;
+    }
+  }
+
   .hamburgerLine {
     width: 35px;
-    height: 2px;
+    height: 3px;
     background-color: $color-white;
     border-radius: 10px;
     transition: all 0.3s ease;
     position: absolute;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     transform-origin: center;
 
     &:nth-child(1) {
-      top: 8px;
+      top: 28px;
     }
 
     &:nth-child(2) {
-      bottom: 8px;
+      bottom: 28px;
     }
   }
 }
@@ -187,13 +214,14 @@
 .hamburgerOpen {
   .hamburgerLine {
     &:nth-child(1) {
-      top: 50% !important;
-      transform: rotate(45deg) translateY(-50%);
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
     }
 
     &:nth-child(2) {
-      bottom: 50% !important;
-      transform: rotate(-45deg) translateY(50%);
+      bottom: auto;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
     }
   }
 }
