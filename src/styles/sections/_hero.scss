@@ -49,10 +49,10 @@
 }
 
 .hero-header {
-  display: flex;
   width: 1200px;
-  gap: $hero-header-gap;
-  padding: 0 $spacing-lg;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .hero-content {
@@ -220,7 +220,7 @@
 
   .hero-header {
     flex-direction: column-reverse;
-    padding-bottom: 3rem;
+    padding-bottom: 3rem $spacing-lg;
   }
 
   .hero-content {
