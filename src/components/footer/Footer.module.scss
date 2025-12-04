@@ -110,22 +110,20 @@
         &::after {
           content: "";
           position: absolute;
+          right: 0;
+          bottom: -0.5px;
           left: 0;
-          bottom: -2px;
-          width: 100%;
-          height: 1.25px;
-          background-color: currentColor;
+          height: 1px;
+          background-color: $color-light;
+          pointer-events: none;
+          transform-origin: right;
           transform: scaleX(0);
-          transform-origin: left;
-          transition: transform $transition-slow;
+          transition: transform $transition-default;
         }
 
-        &:hover {
-          color: $color-white;
-
-          &::after {
-            transform: scaleX(1);
-          }
+        &:hover::after {
+          transform-origin: left;
+          transform: scaleX(1);
         }
       }
     }
@@ -154,20 +152,20 @@
     &::after {
       content: "";
       position: absolute;
+      right: 0;
       bottom: -2px;
       left: 0;
-      width: 0;
-      height: 1.25px;
-      background-color: $color-white;
-      transition: width $transition-default;
+      height: 1px;
+      background-color: $color-light;
+      pointer-events: none;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform $transition-default;
     }
 
-    &:hover {
-      color: $color-white;
-
-      &::after {
-        width: 100%;
-      }
+    &:hover::after {
+      transform-origin: left;
+      transform: scaleX(1);
     }
   }
 }
