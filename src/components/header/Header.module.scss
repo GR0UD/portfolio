@@ -228,8 +228,8 @@
 
 // ==================== RESPONSIVE DESIGN ====================
 
-// Tablet and below
-@media screen and (max-width: 1024px) {
+// Tablet and below (includes all iPads)
+@media screen and (max-width: 1194px) {
   .hamburger {
     display: flex;
   }

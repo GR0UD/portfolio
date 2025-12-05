@@ -39,7 +39,7 @@
   gap: $spacing-xxl;
   margin-bottom: $spacing-xxl;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1194px) {
     grid-template-columns: 1fr 1fr;
     gap: $spacing-lg;
   }
