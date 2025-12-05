@@ -40,7 +40,8 @@ const Header = () => {
   };
 
   // Determine if current section has dark background
-  const isDarkSection = currentSection === "projects";
+  const isDarkSection =
+    currentSection === "about" || currentSection === "contact";
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
