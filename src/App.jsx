@@ -10,12 +10,11 @@ function App() {
   // Dynamic page title that rotates through different messages
   useDynamicTitle(
     [
-      "Mark Galkin | Full-Stack Developer",
+      "Mark Galkins | Full-Stack Developer",
       "👋 Welcome!",
-      "Building Fast Web Experiences",
-      "React • Next.js • Tailwind",
-      "Based in Denmark 🇩🇰",
-      "Let's Build Something Cool",
+      "Available for work",
+      "Web Developer • Denmark",
+      "React • Next.js • TypeScript",
     ],
     3000
   ); // Changes every 3 seconds
