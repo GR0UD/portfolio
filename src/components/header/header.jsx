@@ -10,7 +10,7 @@ const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
-      const sections = ["hero", "about", "projects", "contact"];
+      const sections = ["hero", "about", "projects", "contact", "footer"];
       const headerHeight = 107;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -40,8 +40,7 @@ const Header = () => {
   };
 
   // Determine if current section has dark background
-  const isDarkSection =
-    currentSection === "about" || currentSection === "contact";
+  const isDarkSection = currentSection === "projects";
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
