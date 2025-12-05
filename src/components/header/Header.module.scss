@@ -298,15 +298,12 @@
 
   .container {
     flex-wrap: wrap;
+    padding: $spacing-md $spacing-lg;
   }
 }
 
 // Phone only
 @media screen and (max-width: 768px) {
-  .container {
-    padding: $spacing-md $spacing-lg;
-  }
-
   .logo {
     font-size: 1.2rem;
 
