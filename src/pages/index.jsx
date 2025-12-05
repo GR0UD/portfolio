@@ -169,8 +169,8 @@ export default function Home() {
 
   useMousePosition((moveX, moveY) => {
     if (videoRef.current) {
-      const translateX = moveX * 10;
-      const translateY = moveY * 10;
+      const translateX = moveX * 5.5;
+      const translateY = moveY * 5.5;
       videoRef.current.style.transform = `translate(${translateX}px, ${translateY}px) scale(1.05)`;
     }
   }, 0.05);
