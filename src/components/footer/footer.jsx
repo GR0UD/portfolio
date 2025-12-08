@@ -90,14 +90,14 @@ const Footer = () => {
                   <Icons.codepen />
                 </a>
               </li>
-              <li className="instagram">
+              <li className="devto">
                 <a
-                  href="https://www.instagram.com/gr0ud/"
+                  href="https://dev.to/gr0ud"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Instagram"
+                  aria-label="Dev.to"
                 >
-                  <Icons.instagram />
+                  <Icons.devto />
                 </a>
               </li>
             </ul>

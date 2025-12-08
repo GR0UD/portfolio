@@ -235,17 +235,11 @@
     box-shadow: $shadow-glow-linkedin;
   }
 
-  li.instagram:hover,
+  li.devto:hover,
   li:nth-child(4):hover {
-    background: radial-gradient(
-      circle at 30% 107%,
-      $color-instagram-start 0%,
-      $color-instagram-mid 45%,
-      $color-instagram-accent 60%,
-      $color-instagram-end 90%
-    );
+    background-color: $color-black;
     color: $color-white;
-    box-shadow: $shadow-glow-instagram;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
   }
 }
 

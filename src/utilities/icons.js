@@ -20,6 +20,7 @@ import { CgFigma } from "react-icons/cg";
 import { FaGitlab, FaLocationDot, FaLinkedinIn } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
+import { FaDev } from "react-icons/fa";
 export const Icons = {
   // 💻 Skills
   html: FaHtml5,
@@ -52,4 +53,5 @@ export const Icons = {
   phone: FaPhoneAlt,
   location: FaLocationDot,
   linkedin: FaLinkedinIn,
+  devto: FaDev,
 };
