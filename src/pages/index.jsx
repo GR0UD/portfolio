@@ -370,7 +370,7 @@ export default function Home() {
 
               <article className="project-card">
                 <a
-                  href="https://praktik-din-m-gler-team-2.onrender.com"
+                  href="https://din-maegler-v91p.vercel.app/"
                   className="project-link"
                 >
                   <img
