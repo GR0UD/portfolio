@@ -159,6 +159,7 @@
 }
 
 .hero-blob {
+  display: none;
   width: $blob-width;
   height: $blob-height;
   border-radius: var(--radius-1) var(--radius-2) var(--radius-3) var(--radius-4) /
