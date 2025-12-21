@@ -17,18 +17,6 @@ const Footer = () => {
             <h4>Contact</h4>
             <ul className={styles.contactList}>
               <li className={styles.listItem}>
-                <Icons.location className={styles.techIcon} />
-                <span className={styles.contactText}>
-                  <a
-                    href="https://maps.app.goo.gl/16F1sxvxtQNWUTKv7"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Kolding, Denmark
-                  </a>
-                </span>
-              </li>
-              <li className={styles.listItem}>
                 <Icons.email className={styles.techIcon} />
                 <span className={styles.contactText}>
                   <a href="mailto:marksgalkins@gmail.com">
