@@ -1,7 +1,14 @@
 // React Icons
 import { IoLogoSass } from "react-icons/io5";
 import { TbBrandMysql, TbApi } from "react-icons/tb";
-import { SiCsswizardry, SiPhp, SiWebpack, SiMamp } from "react-icons/si";
+import {
+  SiCsswizardry,
+  SiPhp,
+  SiWebpack,
+  SiMamp,
+  SiTypescript,
+  SiMongodb,
+} from "react-icons/si";
 import {
   FaJs,
   FaHtml5,
@@ -12,7 +19,6 @@ import {
   FaPhoneAlt,
 } from "react-icons/fa";
 import { GiJesterHat } from "react-icons/gi";
-import { PiFileJsxFill } from "react-icons/pi";
 import { RiReactjsLine, RiNpmjsLine } from "react-icons/ri";
 import { VscJson, VscVscodeInsiders } from "react-icons/vsc";
 import { GrWordpress } from "react-icons/gr";
@@ -26,7 +32,6 @@ export const Icons = {
   html: FaHtml5,
   css: SiCsswizardry,
   js: FaJs,
-  jsx: PiFileJsxFill,
   php: SiPhp,
   react: RiReactjsLine,
   sass: IoLogoSass,
@@ -44,6 +49,8 @@ export const Icons = {
   git: FaGitlab,
   next: RiNextjsFill,
   tailwind: RiTailwindCssFill,
+  typescript: SiTypescript,
+  mongodb: SiMongodb,
 
   // 📬 Contact & Social
   github: FaGithub,

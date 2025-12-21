@@ -21,10 +21,10 @@ export const skillsData = {
       color: "#F7DF1E",
     },
     {
-      icon: Icons.jsx,
-      name: "JSX",
-      url: "https://react.dev/",
-      color: "#61DAFB",
+      icon: Icons.typescript,
+      name: "TypeScript",
+      url: "https://www.typescriptlang.org/",
+      color: "#3178C6",
     },
     {
       icon: Icons.php,
@@ -65,6 +65,12 @@ export const skillsData = {
       name: "MySQL",
       url: "https://www.mysql.com/",
       color: "#00758F",
+    },
+    {
+      icon: Icons.mongodb,
+      name: "MongoDB",
+      url: "https://www.mongodb.com/",
+      color: "#47A248",
     },
     {
       icon: Icons.json,
