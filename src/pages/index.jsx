@@ -20,9 +20,6 @@ export default function Home() {
   return (
     <>
       <main>
-        <h1 style={{ position: "absolute", left: "-9999px" }}>
-          Mark Galkins - Full Stack Developer Portfolio
-        </h1>
         {/* HERO SECTION */}
         <section id="hero">
           <div className="hero-background">
@@ -42,9 +39,9 @@ export default function Home() {
           </div>
           <header className="hero-header">
             <div className="hero-content">
-              <h2>
+              <h1>
                 <span>Hey, I'm</span> <strong>Mark</strong> 👋
-              </h2>
+              </h1>
               <h3>A Full-Stack Developer</h3>
               <p>
                 Based in Denmark — I build clean, fast, and user-focused web

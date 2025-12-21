@@ -1,12 +1,32 @@
-# React + Vite
+# Mark Galkins - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimalistic portfolio website inspired by Japanese design principles and wabi-sabi aesthetics. The design embraces simplicity, clean typography, and the organic beauty of imperfection—much like ripped paper textures and negative space.
 
-Currently, two official plugins are available:
+## About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This portfolio showcases my work as a full-stack developer with a focus on creating clean, intuitive web experiences. The design philosophy centers around:
 
 ## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Minimalism**: Every element serves a purpose
+- **Japanese Aesthetics**: Inspired by wabi-sabi and zen design principles
+- **Organic Textures**: Hand-crafted ripped paper effects and natural imperfections
+- **Simplicity**: Whitespace, subtle interactions, and purposeful typography
+
+The site features a curated selection of my projects, technical skills, and ways to connect. Built with modern web technologies and a focus on performance and accessibility.
+
+## Tech Stack
+
+- **React 19** - UI framework
+- **Vite 7.1** - Build tool and dev server
+- **TypeScript** - Type safety
+- **SASS 1.93** - Advanced CSS preprocessing
+- **React Parallax Tilt** - 3D tilt effect component
+- **React Toastify 11** - Toast notifications
+- **React Icons 5.5** - Icon library
+- **Vite Plugin Pages 0.33** - File-based routing plugin
+- **Zod 4.1** - Schema validation
+- **ESLint 9** - Code linting
+- **Terser 5.44** - Code minification
+
+Copyright © 2025 Mark Galkins. All rights reserved.
