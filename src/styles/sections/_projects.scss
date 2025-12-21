@@ -137,60 +137,58 @@
       }
     }
   }
-}
 
-// ==================== RESPONSIVE DESIGN ====================
+  // ==================== RESPONSIVE DESIGN ====================
 
-@media screen and (max-width: 1194px) {
-  #projects {
+  @media screen and (max-width: 1194px) {
     padding: 4rem 2rem;
-  }
 
-  .projects-header {
-    .projects-title {
-      font-size: 2rem;
+    .projects-header {
+      .projects-title {
+        font-size: 2rem;
+      }
+    }
+
+    .projects-body {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: $spacing-md;
     }
   }
 
-  .projects-body {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: $spacing-md;
-  }
-}
+  @media screen and (max-width: 768px) {
+    #projects {
+      padding: 3rem 2rem;
 
-@media screen and (max-width: 768px) {
-  #projects {
-    padding: 3rem 2rem;
-  }
+      .projects-header {
+        margin-bottom: $spacing-lg;
 
-  .projects-header {
-    margin-bottom: $spacing-lg;
-
-    .projects-title {
-      font-size: 1.5rem;
-    }
-  }
-
-  .projects-body {
-    grid-template-columns: 1fr;
-    gap: $spacing-md;
-  }
-
-  .project-card {
-    padding: $spacing-sm;
-
-    .project-link {
-      img.project-image {
-        margin-bottom: $spacing-xs;
+        .projects-title {
+          font-size: 1.5rem;
+        }
       }
 
-      h3 {
-        font-size: 1.2rem;
-        margin-bottom: $spacing-xs;
+      .projects-body {
+        grid-template-columns: 1fr;
+        gap: $spacing-md;
       }
 
-      p {
-        font-size: 0.9rem;
+      .project-card {
+        padding: $spacing-sm;
+
+        .project-link {
+          img.project-image {
+            margin-bottom: $spacing-xs;
+          }
+
+          h3 {
+            font-size: 1.2rem;
+            margin-bottom: $spacing-xs;
+          }
+
+          p {
+            font-size: 0.9rem;
+          }
+        }
       }
     }
   }

@@ -55,6 +55,10 @@
 
 @media screen and (max-width: 768px) {
   .button {
+    display: none;
+  }
+
+  .button {
     bottom: 1rem;
   }
 
