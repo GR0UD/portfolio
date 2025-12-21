@@ -1,5 +1,5 @@
 import styles from "./Footer.module.scss";
-import { Icons } from "../../utilities/icons.js";
+import { Icons } from "../../utilities/useIcons.js";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

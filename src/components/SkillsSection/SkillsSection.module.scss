@@ -1,0 +1,68 @@
+@use "@styles/base/variables" as *;
+
+.wrapper {
+  width: 100%;
+  margin-bottom: $spacing-lg;
+}
+
+.columns {
+  display: flex;
+  gap: $spacing-lg;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.column h4 {
+  margin-bottom: $spacing-xs;
+  font-size: $font-size-h4;
+  font-weight: $font-weight-semibold;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.column li {
+  display: flex;
+  gap: $spacing-xs;
+  align-items: center;
+  margin-bottom: $spacing-xs;
+  font-size: $font-size-body;
+  color: $color-text-muted;
+}
+
+.skillLink {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  color: inherit;
+  text-decoration: none;
+  transition: text-decoration 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+    color: var(--skill-color);
+  }
+}
+
+.icon {
+  display: inline-block;
+  font-size: $font-size-icon;
+  color: $color-text-dark;
+  transition: color 0.2s ease;
+
+  .skillLink:hover & {
+    color: var(--skill-color);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: $spacing-lg;
+  }
+}

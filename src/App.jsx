@@ -3,8 +3,9 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Analytics } from "@vercel/analytics/react";
 import routes from "~react-pages";
-import BackupScroll from "./components/backup/backup.jsx";
+import BackupScroll from "./components/ScrollToTop/index.jsx";
 import { useDynamicTitle } from "./utilities/useDynamicTitle.js";
+import Intro from "./components/intro/intro.jsx";
 
 function App() {
   // Dynamic page title that rotates through different messages
@@ -23,6 +24,7 @@ function App() {
   return (
     <>
       {element}
+      <Intro />
       <BackupScroll />
       <ToastContainer />
       <Analytics />

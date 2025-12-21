@@ -1,0 +1,64 @@
+@use "@styles/base/variables" as *;
+
+.button {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  animation: bounce 2s infinite;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  &:hover .icon {
+    color: darken(white, 10%);
+  }
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.icon {
+  font-size: 3rem;
+  color: $color-white;
+  transition: color $transition-default;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .button {
+    bottom: 1rem;
+  }
+
+  .icon {
+    font-size: 1.5rem;
+  }
+}

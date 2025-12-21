@@ -1,0 +1,78 @@
+@use "@styles/base/variables" as *;
+
+.card {
+  background-color: $color-button-bg;
+  color: $color-light;
+  padding: $spacing-sm;
+  border: 1px solid $color-button-border;
+  border-radius: $border-radius-lg;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-nav;
+  backdrop-filter: $backdrop-blur-project;
+  -webkit-backdrop-filter: $backdrop-blur-project;
+  box-shadow: $shadow-small;
+  overflow: hidden;
+  transition: background-color $transition-default,
+    border-color $transition-default, transform $transition-fast;
+
+  &:hover {
+    background-color: $color-button-bg-hover;
+    border-color: $color-button-border-hover;
+  }
+}
+
+.link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: $spacing-xs;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: $border-radius;
+  margin-bottom: $spacing-sm;
+}
+
+.title {
+  font-size: $font-size-subtitle;
+  margin-bottom: $spacing-xs;
+  color: $color-white;
+  text-align: left;
+}
+
+.description {
+  font-size: $font-size-small;
+  color: $color-white;
+  opacity: 0.75;
+  font-weight: $font-weight-light;
+  line-height: $line-height-tight;
+  text-align: left;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+  margin-top: $spacing-sm;
+}
+
+.tag {
+  background-color: $color-project-tag-bg;
+  color: $color-white;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid $color-button-border;
+  border-radius: $border-radius;
+  font-weight: $font-weight-medium;
+  letter-spacing: $letter-spacing-tag;
+  font-size: $font-size-tiny;
+  backdrop-filter: $backdrop-blur-project;
+  -webkit-backdrop-filter: $backdrop-blur-project;
+  transition: background-color $transition-default,
+    border-color $transition-default;
+
+  &:hover {
+    background-color: $color-project-tag-bg-hover;
+  }
+}
