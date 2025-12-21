@@ -1,6 +1,4 @@
 import { useRef } from "react";
-import Header from "../components/header/header.jsx";
-import Footer from "../components/footer/footer.jsx";
 import ContactForm from "../components/contact-form/contact-form.jsx";
 import ProjectCard from "../components/ProjectCard/ProjectCard.jsx";
 import SkillsSection from "../components/SkillsSection/SkillsSection.jsx";
@@ -21,8 +19,6 @@ export default function Home() {
 
   return (
     <>
-      <Header />
-
       <main>
         <h1 style={{ position: "absolute", left: "-9999px" }}>
           Mark Galkins - Full Stack Developer Portfolio
@@ -167,8 +163,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </>
   );
 }

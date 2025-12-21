@@ -6,6 +6,8 @@ import routes from "~react-pages";
 import BackupScroll from "./components/ScrollToTop/index.jsx";
 import { useDynamicTitle } from "./utilities/useDynamicTitle.js";
 import Intro from "./components/intro/intro.jsx";
+import Header from "./components/header/header.jsx";
+import Footer from "./components/footer/footer.jsx";
 
 function App() {
   // Dynamic page title that rotates through different messages
@@ -23,7 +25,9 @@ function App() {
   const element = useRoutes(routes);
   return (
     <>
+      <Header />
       {element}
+      <Footer />
       <Intro />
       <BackupScroll />
       <ToastContainer />
