@@ -36,7 +36,7 @@ export const skillsData = {
   frontend: [
     {
       icon: Icons.react,
-      name: "React (Vite)",
+      name: "React",
       url: "https://react.dev/",
       color: "#61DAFB",
     },
