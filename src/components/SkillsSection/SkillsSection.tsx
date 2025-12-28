@@ -1,21 +1,22 @@
-import { skillsData } from "../../data/skills.js";
+import { skillsData } from "../../data/skills";
 import styles from "./SkillsSection.module.scss";
+import type { SkillLinkProps, SkillColumnProps } from "../../types";
 
-const SkillLink = ({ icon: Icon, name, url, color }) => (
+const SkillLink = ({ icon: Icon, name, url, color }: SkillLinkProps) => (
   <li>
     <a
       href={url}
       target="_blank"
       rel="noopener noreferrer"
       className={styles.skillLink}
-      style={{ "--skill-color": color }}
+      style={{ "--skill-color": color } as React.CSSProperties}
     >
       <Icon className={styles.icon} /> {name}
     </a>
   </li>
 );
 
-const SkillColumn = ({ title, skills }) => (
+const SkillColumn = ({ title, skills }: SkillColumnProps) => (
   <div className={styles.column}>
     <h4>{title}</h4>
     <ul>
@@ -40,3 +41,4 @@ const SkillsSection = () => {
 };
 
 export default SkillsSection;
+

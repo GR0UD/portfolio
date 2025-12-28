@@ -1,6 +1,7 @@
 import styles from "./ProjectCard.module.scss";
+import type { ProjectCardProps } from "../../types";
 
-const ProjectCard = ({ title, url, image, description, tags }) => {
+const ProjectCard = ({ title, url, image, description, tags }: ProjectCardProps) => {
   return (
     <article className={styles.card}>
       <a
@@ -25,3 +26,4 @@ const ProjectCard = ({ title, url, image, description, tags }) => {
 };
 
 export default ProjectCard;
+

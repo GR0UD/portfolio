@@ -1,13 +1,13 @@
 import { useRef } from "react";
-import ContactForm from "../components/contact-form/contact-form.jsx";
-import ProjectCard from "../components/ProjectCard/ProjectCard.jsx";
-import SkillsSection from "../components/SkillsSection/SkillsSection.jsx";
-import ScrollDownButton from "../components/ScrollDownButton/ScrollDownButton.jsx";
-import { projectsData } from "../data/projects.js";
-import useMousePosition from "../utilities/useMousePosition.js";
+import ContactForm from "../components/contact-form/contact-form";
+import ProjectCard from "../components/ProjectCard/ProjectCard";
+import SkillsSection from "../components/SkillsSection/SkillsSection";
+import ScrollDownButton from "../components/ScrollDownButton/ScrollDownButton";
+import { projectsData } from "../data/projects";
+import useMousePosition from "../utilities/useMousePosition";
 
 export default function Home() {
-  const videoRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useMousePosition((moveX, moveY) => {
     if (videoRef.current) {
@@ -163,3 +163,4 @@ export default function Home() {
     </>
   );
 }
+

@@ -11,12 +11,9 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
-    "@vercel/flags": "^3.1.1",
-    "framer-motion": "^12.23.25",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "react-icons": "^5.5.0",
-    "react-parallax-tilt": "^1.7.315",
     "react-router-dom": "^7.10.1",
     "react-toastify": "^11.0.5",
     "vite-plugin-pages": "^0.33.1",
@@ -33,7 +30,7 @@
     "globals": "^16.4.0",
     "sass": "^1.93.2",
     "terser": "^5.44.0",
-    "unplugin-auto-import": "^20.2.0",
+    "typescript": "^5.9.3",
     "vite": "^7.1.12"
   },
   "overrides": {

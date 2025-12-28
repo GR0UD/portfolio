@@ -18,10 +18,9 @@ The site features a curated selection of my projects, technical skills, and ways
 ## Tech Stack
 
 - **React 19** - UI framework
+- **TypeScript** - Type safety and better developer experience
 - **Vite 7.1** - Build tool and dev server
-- **TypeScript** - Type safety
 - **SASS 1.93** - Advanced CSS preprocessing
-- **React Parallax Tilt** - 3D tilt effect component
 - **React Toastify 11** - Toast notifications
 - **React Icons 5.5** - Icon library
 - **Vite Plugin Pages 0.33** - File-based routing plugin

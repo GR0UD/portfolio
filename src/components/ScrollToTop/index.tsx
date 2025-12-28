@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import { IoChevronUp } from "react-icons/io5";
 import styles from "./backup.module.scss";
 
+type SectionId = "hero" | "about" | "projects" | "contact" | "footer";
+
 export default function BackupScroll() {
   const [isVisible, setIsVisible] = useState(false);
-  const [currentSection, setCurrentSection] = useState("hero");
+  const [currentSection, setCurrentSection] = useState<SectionId>("hero");
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -23,10 +25,11 @@ export default function BackupScroll() {
 
       const buttonBottom = window.innerHeight - 16 - 37.5; // innerHeight - bottom offset - half button height
 
-      const sections = ["hero", "about", "projects", "contact", "footer"];
+      const sections: SectionId[] = ["hero", "about", "projects", "contact", "footer"];
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
+        if (!section) continue;
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
@@ -58,3 +61,4 @@ export default function BackupScroll() {
     </button>
   );
 }
+

@@ -1,4 +1,6 @@
-export const projectsData = [
+import type { Project } from "../types";
+
+export const projectsData: Project[] = [
   {
     id: 1,
     title: "MyMoviez",
@@ -27,3 +29,4 @@ export const projectsData = [
     tags: ["React", "Vite", "JavaScript", "HTML", "SCSS", "CUSTOM API", "JSON"],
   },
 ];
+

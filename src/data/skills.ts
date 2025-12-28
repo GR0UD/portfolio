@@ -1,6 +1,7 @@
-import { Icons } from "../utilities/useIcons.js";
+import type { SkillsData } from "../types";
+import { Icons } from "../utilities/useIcons";
 
-export const skillsData = {
+export const skillsData: SkillsData = {
   development: [
     {
       icon: Icons.html,
@@ -142,3 +143,4 @@ export const skillsData = {
     },
   ],
 };
+

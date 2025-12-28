@@ -1,18 +1,21 @@
 import { useEffect, useRef } from "react";
 
-const useMousePosition = (callback, lerpFactor = 0.05) => {
-  const animationFrameId = useRef(null);
-  const targetX = useRef(0);
-  const targetY = useRef(0);
-  const currentX = useRef(0);
-  const currentY = useRef(0);
+const useMousePosition = (
+  callback: (moveX: number, moveY: number) => void,
+  lerpFactor: number = 0.05
+): void => {
+  const animationFrameId = useRef<number | null>(null);
+  const targetX = useRef<number>(0);
+  const targetY = useRef<number>(0);
+  const currentX = useRef<number>(0);
+  const currentY = useRef<number>(0);
 
   useEffect(() => {
     // Disable parallax on mobile
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
     if (isMobile) return;
 
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       const { clientX, clientY } = e;
       const { innerWidth, innerHeight } = window;
 
@@ -50,3 +53,4 @@ const useMousePosition = (callback, lerpFactor = 0.05) => {
 };
 
 export default useMousePosition;
+

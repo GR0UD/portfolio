@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     Pages({
       dirs: "src/pages",
-      extensions: ["jsx"],
+      extensions: ["tsx"],
     }),
   ],
   resolve: {
@@ -23,6 +23,8 @@ export default defineConfig({
     terserOptions: {
       compress: {
         drop_console: true,
+        drop_debugger: true,
+        pure_funcs: ["console.log", "console.info", "console.debug"],
       },
     },
     rollupOptions: {
@@ -30,9 +32,18 @@ export default defineConfig({
         manualChunks: {
           vendor: ["react", "react-dom", "react-router-dom"],
           toastify: ["react-toastify"],
+          icons: ["react-icons"],
         },
+        // Optimize chunk size warnings
+        chunkFileNames: "assets/[name]-[hash].js",
+        entryFileNames: "assets/[name]-[hash].js",
+        assetFileNames: "assets/[name]-[hash].[ext]",
       },
     },
+    // Enable chunk size warnings
+    chunkSizeWarningLimit: 500,
+    // Optimize asset inlining threshold
+    assetsInlineLimit: 4096,
   },
   server: {
     host: "127.0.0.1",

@@ -1,20 +1,23 @@
 import { useState, useEffect } from "react";
 import styles from "./Header.module.scss";
 
+type SectionId = "hero" | "about" | "projects" | "contact" | "footer";
+
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [currentSection, setCurrentSection] = useState("hero");
+  const [currentSection, setCurrentSection] = useState<SectionId>("hero");
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
-      const sections = ["hero", "about", "projects", "contact", "footer"];
+      const sections: SectionId[] = ["hero", "about", "projects", "contact", "footer"];
       const headerHeight = 107;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
+        if (!section) continue;
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
@@ -104,3 +107,4 @@ const Header = () => {
 };
 
 export default Header;
+

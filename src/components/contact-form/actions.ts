@@ -1,4 +1,5 @@
 import { z } from "zod";
+import type { FormActionState } from "../../types";
 
 const contactSchema = z.object({
   name: z.string().min(1, { message: "Name is required" }),
@@ -11,22 +12,25 @@ const contactSchema = z.object({
     .min(10, { message: "Message must be at least 10 characters long" }),
 });
 
-export async function submitContactForm(prevState, formData) {
+export async function submitContactForm(
+  _prevState: FormActionState | null,
+  formData: FormData
+): Promise<FormActionState> {
   const name = formData.get("name");
   const email = formData.get("email");
   const message = formData.get("message");
 
   const parseResult = contactSchema.safeParse({
-    name: name?.trim(),
-    email: email?.trim(),
-    message: message?.trim(),
+    name: typeof name === "string" ? name.trim() : "",
+    email: typeof email === "string" ? email.trim() : "",
+    message: typeof message === "string" ? message.trim() : "",
   });
 
   if (!parseResult.success) {
     // Use the error format from Zod v3
     const fieldErrors = parseResult.error.flatten().fieldErrors;
 
-    const errorStructure = {};
+    const errorStructure: Record<string, { errors: string[] }> = {};
 
     if (fieldErrors.name) {
       errorStructure.name = { errors: fieldErrors.name };
@@ -44,9 +48,9 @@ export async function submitContactForm(prevState, formData) {
       success: false,
       error: errorStructure,
       data: {
-        name: name?.trim(),
-        email: email?.trim(),
-        message: message?.trim(),
+        name: typeof name === "string" ? name.trim() : "",
+        email: typeof email === "string" ? email.trim() : "",
+        message: typeof message === "string" ? message.trim() : "",
       },
     };
   }
@@ -54,13 +58,16 @@ export async function submitContactForm(prevState, formData) {
   try {
     // Prepare Web3Forms submission
     const web3FormData = new FormData();
-    web3FormData.append(
-      "access_key",
-      import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
-    );
-    web3FormData.append("name", name.trim());
-    web3FormData.append("email", email.trim());
-    web3FormData.append("message", message.trim());
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+    
+    if (!accessKey) {
+      throw new Error("Web3Forms access key is not configured");
+    }
+
+    web3FormData.append("access_key", accessKey);
+    web3FormData.append("name", parseResult.data.name);
+    web3FormData.append("email", parseResult.data.email);
+    web3FormData.append("message", parseResult.data.message);
 
     // Submit to Web3Forms
     const response = await fetch("https://api.web3forms.com/submit", {
@@ -76,6 +83,14 @@ export async function submitContactForm(prevState, formData) {
 
     return { success: true };
   } catch (err) {
-    return { success: false, error: err.message };
+    return {
+      success: false,
+      error: {
+        _form: {
+          errors: [err instanceof Error ? err.message : "An error occurred"],
+        },
+      },
+    };
   }
 }
+

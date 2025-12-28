@@ -3,11 +3,11 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Analytics } from "@vercel/analytics/react";
 import routes from "~react-pages";
-import BackupScroll from "./components/ScrollToTop/index.jsx";
-import { useDynamicTitle } from "./utilities/useDynamicTitle.js";
-import Intro from "./components/intro/intro.jsx";
-import Header from "./components/header/header.jsx";
-import Footer from "./components/footer/footer.jsx";
+import BackupScroll from "./components/ScrollToTop/index";
+import { useDynamicTitle } from "./utilities/useDynamicTitle";
+import Intro from "./components/intro/intro";
+import Header from "./components/header/header";
+import Footer from "./components/footer/footer";
 
 function App() {
   // Dynamic page title that rotates through different messages
@@ -37,3 +37,4 @@ function App() {
 }
 
 export default App;
+

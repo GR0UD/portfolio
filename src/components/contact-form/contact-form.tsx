@@ -1,10 +1,14 @@
 import { toast } from "react-toastify";
-import { submitContactForm } from "./actions.js";
+import { submitContactForm } from "./actions";
 import { useActionState, useEffect } from "react";
+import type { FormActionState } from "../../types";
 
 export default function ContactForm() {
-  const [state, formAction, isPending] = useActionState(submitContactForm, {
-    error: null,
+  const [state, formAction, isPending] = useActionState<
+    FormActionState | null,
+    FormData
+  >(submitContactForm, {
+    error: undefined,
     success: false,
   });
 
@@ -30,11 +34,11 @@ export default function ContactForm() {
     }
   }, [state?.success, state?.error]);
 
-  const getFieldError = (fieldName) => {
+  const getFieldError = (fieldName: string): string | null => {
     if (!state?.error || !state.error[fieldName]) {
       return null;
     }
-    return state.error[fieldName].errors[0];
+    return state.error[fieldName].errors[0] || null;
   };
 
   return (
@@ -96,7 +100,7 @@ export default function ContactForm() {
           className={`form-control ${
             getFieldError("message") ? "input-error" : ""
           }`}
-          rows="10"
+          rows={10}
           placeholder="Drop your message here"
           name="message"
           id="message"
@@ -126,3 +130,4 @@ export default function ContactForm() {
     </form>
   );
 }
+
