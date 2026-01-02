@@ -68,6 +68,12 @@ export const skillsData: SkillsData = {
       color: "#00758F",
     },
     {
+      icon: Icons.mysql,
+      name: "SQL",
+      url: "https://en.wikipedia.org/wiki/SQL",
+      color: "#00758F",
+    },
+    {
       icon: Icons.mongodb,
       name: "MongoDB",
       url: "https://www.mongodb.com/",
@@ -143,4 +149,3 @@ export const skillsData: SkillsData = {
     },
   ],
 };
-
