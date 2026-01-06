@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import ContactForm from "../components/contact-form/contact-form";
 import ProjectCard from "../components/ProjectCard/ProjectCard";
 import SkillsSection from "../components/SkillsSection/SkillsSection";
@@ -8,6 +8,25 @@ import useMousePosition from "../utilities/useMousePosition";
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Force video play on mount (iOS fix)
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.play().catch(() => {
+        // Autoplay was prevented, try again on user interaction
+        const playOnInteraction = () => {
+          video.play();
+          document.removeEventListener("touchstart", playOnInteraction);
+          document.removeEventListener("click", playOnInteraction);
+        };
+        document.addEventListener("touchstart", playOnInteraction, {
+          once: true,
+        });
+        document.addEventListener("click", playOnInteraction, { once: true });
+      });
+    }
+  }, []);
 
   useMousePosition((moveX, moveY) => {
     if (videoRef.current) {
@@ -33,8 +52,11 @@ export default function Home() {
               muted
               loop
               playsInline
+              preload="auto"
               aria-hidden="true"
               controls={false}
+              // @ts-expect-error webkit-playsinline is for older iOS
+              webkit-playsinline="true"
             />
           </div>
           <header className="hero-header">
@@ -163,4 +185,3 @@ export default function Home() {
     </>
   );
 }
-
