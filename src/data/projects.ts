@@ -13,7 +13,7 @@ export const projectsData: Project[] = [
   {
     id: 2,
     title: "Din Mægler",
-    url: "https://din-maegler-v91p.vercel.app/",
+    url: "https://din-maegler.vercel.app/",
     image: "/images/project2.avif",
     description:
       "A real estate website built in React with mock data from a local JSON API. The project showcases dynamic content and responsive design with modern frontend technologies.",
@@ -29,4 +29,3 @@ export const projectsData: Project[] = [
     tags: ["React", "Vite", "JavaScript", "HTML", "SCSS", "CUSTOM API", "JSON"],
   },
 ];
-
