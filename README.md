@@ -1,6 +1,6 @@
 # Mark Galkins - Portfolio
 
-A minimalistic portfolio website inspired by Japanese design principles and wabi-sabi aesthetics. The design embraces simplicity, clean typography, and the organic beauty of imperfection—much like ripped paper textures and negative space.
+A minimalistic portfolio website inspired by Japanese design principles and wabi-sabi aesthetics. The design embraces simplicity, clean typography, and the organic beauty of imperfection, much like ripped paper textures and negative space.
 
 ## About
 
