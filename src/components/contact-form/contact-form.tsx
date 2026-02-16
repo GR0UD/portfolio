@@ -49,7 +49,7 @@ export default function ContactForm() {
       action={formAction}
     >
       <div className="form-group">
-        <label htmlFor="name" style={{ display: "none" }}>
+        <label htmlFor="name" className="sr-only">
           Name
         </label>
         <input
@@ -71,7 +71,7 @@ export default function ContactForm() {
       </div>
 
       <div className="form-group">
-        <label htmlFor="email" style={{ display: "none" }}>
+        <label htmlFor="email" className="sr-only">
           Email
         </label>
         <input
@@ -93,7 +93,7 @@ export default function ContactForm() {
       </div>
 
       <div className="form-group">
-        <label htmlFor="message" style={{ display: "none" }}>
+        <label htmlFor="message" className="sr-only">
           Message
         </label>
         <textarea
@@ -130,4 +130,3 @@ export default function ContactForm() {
     </form>
   );
 }
-

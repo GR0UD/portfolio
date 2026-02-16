@@ -55,7 +55,6 @@ export default function Home() {
               preload="auto"
               aria-hidden="true"
               controls={false}
-              // @ts-expect-error webkit-playsinline is for older iOS
               webkit-playsinline="true"
             />
           </div>

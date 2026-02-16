@@ -35,7 +35,6 @@ const NotFound = () => {
           muted
           playsInline
           preload="auto"
-          // @ts-expect-error webkit-playsinline is for older iOS
           webkit-playsinline="true"
         />
         <div className="hero-overlay"></div>

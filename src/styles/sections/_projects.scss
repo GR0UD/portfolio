@@ -28,7 +28,7 @@
     z-index: $z-hero;
 
     &.hero-divider-top {
-      top: 0;
+      top: -1px;
     }
 
     &.hero-divider-bot {
@@ -73,8 +73,10 @@
     -webkit-backdrop-filter: $backdrop-blur-project;
     box-shadow: $shadow-small;
     overflow: hidden;
-    transition: background-color $transition-default,
-      border-color $transition-default, transform $transition-fast;
+    transition:
+      background-color $transition-default,
+      border-color $transition-default,
+      transform $transition-fast;
 
     &:hover {
       background-color: $color-button-bg-hover;
@@ -127,7 +129,8 @@
           font-size: $font-size-tiny;
           backdrop-filter: $backdrop-blur-project;
           -webkit-backdrop-filter: $backdrop-blur-project;
-          transition: background-color $transition-default,
+          transition:
+            background-color $transition-default,
             border-color $transition-default;
 
           &:hover {
