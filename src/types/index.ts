@@ -1,4 +1,4 @@
-import type React from "react";
+import type { ComponentType } from "react";
 
 // Project types
 export interface Project {
@@ -12,7 +12,7 @@ export interface Project {
 
 // Skills types
 export interface Skill {
-  icon: React.ComponentType<{ className?: string }>;
+  icon: ComponentType<{ className?: string }>;
   name: string;
   url: string;
   color: string;
@@ -56,7 +56,7 @@ export interface ProjectCardProps {
 }
 
 export interface SkillLinkProps {
-  icon: React.ComponentType<{ className?: string }>;
+  icon: ComponentType<{ className?: string }>;
   name: string;
   url: string;
   color: string;
@@ -66,4 +66,3 @@ export interface SkillColumnProps {
   title: string;
   skills: Skill[];
 }
-
