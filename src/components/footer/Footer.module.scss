@@ -185,7 +185,8 @@
     color: $color-black;
     font-size: $font-size-footer;
     text-align: center;
-    transition: background-color $transition-default,
+    transition:
+      background-color $transition-default,
       box-shadow $transition-default;
     cursor: pointer;
     display: flex;
@@ -200,7 +201,9 @@
       width: 100%;
       height: 100%;
       color: inherit;
-      transition: transform $transition-fast, color $transition-fast;
+      transition:
+        transform $transition-fast,
+        color $transition-fast;
     }
 
     svg {
@@ -217,7 +220,8 @@
   li:nth-child(1):hover {
     background-color: $color-github;
     color: $color-github-hover;
-    box-shadow: 0 0 12px rgba(51, 51, 51, 0.5),
+    box-shadow:
+      0 0 12px rgba(51, 51, 51, 0.5),
       inset 0 0 12px rgba(51, 51, 51, 0.5);
   }
 
@@ -261,6 +265,17 @@
     font-size: $font-size-tiny;
     font-weight: $font-weight-light;
     margin: 0;
+  }
+
+  .nameLink {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all $transition-default;
+
+    &:hover {
+      color: $color-white;
+      font-weight: $font-weight-bold;
+    }
   }
 }
 

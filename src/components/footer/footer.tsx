@@ -95,7 +95,18 @@ const Footer = () => {
         <div className={styles.divider}></div>
 
         <div className={styles.bottom}>
-          <p>&copy; {currentYear} Mark Galkins. All rights reserved.</p>
+          <p>
+            &copy; {currentYear}{" "}
+            <a
+              href="https://github.com/GR0UD"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.nameLink}
+            >
+              Mark Galkins
+            </a>
+            . All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
@@ -103,4 +114,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
