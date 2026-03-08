@@ -6,8 +6,6 @@ A minimalistic portfolio website inspired by Japanese design principles and wabi
 
 This portfolio showcases my work as a full-stack developer with a focus on creating clean, intuitive web experiences. The design philosophy centers around:
 
-## Expanding the ESLint configuration
-
 - **Minimalism**: Every element serves a purpose
 - **Japanese Aesthetics**: Inspired by wabi-sabi and zen design principles
 - **Organic Textures**: Hand-crafted ripped paper effects and natural imperfections
