@@ -45,6 +45,7 @@
   border-radius: 50%;
   height: 75px;
 
+  border: 1px solid transparent;
   &.scrolled {
     background-color: $color-button-bg;
     color: $color-white;
