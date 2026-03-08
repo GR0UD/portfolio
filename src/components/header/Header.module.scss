@@ -44,8 +44,8 @@
   background-color: transparent;
   border-radius: 50%;
   height: 75px;
-
   border: 1px solid transparent;
+
   &.scrolled {
     background-color: $color-button-bg;
     color: $color-white;
@@ -87,6 +87,7 @@
   border-radius: 12px;
   transition: all $transition-default;
   height: 75px;
+  border: 1px solid transparent;
 
   &.scrolled {
     background-color: $color-button-bg;
