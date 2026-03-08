@@ -19,8 +19,21 @@ const Footer = () => {
               <li className={styles.listItem}>
                 <Icons.email className={styles.techIcon} />
                 <span className={styles.contactText}>
-                  <a href="mailto:marksgalkins@gmail.com">
-                    marksgalkins@gmail.com
+                  <a href="mailto:marksgalkins@gmail.com?subject=Hello%20from%20website&body=Hi%20Mark%2C%0D%0A%0D%0AI%20wanted%20to%20ask%20about...">
+                    Email me
+                  </a>
+                </span>
+              </li>
+
+              <li className={styles.listItem}>
+                <Icons.discord className={styles.techIcon} />
+                <span className={styles.contactText}>
+                  <a
+                    href="https://discord.com/users/1019690788709470328"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Discord
                   </a>
                 </span>
               </li>
@@ -91,23 +104,20 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-
-        <div className={styles.divider}></div>
-
-        <div className={styles.bottom}>
-          <p>
-            &copy; {currentYear}{" "}
-            <a
-              href="https://github.com/GR0UD"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.nameLink}
-            >
-              Mark Galkins
-            </a>
-            . All rights reserved.
-          </p>
-        </div>
+      </div>
+      <div className={styles.bottom}>
+        <p>
+          &copy; {currentYear}{" "}
+          <a
+            href="https://github.com/GR0UD"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.nameLink}
+          >
+            Mark Galkins
+          </a>
+          . All rights reserved.
+        </p>
       </div>
     </footer>
   );

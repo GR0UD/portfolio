@@ -30,7 +30,7 @@ function App() {
       <Footer />
       <Intro />
       <BackupScroll />
-      <ToastContainer />
+      <ToastContainer /> 
       <Analytics />
     </>
   );

@@ -6,19 +6,29 @@
   left: 0;
   width: 100%;
   z-index: $z-header;
-  transition: background-color $transition-default,
+  transition:
+    background-color $transition-default,
     backdrop-filter $transition-default;
   backdrop-filter: none;
 }
 
 .container {
-  max-width: $container-max-width;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: $spacing-sm 0;
+  width: auto;
+  max-width: 100%;
+  padding: 1rem 7.5rem;
+  transition:
+    max-width $transition-default,
+    padding $transition-default;
+  will-change: max-width, padding;
+
+  &.scrolled {
+    max-width: $container-max-width;
+    padding: 1rem 0rem;
+  }
 }
 
 .logo {
@@ -39,8 +49,10 @@
     background-color: $color-button-bg;
     color: $color-white;
     backdrop-filter: $backdrop-blur-project;
-    transition: background-color $transition-default,
-      border-color $transition-default, transform $transition-fast;
+    transition:
+      background-color $transition-default,
+      border-color $transition-default,
+      transform $transition-fast;
     border: 1px solid $color-button-border;
     border-radius: $border-radius-lg;
     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
@@ -79,8 +91,10 @@
     background-color: $color-button-bg;
     color: $color-white;
     backdrop-filter: $backdrop-blur-project;
-    transition: background-color $transition-default,
-      border-color $transition-default, transform $transition-fast;
+    transition:
+      background-color $transition-default,
+      border-color $transition-default,
+      transform $transition-fast;
     border: 1px solid $color-button-border;
     border-radius: $border-radius-lg;
 
@@ -110,7 +124,9 @@
         text-decoration: none;
         padding: 0.25rem 0;
         opacity: 0.95;
-        transition: opacity $transition-default, color $transition-default;
+        transition:
+          opacity $transition-default,
+          color $transition-default;
         overflow: hidden;
 
         &::after {
@@ -174,8 +190,10 @@
     background-color: $color-button-bg;
     color: $color-white;
     backdrop-filter: $backdrop-blur-project;
-    transition: background-color $transition-default,
-      border-color $transition-default, transform $transition-fast;
+    transition:
+      background-color $transition-default,
+      border-color $transition-default,
+      transform $transition-fast;
     border: 1px solid $color-button-border;
     border-radius: $border-radius-lg;
 
@@ -250,7 +268,9 @@
     align-items: center;
     opacity: 0;
     backdrop-filter: blur(0px);
-    transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
+    transition:
+      opacity 0.3s ease,
+      backdrop-filter 0.3s ease;
     pointer-events: none;
 
     &.navOpen {
@@ -304,6 +324,13 @@
 
 // Phone only
 @media screen and (max-width: 768px) {
+  .container {
+    padding: 1.5rem 2rem;
+    .scrolled & {
+      padding: 1.5rem 2rem;
+    }
+  }
+
   .logo {
     font-size: 1.2rem;
 

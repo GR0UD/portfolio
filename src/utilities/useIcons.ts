@@ -23,7 +23,12 @@ import { RiReactjsLine, RiNpmjsLine } from "react-icons/ri";
 import { VscJson, VscVscodeInsiders } from "react-icons/vsc";
 import { GrWordpress } from "react-icons/gr";
 import { CgFigma } from "react-icons/cg";
-import { FaGitlab, FaLocationDot, FaLinkedinIn } from "react-icons/fa6";
+import {
+  FaGitlab,
+  FaLocationDot,
+  FaLinkedin,
+  FaDiscord,
+} from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { FaDev } from "react-icons/fa";
@@ -60,7 +65,7 @@ export const Icons = {
   email: IoMdMail,
   phone: FaPhoneAlt,
   location: FaLocationDot,
-  linkedin: FaLinkedinIn,
+  linkedin: FaLinkedin,
+  discord: FaDiscord,
   devto: FaDev,
 } as const;
-

@@ -12,7 +12,13 @@ const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
-      const sections: SectionId[] = ["hero", "about", "projects", "contact", "footer"];
+      const sections: SectionId[] = [
+        "hero",
+        "about",
+        "projects",
+        "contact",
+        "footer",
+      ];
       const headerHeight = 107;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -48,7 +54,9 @@ const Header = () => {
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
-      <div className={styles.container}>
+      <div
+        className={`${styles.container} ${isScrolled ? styles.scrolled : ""}`}
+      >
         <a
           href="/"
           className={`${styles.logo} ${isScrolled ? styles.scrolled : ""} ${
@@ -107,4 +115,3 @@ const Header = () => {
 };
 
 export default Header;
-
