@@ -113,7 +113,10 @@
       outline: 30px solid $color-white;
       cursor: pointer;
       overflow: hidden;
-      transition: all $transition-default;
+      transition:
+        background 0.45s ease,
+        color 0.45s ease,
+        border-color 0.45s ease;
       backdrop-filter: $backdrop-blur-header;
       -webkit-backdrop-filter: $backdrop-blur-header;
 
@@ -122,9 +125,13 @@
         cursor: not-allowed;
       }
 
-      &:hover {
-        background: $color-white;
-        color: $color-black;
+      &:hover:not(:disabled) {
+        background: transparent;
+        border-color: rgba(0, 0, 0, 0.4);
+
+        .send-text {
+          letter-spacing: 0.14em;
+        }
       }
 
       .alt-send-button {
@@ -133,12 +140,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: transform $transition-fast;
 
         .send-text {
           font-weight: $font-weight-bold;
           font-size: $font-size-tiny;
           letter-spacing: $letter-spacing-wide;
+          transition: letter-spacing 0.45s ease;
         }
 
         i {

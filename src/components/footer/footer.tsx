@@ -20,7 +20,7 @@ const Footer = () => {
                 <Icons.email className={styles.techIcon} />
                 <span className={styles.contactText}>
                   <a href="mailto:marksgalkins@gmail.com?subject=Hello%20from%20website&body=Hi%20Mark%2C%0D%0A%0D%0AI%20wanted%20to%20ask%20about...">
-                    Email me
+                    Email
                   </a>
                 </span>
               </li>
