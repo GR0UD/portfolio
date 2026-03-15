@@ -32,10 +32,21 @@ export default defineConfig({
     },
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ["react", "react-dom", "react-router-dom"],
-          toastify: ["react-toastify"],
-          icons: ["react-icons"],
+        manualChunks(id) {
+          if (id.includes("node_modules")) {
+            if (id.includes("react-dom") || id.includes("react-router-dom")) {
+              return "vendor";
+            }
+            if (id.includes("react-toastify")) {
+              return "toastify";
+            }
+            if (id.includes("react") && !id.includes("react-icons")) {
+              return "vendor";
+            }
+            if (id.includes("react-icons")) {
+              return "icons";
+            }
+          }
         },
         // Optimize chunk size warnings
         chunkFileNames: "assets/[name]-[hash].js",
@@ -44,7 +55,7 @@ export default defineConfig({
       },
     },
     // Enable chunk size warnings
-    chunkSizeWarningLimit: 500,
+    chunkSizeWarningLimit: 1000,
     // Optimize asset inlining threshold
     assetsInlineLimit: 4096,
   },

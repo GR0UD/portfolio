@@ -1,7 +1,13 @@
 import styles from "./ProjectCard.module.scss";
 import type { ProjectCardProps } from "../../types";
 
-const ProjectCard = ({ title, url, image, description, tags }: ProjectCardProps) => {
+const ProjectCard = ({
+  title,
+  url,
+  image,
+  description,
+  tags,
+}: ProjectCardProps) => {
   return (
     <article className={styles.card}>
       <a
@@ -10,7 +16,7 @@ const ProjectCard = ({ title, url, image, description, tags }: ProjectCardProps)
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src={image} alt={title} className={styles.image} />
+        <img src={image} alt={title} className={styles.image} loading="lazy" />
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>
         <div className={styles.tags}>
@@ -26,4 +32,3 @@ const ProjectCard = ({ title, url, image, description, tags }: ProjectCardProps)
 };
 
 export default ProjectCard;
-
