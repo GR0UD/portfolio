@@ -27,7 +27,34 @@
       ]
     },
     {
-      "source": "/.*\\.(woff|woff2|ttf|otf)$",
+      "source": "/:path*\\.woff2",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/:path*\\.woff",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/:path*\\.ttf",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/:path*\\.otf",
       "headers": [
         {
           "key": "Cache-Control",
