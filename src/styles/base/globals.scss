@@ -46,6 +46,17 @@ button {
   cursor: pointer;
 }
 
+/* Selection styling */
+::selection {
+  background-color: #c5e1ff;
+  color: #000;
+}
+
+::-moz-selection {
+  background-color: #c5e1ff;
+  color: #000;
+}
+
 /* Screen reader only utility class */
 .sr-only {
   position: absolute;

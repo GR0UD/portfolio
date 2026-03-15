@@ -36,6 +36,7 @@
   }
 
   .hero-overlay {
+    user-select: none;
     position: fixed;
     inset: $spacing-xs - $spacing-xs;
     background-color: $color-hero-overlay;
@@ -88,8 +89,10 @@
       font-weight: $font-weight-regular;
       font-size: $font-size-nav;
       backdrop-filter: $backdrop-blur-project;
-      transition: background-color $transition-default,
-        border-color $transition-default, transform $transition-fast;
+      transition:
+        background-color $transition-default,
+        border-color $transition-default,
+        transform $transition-fast;
       text-decoration: none;
       display: inline-block;
 
