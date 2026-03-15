@@ -64,7 +64,7 @@ const Header = () => {
           }`}
           onClick={closeMenu}
         >
-          <img src="/logo.png" alt="Logo" className={styles.logoImage} />
+          <img src="/logo.avif" alt="Logo" className={styles.logoImage} />
         </a>
         <nav
           className={`${styles.nav} ${menuOpen ? styles.navOpen : ""} ${

@@ -6,10 +6,10 @@ import { Analytics } from "@vercel/analytics/react";
 import routes from "~react-pages";
 import { useDynamicTitle } from "./utilities/useDynamicTitle";
 import Header from "./components/header/header";
-import Footer from "./components/footer/footer";
 import Intro from "./components/intro/intro";
 
 // Lazy load non-critical below-the-fold components
+const Footer = lazy(() => import("./components/footer/footer"));
 const BackupScroll = lazy(() => import("./components/ScrollToTop/index"));
 
 function App() {
@@ -30,7 +30,9 @@ function App() {
     <>
       <Header />
       {element}
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
       <Intro />
       <Suspense fallback={null}>
         <BackupScroll />

@@ -4,7 +4,7 @@
   "description": "Full-Stack Developer based in Denmark — I build clean, fast, and user-focused web experiences.",
   "icons": [
     {
-      "src": "/logo.png",
+      "src": "/logo.avif",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"

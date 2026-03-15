@@ -1,5 +1,7 @@
-import { useRef, useEffect } from "react";
-import ContactForm from "../components/contact-form/contact-form";
+import { useRef, useEffect, lazy, Suspense } from "react";
+const ContactForm = lazy(
+  () => import("../components/contact-form/contact-form"),
+);
 import ProjectCard from "../components/ProjectCard/ProjectCard";
 import SkillsSection from "../components/SkillsSection/SkillsSection";
 import ScrollDownButton from "../components/ScrollDownButton/ScrollDownButton";
@@ -169,7 +171,9 @@ export default function Home() {
           </header>
 
           <div className="contact-wrapper">
-            <ContactForm />
+            <Suspense fallback={<div style={{ minHeight: "400px" }} />}>
+              <ContactForm />
+            </Suspense>
 
             <div className="contact-note">
               <hr />
