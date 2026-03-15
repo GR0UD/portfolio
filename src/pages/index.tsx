@@ -47,7 +47,7 @@ export default function Home() {
               ref={videoRef}
               className="hero-video"
               src="/video/hero.webm"
-              poster="/video/hero.jpg"
+              poster="/video/hero.avif"
               autoPlay
               muted
               loop

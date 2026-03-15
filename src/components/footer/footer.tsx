@@ -14,7 +14,7 @@ const Footer = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.section}>
-            <h4>Contact</h4>
+            <h2>Contact</h2>
             <ul className={styles.contactList}>
               <li className={styles.listItem}>
                 <Icons.email className={styles.techIcon} />
@@ -41,7 +41,7 @@ const Footer = () => {
           </div>
 
           <div className={styles.section}>
-            <h4>Navigation</h4>
+            <h2>Navigation</h2>
             <ul className={styles.links}>
               <li>
                 <a href="#hero">Home</a>
@@ -59,7 +59,7 @@ const Footer = () => {
           </div>
 
           <div className={styles.section}>
-            <h4>Connect</h4>
+            <h2>Connect</h2>
             <ul className={styles.socialLinks}>
               <li className="github">
                 <a
