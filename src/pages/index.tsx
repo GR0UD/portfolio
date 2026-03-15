@@ -63,7 +63,7 @@ export default function Home() {
               <h1>
                 <span>Hey, I'm</span> <strong>Mark</strong> 👋
               </h1>
-              <h3>A Full-Stack Developer</h3>
+              <h2>A Full-Stack Developer</h2>
               <p>
                 Based in Denmark — I build clean, fast, and user-focused web
                 experiences.

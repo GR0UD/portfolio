@@ -86,7 +86,7 @@
     }
   }
 
-  h3 {
+  h2 {
     font-size: $font-size-h2;
     font-weight: $font-weight-regular;
     color: $color-white;
@@ -122,8 +122,10 @@
     font-weight: $font-weight-regular;
     font-size: $font-size-nav;
     backdrop-filter: $backdrop-blur-project;
-    transition: background-color $transition-default,
-      border-color $transition-default, transform $transition-fast;
+    transition:
+      background-color $transition-default,
+      border-color $transition-default,
+      transform $transition-fast;
 
     &:hover {
       background-color: $color-button-bg-hover;
@@ -161,15 +163,18 @@
   display: none !important;
   width: $blob-width;
   height: $blob-height;
-  border-radius: var(--radius-1) var(--radius-2) var(--radius-3) var(--radius-4) /
-    var(--radius-5) var(--radius-6) var(--radius-7) var(--radius-8);
+  border-radius: var(--radius-1) var(--radius-2) var(--radius-3)
+    var(--radius-4) / var(--radius-5) var(--radius-6) var(--radius-7)
+    var(--radius-8);
   background-color: $color-button-bg;
   border: 1px solid $color-button-border;
   font-weight: $font-weight-regular;
   font-size: $font-size-nav;
   backdrop-filter: $backdrop-blur-blob;
-  transition: background-color $transition-default,
-    border-color $transition-default, transform $transition-fast;
+  transition:
+    background-color $transition-default,
+    border-color $transition-default,
+    transform $transition-fast;
   overflow: hidden;
   display: flex;
   align-items: end;
@@ -237,7 +242,7 @@
       }
     }
 
-    h3 {
+    h2 {
       font-size: 1.1rem;
       padding-left: 0;
 
