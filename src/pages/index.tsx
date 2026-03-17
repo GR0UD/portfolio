@@ -37,7 +37,7 @@ export default function Home() {
       if (emojiRef.current) {
         emojiRef.current.classList.add("wave");
       }
-    }, 3500); // Matches intro animation duration
+    }, 2800); // Matches intro animation duration
 
     return () => clearTimeout(timer);
   }, []);
@@ -76,7 +76,9 @@ export default function Home() {
             <div className="hero-content">
               <h1>
                 <span>Hey, I'm</span> <strong>Mark</strong>{" "}
-                <span ref={emojiRef}>👋</span>
+                <span className="emoji" ref={emojiRef}>
+                  👋
+                </span>
               </h1>
               <h2>A Full-Stack Developer</h2>
               <p>
