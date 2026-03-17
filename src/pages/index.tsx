@@ -10,6 +10,7 @@ import useMousePosition from "../utilities/useMousePosition";
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const emojiRef = useRef<HTMLElement>(null);
 
   // Force video play on mount (iOS fix)
   useEffect(() => {
@@ -28,6 +29,17 @@ export default function Home() {
         document.addEventListener("click", playOnInteraction, { once: true });
       });
     }
+  }, []);
+
+  // Trigger emoji wave animation when intro animation finishes
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (emojiRef.current) {
+        emojiRef.current.classList.add("wave");
+      }
+    }, 3500); // Matches intro animation duration
+
+    return () => clearTimeout(timer);
   }, []);
 
   useMousePosition((moveX, moveY) => {
@@ -63,7 +75,8 @@ export default function Home() {
           <header className="hero-header">
             <div className="hero-content">
               <h1>
-                <span>Hey, I'm</span> <strong>Mark</strong> 👋
+                <span>Hey, I'm</span> <strong>Mark</strong>{" "}
+                <span ref={emojiRef}>👋</span>
               </h1>
               <h2>A Full-Stack Developer</h2>
               <p>

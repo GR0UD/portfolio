@@ -37,6 +37,7 @@
 }
 
 .hero-overlay {
+  user-select: none;
   position: fixed;
   inset: 0;
   background-color: $color-hero-overlay;
@@ -212,6 +213,33 @@
       var(--radius-3) / var(--radius-6) var(--radius-5) var(--radius-8)
       var(--radius-7);
   }
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(15deg);
+  }
+  30% {
+    transform: rotate(-10deg);
+  }
+  40% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.wave {
+  display: inline-block;
+  transform-origin: 70% 100%;
+  animation: wave 1400ms ease-in-out 1;
 }
 
 @media screen and (max-width: 1194px) {
