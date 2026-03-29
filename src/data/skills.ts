@@ -80,6 +80,12 @@ export const skillsData: SkillsData = {
       color: "#47A248",
     },
     {
+      icon: Icons.postgresql,
+      name: "PostgreSQL",
+      url: "https://www.postgresql.org/",
+      color: "#336791",
+    },
+    {
       icon: Icons.json,
       name: "JSON",
       url: "https://www.json.org/",
