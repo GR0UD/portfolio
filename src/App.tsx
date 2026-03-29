@@ -2,6 +2,7 @@ import { useRoutes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { lazy, Suspense, useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import routes from "~react-pages";
 import { useDynamicTitle } from "./utilities/useDynamicTitle";
 import Header from "./components/header/header";
@@ -51,6 +52,7 @@ function App() {
       </Suspense>
       <ToastContainer />
       <Analytics />
+      <SpeedInsights />
     </>
   );
 }

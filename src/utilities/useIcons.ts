@@ -8,8 +8,8 @@ import {
   SiMamp,
   SiTypescript,
   SiMongodb,
-  SiPostgresql,
 } from "react-icons/si";
+import { BiLogoPostgresql } from "react-icons/bi";
 import {
   FaJs,
   FaHtml5,
@@ -58,7 +58,7 @@ export const Icons = {
   tailwind: RiTailwindCssFill,
   typescript: SiTypescript,
   mongodb: SiMongodb,
-  postgresql: SiPostgresql,
+  postgresql: BiLogoPostgresql,
 
   // 📬 Contact & Social
   github: FaGithub,
