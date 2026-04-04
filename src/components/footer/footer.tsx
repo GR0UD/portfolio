@@ -24,19 +24,6 @@ const Footer = () => {
                   </a>
                 </span>
               </li>
-
-              <li className={styles.listItem}>
-                <Icons.discord className={styles.techIcon} />
-                <span className={styles.contactText}>
-                  <a
-                    href="https://discord.com/users/1019690788709470328"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Discord
-                  </a>
-                </span>
-              </li>
             </ul>
           </div>
 
