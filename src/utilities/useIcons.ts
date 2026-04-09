@@ -8,6 +8,7 @@ import {
   SiMamp,
   SiTypescript,
   SiMongodb,
+  SiVercel,
 } from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
 import {
@@ -59,6 +60,7 @@ export const Icons = {
   typescript: SiTypescript,
   mongodb: SiMongodb,
   postgresql: BiLogoPostgresql,
+  vercel: SiVercel,
 
   // 📬 Contact & Social
   github: FaGithub,

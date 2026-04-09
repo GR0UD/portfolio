@@ -153,5 +153,11 @@ export const skillsData: SkillsData = {
       url: "https://git-scm.com/",
       color: "#F1502F",
     },
+    {
+      icon: Icons.vercel,
+      name: "Vercel",
+      url: "https://vercel.com/",
+      color: "#000000",
+    },
   ],
 };
