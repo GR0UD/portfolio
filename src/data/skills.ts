@@ -115,6 +115,18 @@ export const skillsData: SkillsData = {
       url: "https://jestjs.io/",
       color: "#C21325",
     },
+    {
+      icon: Icons.express,
+      name: "Express.js",
+      url: "https://expressjs.com/",
+      color: "#000000",
+    },
+    {
+      icon: Icons.hono,
+      name: "Hono",
+      url: "https://hono.dev/",
+      color: "#FFA500",
+    },
   ],
   tools: [
     {
