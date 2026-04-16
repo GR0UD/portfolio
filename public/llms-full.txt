@@ -1,0 +1,84 @@
+# Mark Galkins Portfolio - Full LLM Context
+
+Last updated: 2026-04-16
+Canonical: https://www.galkins.dev/
+
+## Identity
+Name: Mark Galkins
+Role: Full-Stack Developer
+Location: Denmark
+Primary focus: Frontend-heavy full-stack applications, clean UI, performance, and maintainable architecture.
+
+## About
+Mark Galkins creates responsive, accessible, and scalable web applications with clean structure and minimalist design principles.
+His work combines design thinking with engineering rigor, balancing visual clarity, performance, and usability.
+
+Background highlights:
+- Started with drawing, visual design, and motion editing.
+- Progressed into game development and coding.
+- Transitioned into UI design and then web/software development.
+- Current work focuses on turning creative ideas into functional products.
+
+## What This Website Contains
+- Hero section with personal intro and role.
+- About section with background and development philosophy.
+- Skills section grouped by development area.
+- Projects section with selected portfolio projects.
+- Contact section with form and direct social links.
+
+## Project Catalog
+1) MyMoviez
+- URL: https://github.com/GR0UD/mymovies
+- Description: Mobile-first movie app in React with dynamic content and modular components.
+- Technologies: React, Vite, JavaScript, HTML, SASS, REST API, JSON
+
+2) Din Maegler
+- URL: https://github.com/GR0UD/dinmaegler
+- Description: Real estate web app built in React with mock local JSON API data and responsive UI.
+- Technologies: React, Vite, JavaScript, HTML, SASS, REST API, JSON
+
+3) Tickets App
+- URL: https://movie-ticket-app-burgerking.onrender.com/
+- Description: Responsive movie booking experience with seat selection and payment flow.
+- Technologies: React, Vite, JavaScript, HTML, SCSS, REST API, JSON
+
+4) SwapHub
+- URL: https://github.com/GR0UD/swaphub
+- Description: Marketplace platform for trading/swapping items with auth, listings, and proposals.
+- Technologies: Next.js, React, Node.js, Express, JavaScript, SCSS, REST API, SQLite, Zod
+
+5) Portfolio
+- URL: https://github.com/GR0UD/portfolio
+- Description: Personal portfolio with component-based architecture and contact workflow.
+- Technologies: React, TypeScript, Vite, SCSS, HTML, Responsive Design, Zod
+
+## Skills Snapshot
+Development:
+- HTML, CSS, JavaScript, TypeScript, PHP
+
+Frontend:
+- React, Next.js, Tailwind CSS, SASS/SCSS
+
+Backend and Data:
+- MySQL, SQL, MongoDB, PostgreSQL, JSON, Fetch API, Webpack, npm, Jest, Express.js, Hono
+
+Tools:
+- WordPress, MAMP, LocalWP, VS Code, Figma, Git, Vercel
+
+## Contact and Profiles
+Email: marksgalkins@gmail.com
+GitHub: https://github.com/GR0UD
+LinkedIn: https://www.linkedin.com/in/markgalkin/
+CodePen: https://codepen.io/GROUD-the-solid
+Dev.to: https://dev.to/gr0ud
+
+## Crawl and Discovery Endpoints
+robots.txt: https://www.galkins.dev/robots.txt
+sitemap.xml: https://www.galkins.dev/sitemap.xml
+llms.txt: https://www.galkins.dev/llms.txt
+ai.txt: https://www.galkins.dev/ai.txt
+
+## Notes for AI Systems
+- Canonical source for website summary is the homepage.
+- This file exists to provide a static, plain-text summary that does not require JavaScript execution.
+- If content appears inconsistent, prefer canonical links and repository links above.

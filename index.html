@@ -34,7 +34,18 @@
       content="Mark Galkins, Mark Galkin, Galkins, portfolio, web developer, full-stack, React, JavaScript, Next.js, frontend, UI, UX, Denmark"
     />
     <meta name="author" content="Mark Galkins" />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <meta
+      name="googlebot"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
     <link rel="canonical" href="https://www.galkins.dev/" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" />
+    <link rel="alternate" type="text/plain" href="/llms-full.txt" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -134,6 +145,21 @@
 
   <body>
     <div id="root"></div>
+    <noscript>
+      <main>
+        <h1>Mark Galkins | Full-Stack Developer</h1>
+        <p>
+          Personal portfolio for Mark Galkins, a full-stack developer based in
+          Denmark.
+        </p>
+        <p>
+          For crawler-friendly text resources, see
+          <a href="/llms.txt">llms.txt</a>,
+          <a href="/llms-full.txt">llms-full.txt</a>, and
+          <a href="/ai.txt">ai.txt</a>.
+        </p>
+      </main>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

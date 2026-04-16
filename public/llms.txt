@@ -1,0 +1,34 @@
+# Mark Galkins Portfolio
+
+> Personal portfolio for Mark Galkins, full-stack developer based in Denmark.
+
+## Canonical URL
+- https://www.galkins.dev/
+
+## Summary
+- Mark Galkins builds clean, fast, and user-focused web experiences.
+- Focus areas: React, TypeScript, Next.js, Node.js/Express, UI/UX, responsive frontend.
+- Availability: freelance and full-time opportunities (CET timezone).
+
+## Contact
+- Email: marksgalkins@gmail.com
+- GitHub: https://github.com/GR0UD
+- LinkedIn: https://www.linkedin.com/in/markgalkin/
+- Dev.to: https://dev.to/gr0ud
+- CodePen: https://codepen.io/GROUD-the-solid
+
+## Portfolio Projects
+- MyMoviez: https://github.com/GR0UD/mymovies
+- Din Maegler: https://github.com/GR0UD/dinmaegler
+- Tickets App: https://movie-ticket-app-burgerking.onrender.com/
+- SwapHub: https://github.com/GR0UD/swaphub
+- Portfolio: https://github.com/GR0UD/portfolio
+
+## Machine-Readable Resources
+- Sitemap: https://www.galkins.dev/sitemap.xml
+- Extended LLM context: https://www.galkins.dev/llms-full.txt
+- AI plain-text profile: https://www.galkins.dev/ai.txt
+
+## Crawl Permissions
+- Crawling is allowed via robots.txt
+- robots.txt: https://www.galkins.dev/robots.txt

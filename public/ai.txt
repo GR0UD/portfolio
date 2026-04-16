@@ -1,0 +1,43 @@
+site: Mark Galkins Portfolio
+canonical: https://www.galkins.dev/
+updated: 2026-04-16
+owner: Mark Galkins
+role: Full-Stack Developer
+location: Denmark
+summary: Personal portfolio showcasing projects, skills, and contact details.
+
+contact:
+  email: marksgalkins@gmail.com
+  github: https://github.com/GR0UD
+  linkedin: https://www.linkedin.com/in/markgalkin/
+  codepen: https://codepen.io/GROUD-the-solid
+  devto: https://dev.to/gr0ud
+
+skills:
+  development: HTML, CSS, JavaScript, TypeScript, PHP
+  frontend: React, Next.js, Tailwind CSS, SASS/SCSS
+  backend: MySQL, SQL, MongoDB, PostgreSQL, Express.js, Hono, JSON, Fetch API
+  tools: WordPress, MAMP, LocalWP, VS Code, Figma, Git, Vercel
+
+projects:
+  - name: MyMoviez
+    url: https://github.com/GR0UD/mymovies
+    tags: React, Vite, JavaScript, HTML, SASS, REST API, JSON
+  - name: Din Maegler
+    url: https://github.com/GR0UD/dinmaegler
+    tags: React, Vite, JavaScript, HTML, SASS, REST API, JSON
+  - name: Tickets App
+    url: https://movie-ticket-app-burgerking.onrender.com/
+    tags: React, Vite, JavaScript, HTML, SCSS, REST API, JSON
+  - name: SwapHub
+    url: https://github.com/GR0UD/swaphub
+    tags: Next.js, React, Node.js, Express, JavaScript, SCSS, REST API, SQLite, Zod
+  - name: Portfolio
+    url: https://github.com/GR0UD/portfolio
+    tags: React, TypeScript, Vite, SCSS, HTML, Responsive Design, Zod
+
+crawl:
+  robots: https://www.galkins.dev/robots.txt
+  sitemap: https://www.galkins.dev/sitemap.xml
+  llms: https://www.galkins.dev/llms.txt
+  llms_full: https://www.galkins.dev/llms-full.txt

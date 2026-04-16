@@ -1,4 +1,29 @@
 User-agent: *
 Allow: /
 Disallow: /node_modules/
+Disallow: /src/
+Disallow: /.git/
+
+# Explicit allow list for common AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 Sitemap: https://www.galkins.dev/sitemap.xml
