@@ -26,25 +26,36 @@
   left: 1px;
   right: 1px;
   border-radius: 999px;
-  background: $color-header-bg;
-  backdrop-filter: $backdrop-blur-header;
-  -webkit-backdrop-filter: $backdrop-blur-header;
-  border: 1px solid $color-header-border;
+  background-color: $color-button-bg;
+  backdrop-filter: $backdrop-blur-project;
+  -webkit-backdrop-filter: $backdrop-blur-project;
+  border: 1px solid $color-button-border;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
   cursor: grab;
   pointer-events: all;
   transition:
-    background $transition-fast,
+    background-color $transition-default,
+    border-color $transition-default,
     left $transition-fast,
     right $transition-fast;
 
   &:hover {
     left: 0;
     right: 0;
-    background: rgba(15, 15, 15, 0.55);
+    background-color: $color-button-bg-hover;
+    border-color: $color-button-border-hover;
   }
 
   &:active {
     cursor: grabbing;
-    background: rgba(15, 15, 15, 0.7);
+  }
+
+  &.onLight {
+    background-color: $color-ondark-bg-scrolled;
+    border-color: rgba(0, 0, 0, 0.12);
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
   }
 }

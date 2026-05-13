@@ -38,6 +38,7 @@ function calcScrollState(trackH: number): ScrollState {
 
 export default function CustomScrollbar() {
   const trackRef = useRef<HTMLDivElement>(null);
+  const thumbRef = useRef<HTMLDivElement>(null);
   const [{ thumbHeight, thumbTop, isVisible, isLight }, setScrollState] =
     useState<ScrollState>(() => calcScrollState(window.innerHeight));
 
@@ -51,7 +52,10 @@ export default function CustomScrollbar() {
   );
 
   useEffect(() => {
-    const handleUpdate = () => setScrollState(calcScrollState(getTrackH()));
+    const handleUpdate = () => {
+      if (isDragging.current) return;
+      setScrollState(calcScrollState(getTrackH()));
+    };
     window.addEventListener("scroll", handleUpdate, { passive: true });
     window.addEventListener("resize", handleUpdate);
     return () => {
@@ -65,26 +69,42 @@ export default function CustomScrollbar() {
     isDragging.current = true;
     dragStartY.current = e.clientY;
     dragStartScrollTop.current = document.documentElement.scrollTop;
+    document.body.style.userSelect = "none";
+    document.body.style.cursor = "grabbing";
 
     const onMouseMove = (e: MouseEvent) => {
       if (!isDragging.current) return;
       const trackH = trackRef.current?.offsetHeight ?? window.innerHeight;
       const { scrollHeight, clientHeight } = document.documentElement;
       const tHeight = Math.max((clientHeight / scrollHeight) * trackH, 32);
+      const maxScroll = scrollHeight - clientHeight;
       const scrollRatio = (e.clientY - dragStartY.current) / (trackH - tHeight);
-      document.documentElement.scrollTop =
-        dragStartScrollTop.current + scrollRatio * (scrollHeight - clientHeight);
+      const newScrollTop = Math.max(0, Math.min(
+        dragStartScrollTop.current + scrollRatio * maxScroll,
+        maxScroll
+      ));
+
+      document.documentElement.scrollTop = newScrollTop;
+
+      // Bypass React state during drag for instant visual feedback
+      if (thumbRef.current) {
+        const newThumbTop = maxScroll > 0 ? (newScrollTop / maxScroll) * (trackH - tHeight) : 0;
+        thumbRef.current.style.top = `${newThumbTop}px`;
+      }
     };
 
     const onMouseUp = () => {
       isDragging.current = false;
+      document.body.style.userSelect = "";
+      document.body.style.cursor = "";
+      setScrollState(calcScrollState(getTrackH()));
       document.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("mouseup", onMouseUp);
     };
 
     document.addEventListener("mousemove", onMouseMove);
     document.addEventListener("mouseup", onMouseUp);
-  }, []);
+  }, [getTrackH]);
 
   const handleTrackClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     if ((e.target as HTMLElement).classList.contains(styles.thumb ?? "")) return;
@@ -103,6 +123,7 @@ export default function CustomScrollbar() {
       onClick={handleTrackClick}
     >
       <div
+        ref={thumbRef}
         className={`${styles.thumb} ${isLight ? styles.onLight : ""}`}
         style={{ height: thumbHeight, top: thumbTop }}
         onMouseDown={handleMouseDown}
