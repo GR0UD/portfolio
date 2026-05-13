@@ -17,7 +17,6 @@
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.10.1",
     "react-toastify": "^11.0.5",
-    "vite-plugin-pages": "^0.33.1",
     "zod": "^4.1.12"
   },
   "devDependencies": {
@@ -32,11 +31,11 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.6.0",
     "sass": "^1.93.2",
-    "sharp": "^0.34.5",
     "terser": "^5.44.0",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.59.3",
-    "vite": "^8.0.12"
+    "vite": "^8.0.12",
+    "vite-plugin-pages": "^0.33.3"
   },
   "overrides": {
     "core-js": "^3.39.0"

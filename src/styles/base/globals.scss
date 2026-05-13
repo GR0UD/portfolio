@@ -46,6 +46,15 @@ button {
   cursor: pointer;
 }
 
+/* Hide native scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  scrollbar-width: none;
+}
+
 /* Selection styling */
 ::selection {
   background-color: #c5e1ff;

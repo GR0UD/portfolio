@@ -12,8 +12,7 @@ const useMousePosition = (
 
   useEffect(() => {
     // Disable parallax on mobile
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
-    if (isMobile) return;
+    if (!window.matchMedia("(pointer: fine)").matches) return;
 
     const handleMouseMove = (e: MouseEvent) => {
       const { clientX, clientY } = e;

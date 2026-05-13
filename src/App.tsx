@@ -7,12 +7,22 @@ import routes from "~react-pages";
 import { useDynamicTitle } from "./utilities/useDynamicTitle";
 import Header from "./components/header/header";
 import Intro from "./components/intro/intro";
+import CustomScrollbar from "./components/CustomScrollbar/CustomScrollbar";
 
 // Lazy load non-critical below-the-fold components
 const Footer = lazy(() => import("./components/footer/footer"));
-const BackupScroll = lazy(() => import("./components/ScrollToTop/index"));
+const ScrollToTop = lazy(() => import("./components/ScrollToTop/index"));
 
 function App() {
+  // Lock scroll while intro animation plays (2.25s delay + 1s slide = 3.25s)
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    const timer = setTimeout(() => {
+      document.body.style.overflow = "";
+    }, 3250);
+    return () => clearTimeout(timer);
+  }, []);
+
   // Load toastify CSS asynchronously to not block render
   useEffect(() => {
     const link = document.createElement("link");
@@ -48,9 +58,10 @@ function App() {
       </Suspense>
       <Intro />
       <Suspense fallback={null}>
-        <BackupScroll />
+        <ScrollToTop />
       </Suspense>
       <ToastContainer />
+      <CustomScrollbar />
       <Analytics />
       <SpeedInsights />
     </>

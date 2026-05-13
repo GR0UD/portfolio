@@ -126,8 +126,9 @@
       }
 
       &:hover:not(:disabled) {
-        background: transparent;
-        border-color: rgba(0, 0, 0, 0.4);
+        background-color: $color-button-bg-hover;
+        border-color: $color-button-border-hover;
+        color: $color-white;
 
         .send-text {
           letter-spacing: 0.14em;

@@ -4,7 +4,7 @@ import styles from "./ScrollToTop.module.scss";
 
 type SectionId = "hero" | "about" | "projects" | "contact" | "footer";
 
-export default function BackupScroll() {
+export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
   const [currentSection, setCurrentSection] = useState<SectionId>("hero");
 
