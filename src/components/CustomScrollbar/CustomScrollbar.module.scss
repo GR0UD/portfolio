@@ -27,8 +27,8 @@
   right: 1px;
   border-radius: 999px;
   background-color: $color-button-bg;
-  backdrop-filter: $backdrop-blur-project;
-  -webkit-backdrop-filter: $backdrop-blur-project;
+  backdrop-filter: $backdrop-blur-header;
+  -webkit-backdrop-filter: $backdrop-blur-header;
   border: 1px solid $color-button-border;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
   cursor: grab;
