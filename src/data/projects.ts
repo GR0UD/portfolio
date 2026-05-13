@@ -65,4 +65,22 @@ export const projectsData: Project[] = [
       "Zod",
     ],
   },
+  {
+    id: 6,
+    title: "AyaBilA",
+    url: "https://ayabila.dk",
+    image: "/images/project6.avif",
+    description:
+      "A professional beauty services website for kosmetolog and frisor services. Built with Next.js featuring appointment booking via Cal.com, multi-language support, responsive design, and modern styling with SASS.",
+    tags: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "SASS",
+      "HTML",
+      "Responsive Design",
+      "Booking",
+      "translation-widget",
+    ],
+  },
 ];

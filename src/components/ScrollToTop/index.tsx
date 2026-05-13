@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { IoChevronUp } from "react-icons/io5";
-import styles from "./backup.module.scss";
+import styles from "./ScrollToTop.module.scss";
 
 type SectionId = "hero" | "about" | "projects" | "contact" | "footer";
 

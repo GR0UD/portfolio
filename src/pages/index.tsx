@@ -104,7 +104,6 @@ export default function Home() {
         <section id="about">
           <div className="about-wrapper">
             <div className="about-body">
-              <div className="about-body">
                 <article className="about-left">
                   <h3>How I Got Here</h3>
                   <p>
@@ -148,7 +147,6 @@ export default function Home() {
                     efficiency, and a user-first flow.
                   </p>
                 </article>
-              </div>
             </div>
 
             <SkillsSection />

@@ -27,7 +27,6 @@ export async function submitContactForm(
   });
 
   if (!parseResult.success) {
-    // Use the error format from Zod v3
     const fieldErrors = parseResult.error.flatten().fieldErrors;
 
     const errorStructure: Record<string, { errors: string[] }> = {};
