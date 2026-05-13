@@ -2,7 +2,7 @@
 
 .track {
   position: fixed;
-  top: 0;
+  top: 1.5rem;
   bottom: 1.5rem;
   right: 0.6rem;
   width: 10px;
@@ -10,23 +10,14 @@
   z-index: 9998;
   pointer-events: none;
   opacity: 0;
-  background-color: $color-button-bg;
-  backdrop-filter: $backdrop-blur-project;
-  -webkit-backdrop-filter: $backdrop-blur-project;
-  border: 1px solid $color-button-border;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
-  transition:
-    opacity $transition-default,
-    background-color $transition-default,
-    border-color $transition-default;
+  transition: opacity $transition-default;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 
   &.visible {
     opacity: 1;
-  }
-
-  &.onLight {
-    background-color: $color-ondark-bg-scrolled;
-    border-color: rgba(0, 0, 0, 0.12);
   }
 }
 
@@ -35,7 +26,10 @@
   left: 1px;
   right: 1px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.35);
+  background: $color-header-bg;
+  backdrop-filter: $backdrop-blur-header;
+  -webkit-backdrop-filter: $backdrop-blur-header;
+  border: 1px solid $color-header-border;
   cursor: grab;
   pointer-events: all;
   transition:
@@ -46,11 +40,11 @@
   &:hover {
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(15, 15, 15, 0.55);
   }
 
   &:active {
     cursor: grabbing;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(15, 15, 15, 0.7);
   }
 }
