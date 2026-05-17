@@ -34,7 +34,7 @@ const NotFound = () => {
           loop
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
         />
         <div className="hero-overlay"></div>
       </div>

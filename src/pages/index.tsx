@@ -57,7 +57,7 @@ export default function Home() {
               muted
               loop
               playsInline
-              preload="auto"
+              preload="metadata"
               aria-hidden="true"
               controls={false}
             />
@@ -85,6 +85,7 @@ export default function Home() {
             className="hero-divider"
             src="/images/divider-bot.png"
             alt="section divider"
+            loading="lazy"
           />
         </section>
         {/* ABOUT SECTION */}
@@ -144,6 +145,7 @@ export default function Home() {
             className="hero-divider-top"
             src="/images/divider-top.png"
             alt="section divider"
+            loading="lazy"
           />
           <div className="projects-overlay"></div>
           <div className="projects-wrapper">
