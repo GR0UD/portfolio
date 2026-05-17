@@ -49,10 +49,9 @@
       border-radius: $border-radius-lg;
       letter-spacing: $letter-spacing-normal;
       resize: vertical;
-      display: relative;
+      position: relative;
       z-index: 1;
       backdrop-filter: $backdrop-blur-header;
-      -webkit-backdrop-filter: $backdrop-blur-header;
 
       box-shadow: 0 0 200px rgba(255, 255, 255, 0.05);
       transition: border $transition-default;
@@ -118,7 +117,6 @@
         color 0.45s ease,
         border-color 0.45s ease;
       backdrop-filter: $backdrop-blur-header;
-      -webkit-backdrop-filter: $backdrop-blur-header;
 
       &:disabled {
         opacity: 0.6;

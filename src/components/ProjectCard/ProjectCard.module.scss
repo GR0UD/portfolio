@@ -9,7 +9,6 @@
   font-weight: $font-weight-medium;
   font-size: $font-size-nav;
   backdrop-filter: $backdrop-blur-project;
-  -webkit-backdrop-filter: $backdrop-blur-project;
   box-shadow: $shadow-small;
   overflow: hidden;
   transition: background-color $transition-default,
@@ -68,7 +67,6 @@
   letter-spacing: $letter-spacing-tag;
   font-size: $font-size-tiny;
   backdrop-filter: $backdrop-blur-project;
-  -webkit-backdrop-filter: $backdrop-blur-project;
   transition: background-color $transition-default,
     border-color $transition-default;
 
