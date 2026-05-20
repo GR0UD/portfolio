@@ -163,6 +163,133 @@
   }
 }
 
+// ==================== NAV GROUP ====================
+
+.navGroup {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+// ==================== LANGUAGE PICKER ====================
+
+.langWrapper {
+  position: relative;
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $border-radius-lg;
+  border: 1px solid transparent;
+  transition: all $transition-default;
+
+  &.scrolled {
+    background-color: $color-button-bg;
+    border: 1px solid $color-button-border;
+    border-radius: $border-radius-lg;
+    backdrop-filter: $backdrop-blur-project;
+    transition:
+      background-color $transition-default,
+      border-color $transition-default,
+      transform $transition-fast;
+
+    &:hover {
+      background-color: $color-button-bg-hover;
+      border-color: $color-button-border-hover;
+    }
+
+    &.onDark {
+      background-color: $color-ondark-bg-scrolled;
+    }
+
+    &.dropdownActive {
+      backdrop-filter: none;
+    }
+  }
+}
+
+.langBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: none;
+  border: none;
+  color: $color-white;
+  cursor: pointer;
+  transition: opacity $transition-default;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.langIcon {
+  height: 26px;
+  width: 26px;
+  flex-shrink: 0;
+}
+
+.langDropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 130px;
+  background-color: $color-button-bg;
+  border: 1px solid $color-button-border;
+  border-radius: $border-radius;
+  backdrop-filter: $backdrop-blur-project;
+  overflow: hidden;
+  z-index: $z-header;
+  list-style: none;
+  padding: 0.25rem 0;
+  transition: background-color $transition-default, border-color $transition-default;
+}
+
+.langWrapper.onDark .langDropdown {
+  background-color: $color-ondark-bg-scrolled;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.langOption {
+  display: block;
+  width: 100%;
+  padding: 0.55rem $spacing-sm;
+  background: none;
+  border: none;
+  color: $color-white;
+  font-size: $font-size-small;
+  text-align: left;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: background-color $transition-fast, opacity $transition-fast;
+
+  &:hover {
+    background-color: $color-button-bg-hover;
+    opacity: 1;
+  }
+}
+
+.langWrapper.onDark .langOption:hover {
+  background-color: $color-button-bg-dark-hover;
+}
+
+.langActive {
+  opacity: 1;
+  font-weight: $font-weight-medium;
+}
+
+.navLangTags {
+  display: none;
+}
+
 // ==================== HAMBURGER MENU ====================
 
 .hamburger {
@@ -319,9 +446,63 @@
     }
   }
 
+  .navLangTags {
+    display: flex;
+    gap: $spacing-xs;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: $spacing-xl;
+    opacity: 0;
+    transition: opacity 0.4s ease 0.15s;
+
+    &.navOpen {
+      opacity: 1;
+    }
+  }
+
+  .navLangTag {
+    background-color: $color-project-tag-bg;
+    color: $color-white;
+    padding: 0.4rem 0.85rem;
+    border: 1px solid $color-button-border;
+    border-radius: $border-radius;
+    font-size: $font-size-tiny;
+    font-weight: $font-weight-medium;
+    letter-spacing: $letter-spacing-tag;
+    cursor: pointer;
+    backdrop-filter: $backdrop-blur-project;
+    transition:
+      background-color $transition-default,
+      border-color $transition-default;
+
+    &:hover {
+      background-color: $color-project-tag-bg-hover;
+      border-color: $color-button-border-hover;
+    }
+
+    &.langActive {
+      background-color: $color-project-tag-bg-hover;
+      border-color: $color-button-border-hover;
+    }
+  }
+
   .container {
     flex-wrap: wrap;
     padding: $spacing-md $spacing-lg;
+
+    &.scrolled {
+      padding: $spacing-md $spacing-lg;
+    }
+  }
+
+  .langWrapper {
+    width: 55px;
+    height: 55px;
+  }
+
+  .langIcon {
+    height: 22px;
+    width: 22px;
   }
 }
 

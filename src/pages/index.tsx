@@ -75,9 +75,14 @@ export default function Home() {
                 Based in Denmark — I build clean, fast, and user-focused web
                 experiences.
               </p>
-              <a href="#projects" className="btn">
-                Explore My Work
-              </a>
+              <div className="hero-buttons">
+                <a href="#projects" className="btn">
+                  Explore My Work
+                </a>
+                <a href="#contact" className="btn">
+                  Contact
+                </a>
+              </div>
             </div>
           </header>
           <ScrollDownButton />

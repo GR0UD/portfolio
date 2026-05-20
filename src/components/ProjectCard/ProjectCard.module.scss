@@ -11,8 +11,12 @@
   backdrop-filter: $backdrop-blur-project;
   box-shadow: $shadow-small;
   overflow: hidden;
-  transition: background-color $transition-default,
-    border-color $transition-default, transform $transition-fast;
+  display: flex;
+  flex-direction: column;
+  transition:
+    background-color $transition-default,
+    border-color $transition-default,
+    transform $transition-fast;
 
   &:hover {
     background-color: $color-button-bg-hover;
@@ -20,11 +24,11 @@
   }
 }
 
-.link {
+.body {
   display: block;
-  text-decoration: none;
   color: inherit;
   padding: $spacing-xs;
+  flex: 1;
 }
 
 .image {
@@ -67,10 +71,42 @@
   letter-spacing: $letter-spacing-tag;
   font-size: $font-size-tiny;
   backdrop-filter: $backdrop-blur-project;
-  transition: background-color $transition-default,
+  transition:
+    background-color $transition-default,
     border-color $transition-default;
 
   &:hover {
     background-color: $color-project-tag-bg-hover;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: $spacing-xs;
+  padding: $spacing-xs;
+  border-top: 1px solid $color-button-border;
+  margin-top: auto;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: $color-button-bg;
+  border: 1px solid $color-button-border;
+  border-radius: $border-radius;
+  color: $color-white;
+  font-size: 1rem;
+  text-decoration: none;
+  backdrop-filter: $backdrop-blur-project;
+  transition:
+    background-color $transition-default,
+    border-color $transition-default;
+
+  &:hover {
+    background-color: $color-button-bg-hover;
+    border-color: $color-button-border-hover;
   }
 }

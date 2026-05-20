@@ -3,12 +3,10 @@ import { skillsData } from "../../data/skills";
 import styles from "./SkillsSection.module.scss";
 import type { SkillLinkProps, SkillColumnProps } from "../../types";
 
-const SkillLink = ({ icon: Icon, name, url, color }: SkillLinkProps) => (
+const SkillLink = ({ icon: Icon, name, color }: SkillLinkProps) => (
   <li>
     <a
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
+      href="#projects"
       className={styles.skillLink}
       style={{ "--skill-color": color } as CSSProperties}
     >

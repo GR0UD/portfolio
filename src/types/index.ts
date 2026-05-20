@@ -4,7 +4,8 @@ import type { ComponentType } from "react";
 export interface Project {
   id: number;
   title: string;
-  url: string;
+  url?: string;
+  github?: string;
   image: string;
   description: string;
   tags: string[];
@@ -39,7 +40,8 @@ export interface FormActionState {
 // Component prop types
 export interface ProjectCardProps {
   title: string;
-  url: string;
+  url?: string;
+  github?: string;
   image: string;
   description: string;
   tags: string[];

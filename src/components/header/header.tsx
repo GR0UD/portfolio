@@ -1,12 +1,24 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { PiTranslateThin } from "react-icons/pi";
 import styles from "./Header.module.scss";
 
 type SectionId = "hero" | "about" | "projects" | "contact" | "footer";
+
+const LANGUAGES = [
+  { code: "en", label: "English" },
+  { code: "da", label: "Dansk" },
+  { code: "de", label: "Deutsch" },
+  { code: "es", label: "Español" },
+  { code: "fr", label: "Français" },
+];
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [currentSection, setCurrentSection] = useState<SectionId>("hero");
+  const [langOpen, setLangOpen] = useState(false);
+  const [activeLang, setActiveLang] = useState("en");
+  const langRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,20 +47,35 @@ const Header = () => {
       }
     };
 
-    handleScroll(); // Initial check
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleLangSelect = (code: string) => {
+    setActiveLang(code);
+    setLangOpen(false);
+    const w = window as any;
+    if (code === "en") {
+      w.resetTranslation?.("en");
+    } else {
+      w.translate?.(code);
+    }
   };
 
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
 
-  // Determine if current section has dark background
   const isDarkSection =
     currentSection === "about" || currentSection === "contact";
 
@@ -66,7 +93,37 @@ const Header = () => {
         >
           <img src="/logo.avif" alt="Logo" className={styles.logoImage} />
         </a>
-        <nav
+        <div className={styles.navGroup}>
+          {/* Language picker */}
+          <div
+            ref={langRef}
+            className={`${styles.langWrapper} ${isScrolled ? styles.scrolled : ""} ${isDarkSection ? styles.onDark : ""} ${langOpen ? styles.dropdownActive : ""}`}
+          >
+            <button
+              className={styles.langBtn}
+              onClick={() => setLangOpen((o) => !o)}
+              aria-label="Select language"
+              aria-expanded={langOpen}
+            >
+              <PiTranslateThin className={styles.langIcon} />
+            </button>
+            {langOpen && (
+              <ul className={styles.langDropdown}>
+                {LANGUAGES.map(({ code, label }) => (
+                  <li key={code}>
+                    <button
+                      className={`${styles.langOption} ${activeLang === code ? styles.langActive : ""}`}
+                      onClick={() => handleLangSelect(code)}
+                    >
+                      {label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
+          <nav
           className={`${styles.nav} ${menuOpen ? styles.navOpen : ""} ${
             isScrolled ? styles.scrolled : ""
           } ${isDarkSection ? styles.onDark : ""}`}
@@ -95,7 +152,20 @@ const Header = () => {
               </a>
             </li>
           </ul>
+          <div className={`${styles.navLangTags} ${menuOpen ? styles.navOpen : ""}`}>
+            {LANGUAGES.slice(0, 3).map(({ code, label }) => (
+              <button
+                key={code}
+                className={`${styles.navLangTag} ${activeLang === code ? styles.langActive : ""}`}
+                onClick={() => handleLangSelect(code)}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
         </nav>
+        </div>
+
         <button
           className={`${styles.hamburger} ${
             menuOpen ? styles.hamburgerOpen : ""

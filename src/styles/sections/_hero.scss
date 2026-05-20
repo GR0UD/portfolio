@@ -110,6 +110,12 @@
     text-align: left;
   }
 
+  .hero-buttons {
+    display: flex;
+    gap: $spacing-sm;
+    flex-wrap: wrap;
+  }
+
   .btn {
     background-color: $color-button-bg;
     color: $color-white;
