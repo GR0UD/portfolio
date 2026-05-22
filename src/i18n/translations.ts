@@ -79,8 +79,8 @@ export const translations = {
 
   da: {
     // Nav
-    navHome: "Hjem",
-    navAbout: "Om mig",
+    navHome: "Home",
+    navAbout: "Om",
     navProjects: "Projekter",
     navContact: "Kontakt",
 
@@ -133,7 +133,7 @@ export const translations = {
     contactTitle: "Kontakt",
     contactAvailable: "Tilgængelig for freelance & fuldtidsstillinger",
     formName: "Navn",
-    formEmail: "E-mail",
+    formEmail: "Email",
     formMessage: "Skriv din besked her",
     formSend: "SEND",
     formSending: "SENDER...",
@@ -144,8 +144,8 @@ export const translations = {
     footerContact: "Kontakt",
     footerNav: "Navigation",
     footerConnect: "Forbind",
-    footerEmail: "E-mail",
-    footerHome: "Hjem",
+    footerEmail: "Email",
+    footerHome: "Start",
     footerAbout: "Om",
     footerProjects: "Projekter",
     footerRights: "Alle rettigheder forbeholdes.",
@@ -153,8 +153,8 @@ export const translations = {
 
   de: {
     // Nav
-    navHome: "Startseite",
-    navAbout: "Über mich",
+    navHome: "Home",
+    navAbout: "Über",
     navProjects: "Projekte",
     navContact: "Kontakt",
 
@@ -207,7 +207,7 @@ export const translations = {
     contactTitle: "Kontakt",
     contactAvailable: "Verfügbar für Freelance & Vollzeitstellen",
     formName: "Name",
-    formEmail: "E-Mail",
+    formEmail: "Email",
     formMessage: "Hinterlasse hier deine Nachricht",
     formSend: "SENDEN",
     formSending: "WIRD GESENDET...",
@@ -218,9 +218,9 @@ export const translations = {
     footerContact: "Kontakt",
     footerNav: "Navigation",
     footerConnect: "Verbinden",
-    footerEmail: "E-Mail",
-    footerHome: "Startseite",
-    footerAbout: "Über mich",
+    footerEmail: "Email",
+    footerHome: "Start",
+    footerAbout: "Über",
     footerProjects: "Projekte",
     footerRights: "Alle Rechte vorbehalten.",
   },

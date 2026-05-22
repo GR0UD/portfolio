@@ -3,45 +3,24 @@
 
 .wrapper {
   position: relative;
-  min-width: 75px;
-  display: flex;
-  flex-direction: column;
-  border-radius: $border-radius-lg;
-  border: 1px solid transparent;
-  background-color: transparent;
-  backdrop-filter: none;
-  overflow: hidden;
-  transition: all $transition-default;
-
-  &.scrolled {
-    @include glass-scrolled;
-  }
-
-  &.dropdownActive {
-    background-color: $color-button-bg;
-    backdrop-filter: $backdrop-blur-project;
-    border-color: $color-button-border;
-  }
-
-  &.dropdownActive.onDark {
-    background-color: $color-ondark-bg-scrolled;
-  }
 }
 
 .btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
   min-width: 75px;
   height: 75px;
   padding: 0;
-  background: none;
-  border: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: $border-radius-lg;
   color: $color-white;
   cursor: pointer;
-  opacity: 0.8;
-  transition: opacity $transition-default;
+  transition:
+    background-color $transition-default,
+    border-color $transition-default,
+    opacity $transition-default;
 
   &:hover {
     opacity: 1;
@@ -49,6 +28,21 @@
 
   &:focus {
     outline: none;
+  }
+
+  .wrapper.scrolled & {
+    background-color: $color-button-bg;
+    backdrop-filter: $backdrop-blur-project;
+    border-color: $color-button-border;
+
+    &:hover {
+      background-color: $color-button-bg-hover;
+      border-color: $color-button-border-hover;
+    }
+  }
+
+  .wrapper.scrolled.onDark & {
+    background-color: $color-ondark-bg-scrolled;
   }
 }
 
@@ -61,12 +55,18 @@
 
 .dropdown {
   display: none;
+  position: absolute;
+  top: calc(100% + 1rem);
+  left: 50%;
+  transform: translateX(-50%);
   min-width: 130px;
-  background-color: transparent;
-  border-top: 1px solid $color-button-border;
   list-style: none;
-  padding: 0.25rem 0;
-  transition: background-color $transition-default, border-color $transition-default;
+  padding: 0;
+  background-color: $color-button-bg;
+  backdrop-filter: $backdrop-blur-project;
+  border: 1px solid $color-button-border;
+  border-radius: $border-radius-lg;
+  z-index: 100;
 
   .wrapper.dropdownActive & {
     display: block;
@@ -74,7 +74,18 @@
 }
 
 .wrapper.onDark .dropdown {
+  background-color: $color-ondark-bg-scrolled;
   border-color: rgba(0, 0, 0, 0.15);
+}
+
+li:first-child .option {
+  border-top-left-radius: $border-radius-lg;
+  border-top-right-radius: $border-radius-lg;
+}
+
+li:last-child .option {
+  border-bottom-left-radius: $border-radius-lg;
+  border-bottom-right-radius: $border-radius-lg;
 }
 
 .option {
@@ -90,7 +101,9 @@
   text-align: left;
   cursor: pointer;
   opacity: 0.8;
-  transition: background-color $transition-fast, opacity $transition-fast;
+  transition:
+    background-color $transition-fast,
+    opacity $transition-fast;
 
   &:hover {
     background-color: $color-button-bg-hover;

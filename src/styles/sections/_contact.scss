@@ -43,6 +43,8 @@
     textarea {
       width: 100%;
       padding: $input-padding;
+      font-family: inherit;
+      font-size: $font-size-small;
       background-color: $color-projects-overlay;
       color: $color-input-text;
       border: 1px solid $color-input-border;
