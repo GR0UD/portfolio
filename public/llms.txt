@@ -6,7 +6,7 @@
 - https://www.galkins.dev/
 
 ## Summary
-- Mark Galkins builds clean, fast, and user-focused web experiences.
+- Mark Galkins builds clean, fast, and user-focused websites.
 - Focus areas: React, TypeScript, Next.js, Node.js/Express, UI/UX, responsive frontend.
 - Availability: freelance and full-time opportunities (CET timezone).
 

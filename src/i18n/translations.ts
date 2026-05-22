@@ -12,7 +12,7 @@ export const translations = {
     heroGreeting: "Hey, I'm",
     heroSubtitle: "A Full-Stack Developer",
     heroDescription:
-      "Based in Denmark. I build clean, fast, and user-focused web experiences.",
+      "Based in Denmark. I build clean, fast, and user-focused websites.",
     heroCta: "Explore My Work",
     heroContact: "Contact",
 

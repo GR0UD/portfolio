@@ -4,7 +4,7 @@ A minimalistic portfolio website inspired by Japanese design principles and wabi
 
 ## About
 
-This portfolio showcases my work as a full-stack developer with a focus on creating clean, intuitive web experiences. The design philosophy centers around:
+This portfolio showcases my work as a full-stack developer with a focus on creating clean, intuitive websites. The design philosophy centers around:
 
 - **Minimalism**: Every element serves a purpose
 - **Japanese Aesthetics**: Inspired by wabi-sabi and zen design principles
