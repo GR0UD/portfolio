@@ -79,7 +79,7 @@ export async function submitContactForm(
     web3FormData.append("email", parseResult.data.email);
     web3FormData.append(
       "message",
-      `"Interested in " + ${parseResult.data.service}\n\n${parseResult.data.message}`,
+      `Interested in ${parseResult.data.service}\n\n${parseResult.data.message}`,
     );
 
     // Submit to Web3Forms
