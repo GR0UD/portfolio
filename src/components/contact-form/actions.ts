@@ -1,6 +1,14 @@
 import { z } from "zod";
 import type { FormActionState } from "../../types";
 
+const SERVICE_OPTIONS = [
+  "Consultation",
+  "Website Development",
+  "UI / UX Design",
+  "Code Review & Maintenance",
+  "Other",
+] as const;
+
 const contactSchema = z.object({
   name: z.string().min(1, { message: "Name is required" }),
   email: z
@@ -10,6 +18,7 @@ const contactSchema = z.object({
   message: z
     .string()
     .min(10, { message: "Message must be at least 10 characters long" }),
+  service: z.enum(SERVICE_OPTIONS, { message: "Please select a service" }),
 });
 
 export async function submitContactForm(
@@ -19,11 +28,13 @@ export async function submitContactForm(
   const name = formData.get("name");
   const email = formData.get("email");
   const message = formData.get("message");
+  const service = formData.get("service");
 
   const parseResult = contactSchema.safeParse({
     name: typeof name === "string" ? name.trim() : "",
     email: typeof email === "string" ? email.trim() : "",
     message: typeof message === "string" ? message.trim() : "",
+    service: typeof service === "string" ? service.trim() : "",
   });
 
   if (!parseResult.success) {
@@ -31,17 +42,10 @@ export async function submitContactForm(
 
     const errorStructure: Record<string, { errors: string[] }> = {};
 
-    if (fieldErrors.name) {
-      errorStructure.name = { errors: fieldErrors.name };
-    }
-
-    if (fieldErrors.email) {
-      errorStructure.email = { errors: fieldErrors.email };
-    }
-
-    if (fieldErrors.message) {
-      errorStructure.message = { errors: fieldErrors.message };
-    }
+    if (fieldErrors.name) errorStructure.name = { errors: fieldErrors.name };
+    if (fieldErrors.email) errorStructure.email = { errors: fieldErrors.email };
+    if (fieldErrors.message) errorStructure.message = { errors: fieldErrors.message };
+    if (fieldErrors.service) errorStructure.service = { errors: fieldErrors.service };
 
     return {
       success: false,
@@ -50,6 +54,7 @@ export async function submitContactForm(
         name: typeof name === "string" ? name.trim() : "",
         email: typeof email === "string" ? email.trim() : "",
         message: typeof message === "string" ? message.trim() : "",
+        service: typeof service === "string" ? service.trim() : "",
       },
     };
   }
@@ -64,9 +69,10 @@ export async function submitContactForm(
     }
 
     web3FormData.append("access_key", accessKey);
+    web3FormData.append("subject", `[Portfolio] ${parseResult.data.service} — ${parseResult.data.name}`);
     web3FormData.append("name", parseResult.data.name);
     web3FormData.append("email", parseResult.data.email);
-    web3FormData.append("message", parseResult.data.message);
+    web3FormData.append("message", `${parseResult.data.service}\n\n${parseResult.data.message}`);
 
     // Submit to Web3Forms
     const response = await fetch("https://api.web3forms.com/submit", {

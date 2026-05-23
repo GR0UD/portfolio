@@ -1,4 +1,6 @@
 import { useRef, useEffect, lazy, Suspense } from "react";
+import { FaClock, FaCalendarAlt } from "react-icons/fa";
+import { Icons } from "../utilities/useIcons";
 const ContactForm = lazy(
   () => import("../components/contact-form/contact-form"),
 );
@@ -164,22 +166,64 @@ export default function Home() {
 
         {/* CONTACT SECTION */}
         <section id="contact">
-          <header className="contact-header">
-            <h2 className="contact-title">{t("contactTitle")}</h2>
-          </header>
-
           <div className="contact-wrapper">
-            <Suspense fallback={<div style={{ minHeight: "400px" }} />}>
-              <ContactForm />
-            </Suspense>
-
-            <div className="contact-note">
-              <hr />
-              <div className="contact-note__content">
-                <span>{t("contactAvailable")}</span>
-                <span>({ceTimezone})</span>
+            <div className="contact-body">
+              <div className="contact-info">
+                <h3 className="contact-info__title">{t("contactInfoTitle")}</h3>
+                <p className="contact-info__description">
+                  {t("contactInfoDescription")}
+                </p>
+                <div className="contact-info__items">
+                  <div className="contact-info__item">
+                    <div className="contact-info__icon">
+                      <Icons.email />
+                    </div>
+                    <div className="contact-info__text">
+                      <span className="contact-info__label">
+                        {t("contactInfoEmailLabel")}
+                      </span>
+                      <a
+                        href="mailto:marksgalkins@gmail.com"
+                        className="contact-info__value contact-info__value--link"
+                      >
+                        {t("contactInfoEmailValue")}
+                      </a>
+                    </div>
+                  </div>
+                  <div className="contact-info__item">
+                    <div className="contact-info__icon">
+                      <FaClock />
+                    </div>
+                    <div className="contact-info__text">
+                      <span className="contact-info__label">
+                        {t("contactInfoResponseLabel")}
+                      </span>
+                      <span className="contact-info__value">
+                        {t("contactInfoResponseValue")}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="contact-info__item">
+                    <div className="contact-info__icon">
+                      <FaCalendarAlt />
+                    </div>
+                    <div className="contact-info__text">
+                      <span className="contact-info__label">
+                        {t("contactInfoCallLabel")}
+                      </span>
+                      <span className="contact-info__value">
+                        {t("contactInfoCallValue")}
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
+
+              <Suspense fallback={<div style={{ minHeight: "400px" }} />}>
+                <ContactForm />
+              </Suspense>
             </div>
+
           </div>
         </section>
       </main>

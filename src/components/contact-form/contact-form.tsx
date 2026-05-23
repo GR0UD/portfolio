@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 import { submitContactForm } from "./actions";
-import { useActionState, useEffect } from "react";
+import { useActionState, useEffect, useState } from "react";
 import type { FormActionState } from "../../types";
 import { useTranslation } from "../../i18n/TranslationContext";
 
@@ -14,6 +14,8 @@ export default function ContactForm() {
     success: false,
   });
 
+  const [service, setService] = useState(state?.data?.service || "");
+
   useEffect(() => {
     if (state?.success) {
       toast.success(t("formSuccess"), {
@@ -24,7 +26,7 @@ export default function ContactForm() {
         pauseOnHover: true,
         draggable: true,
       });
-    } else if (state?.error) {
+    } else if (state?.error?._form) {
       toast.error(t("formError"), {
         position: "bottom-right",
         autoClose: 5000,
@@ -37,9 +39,7 @@ export default function ContactForm() {
   }, [state?.success, state?.error]);
 
   const getFieldError = (fieldName: string): string | null => {
-    if (!state?.error || !state.error[fieldName]) {
-      return null;
-    }
+    if (!state?.error || !state.error[fieldName]) return null;
     return state.error[fieldName].errors[0] || null;
   };
 
@@ -50,17 +50,16 @@ export default function ContactForm() {
       role="form"
       action={formAction}
     >
+      {/* Name + Email — 2 columns */}
       <div className="form-group">
         <label htmlFor="name" className="sr-only">
           {t("formName")}
         </label>
         <input
           type="text"
-          className={`form-control ${
-            getFieldError("name") ? "input-error" : ""
-          }`}
+          className={`form-control ${getFieldError("name") ? "input-error" : ""}`}
           id="name"
-          placeholder={t("formName")}
+          placeholder={t("formNamePlaceholder")}
           name="name"
           defaultValue={state?.data?.name || ""}
           aria-describedby={getFieldError("name") ? "name-error" : undefined}
@@ -78,11 +77,9 @@ export default function ContactForm() {
         </label>
         <input
           type="email"
-          className={`form-control ${
-            getFieldError("email") ? "input-error" : ""
-          }`}
+          className={`form-control ${getFieldError("email") ? "input-error" : ""}`}
           id="email"
-          placeholder={t("formEmail")}
+          placeholder={t("formEmailPlaceholder")}
           name="email"
           defaultValue={state?.data?.email || ""}
           aria-describedby={getFieldError("email") ? "email-error" : undefined}
@@ -94,22 +91,48 @@ export default function ContactForm() {
         )}
       </div>
 
-      <div className="form-group">
+      {/* Service — full width */}
+      <div className="form-group form-group--full">
+        <label htmlFor="service" className="sr-only">
+          {t("formService")}
+        </label>
+        <select
+          id="service"
+          name="service"
+          className={`form-control form-select ${!service ? "select-placeholder" : ""} ${getFieldError("service") ? "input-error" : ""}`}
+          value={service}
+          onChange={(e) => setService(e.target.value)}
+          aria-describedby={getFieldError("service") ? "service-error" : undefined}
+        >
+          <option value="" disabled>
+            {t("formService")}
+          </option>
+          <option value="Consultation">{t("formServiceConsultation")}</option>
+          <option value="Website Development">{t("formServiceWebsite")}</option>
+          <option value="UI / UX Design">{t("formServiceUIUX")}</option>
+          <option value="Code Review & Maintenance">{t("formServiceMaintenance")}</option>
+          <option value="Other">{t("formServiceOther")}</option>
+        </select>
+        {getFieldError("service") && (
+          <span className="error-message" id="service-error">
+            {getFieldError("service")}
+          </span>
+        )}
+      </div>
+
+      {/* Message — full width */}
+      <div className="form-group form-group--full">
         <label htmlFor="message" className="sr-only">
           {t("formMessage")}
         </label>
         <textarea
-          className={`form-control ${
-            getFieldError("message") ? "input-error" : ""
-          }`}
-          rows={10}
+          className={`form-control ${getFieldError("message") ? "input-error" : ""}`}
+          rows={8}
           placeholder={t("formMessage")}
           name="message"
           id="message"
           defaultValue={state?.data?.message || ""}
-          aria-describedby={
-            getFieldError("message") ? "message-error" : undefined
-          }
+          aria-describedby={getFieldError("message") ? "message-error" : undefined}
         ></textarea>
         {getFieldError("message") && (
           <span className="error-message" id="message-error">
