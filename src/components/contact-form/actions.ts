@@ -23,7 +23,7 @@ const contactSchema = z.object({
 
 export async function submitContactForm(
   _prevState: FormActionState | null,
-  formData: FormData
+  formData: FormData,
 ): Promise<FormActionState> {
   const name = formData.get("name");
   const email = formData.get("email");
@@ -44,8 +44,10 @@ export async function submitContactForm(
 
     if (fieldErrors.name) errorStructure.name = { errors: fieldErrors.name };
     if (fieldErrors.email) errorStructure.email = { errors: fieldErrors.email };
-    if (fieldErrors.message) errorStructure.message = { errors: fieldErrors.message };
-    if (fieldErrors.service) errorStructure.service = { errors: fieldErrors.service };
+    if (fieldErrors.message)
+      errorStructure.message = { errors: fieldErrors.message };
+    if (fieldErrors.service)
+      errorStructure.service = { errors: fieldErrors.service };
 
     return {
       success: false,
@@ -63,16 +65,22 @@ export async function submitContactForm(
     // Prepare Web3Forms submission
     const web3FormData = new FormData();
     const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
-    
+
     if (!accessKey) {
       throw new Error("Web3Forms access key is not configured");
     }
 
     web3FormData.append("access_key", accessKey);
-    web3FormData.append("subject", `[Portfolio] ${parseResult.data.service} — ${parseResult.data.name}`);
+    web3FormData.append(
+      "subject",
+      `[Portfolio] ${parseResult.data.service} — ${parseResult.data.name}`,
+    );
     web3FormData.append("name", parseResult.data.name);
     web3FormData.append("email", parseResult.data.email);
-    web3FormData.append("message", `${parseResult.data.service}\n\n${parseResult.data.message}`);
+    web3FormData.append(
+      "message",
+      `"Interested in " + ${parseResult.data.service}\n\n${parseResult.data.message}`,
+    );
 
     // Submit to Web3Forms
     const response = await fetch("https://api.web3forms.com/submit", {
@@ -98,4 +106,3 @@ export async function submitContactForm(
     };
   }
 }
-
