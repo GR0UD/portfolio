@@ -23,7 +23,7 @@ export const projectsData: Project[] = [
   {
     id: 3,
     title: "MyMoviez",
-    url: "https://mymovies-ebon-tau.vercel.app/",
+    url: "https://myxmovies.vercel.app/",
     github: "https://github.com/GR0UD/mymovies",
     image: "/images/project1.avif",
     description:
