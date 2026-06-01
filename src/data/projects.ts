@@ -28,7 +28,7 @@ export const projectsData: Project[] = [
     image: "/images/project1.avif",
     description:
       "A mobile-first movie app built in React featuring dynamic content, modular components, and a local JSON database for browsing and discovering films.",
-    tags: ["React", "Vite", "JavaScript", "SCSS", "REST API"],
+    tags: ["React", "Vite", "TypeScript", "SCSS", "REST API"],
   },
   {
     id: 4,
