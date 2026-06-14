@@ -37,6 +37,6 @@
     "descriptionRu": "",
     "version": "0.1.0",
     "status": "in-progress",
-    "notes": ""
+    "notes": "## Monitor Pinning\n\nChoose which monitor's taskbar shows the player.\n\n- Setting: monitor index or \"primary\"/\"active\"\n- React to plug/unplug and display changes\n- Fall back to primary if chosen monitor disconnects"
   }
 ]
