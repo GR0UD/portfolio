@@ -1,15 +1,5 @@
 [
   {
-    "id": "94153eaa-1ccd-4086-8eef-0e0510aa1572",
-    "nameEn": "123",
-    "nameRu": "123",
-    "descriptionEn": "123",
-    "descriptionRu": "123",
-    "version": "1.0.0",
-    "status": "in-progress",
-    "notes": ""
-  },
-  {
     "id": "4f78d1c9-0d78-44c7-b7b7-c76249edba0c",
     "nameEn": "Audio Visualizer (Using DW/D2)",
     "nameRu": "",
