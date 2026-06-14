@@ -18,5 +18,15 @@
     "version": "0.1.0",
     "status": "in-progress",
     "notes": "## Audio Visualizer\n\nReal-time spectrum/waveform render behind or beside the controls.\n\n- Use **Direct2D** for drawing, **DirectWrite** for labels\n- Capture audio via WASAPI loopback\n- Keep render loop cheap to avoid taskbar lag\n- Style options: bars, wave, mirrored"
+  },
+  {
+    "id": "81ea55b8-4a3e-45ca-8088-4e7e4781913a",
+    "nameEn": "Sort code into modules",
+    "nameRu": "",
+    "descriptionEn": "Split the single-file mod source into focused modules for rendering, audio, config, and hooks to ease maintenance.",
+    "descriptionRu": "",
+    "version": "0.1.0",
+    "status": "in-progress",
+    "notes": ""
   }
 ]
