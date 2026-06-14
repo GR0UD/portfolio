@@ -67,6 +67,6 @@
     "descriptionRu": "",
     "version": "0.1.0",
     "status": "in-progress",
-    "notes": ""
+    "notes": "## Movable Containers\n\nFree-form layout instead of fixed slots.\n\n- Drag art, controls, and title independently\n- Persist positions per monitor/profile\n- Optional snap-to-grid\n- Drag handles only shown in \"edit layout\" mode"
   }
 ]
