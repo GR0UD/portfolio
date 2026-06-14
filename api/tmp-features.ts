@@ -93,10 +93,7 @@ async function writeFeatures(
   }
 }
 
-export default async function handler(
-  req: VercelRequest,
-  res: VercelResponse,
-) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   const token = process.env.GITHUB_TOKEN;
 
   if (req.method === "GET") {

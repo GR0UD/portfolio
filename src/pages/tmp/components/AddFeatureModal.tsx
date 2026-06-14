@@ -1,5 +1,4 @@
 import { useEffect, useState, type FormEvent } from "react";
-import { FaXmark } from "react-icons/fa6";
 import { z } from "zod";
 import styles from "./AddFeatureModal.module.scss";
 import type { FeatureInput } from "../types";
