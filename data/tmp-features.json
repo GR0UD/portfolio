@@ -27,6 +27,6 @@
     "descriptionRu": "",
     "version": "0.1.0",
     "status": "in-progress",
-    "notes": ""
+    "notes": "## Code Modularization\n\nSplit the monolith into focused modules:\n\n- `render/` — drawing & layout\n- `audio/` — media session + metadata\n- `config/` — settings schema & persistence\n- `hooks/` — Windhawk hook setup/teardown\n\nGoal: easier debugging and adding features without touching unrelated code."
   }
 ]
