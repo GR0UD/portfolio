@@ -17,6 +17,6 @@
     "descriptionRu": "",
     "version": "0.1.0",
     "status": "in-progress",
-    "notes": ""
+    "notes": "## Audio Visualizer\n\nReal-time spectrum/waveform render behind or beside the controls.\n\n- Use **Direct2D** for drawing, **DirectWrite** for labels\n- Capture audio via WASAPI loopback\n- Keep render loop cheap to avoid taskbar lag\n- Style options: bars, wave, mirrored"
   }
 ]
