@@ -48,5 +48,15 @@
     "version": "0.1.0",
     "status": "in-progress",
     "notes": "## Vertical Taskbar Support\n\nAdapt layout when the taskbar is docked left/right.\n\n- Detect taskbar orientation\n- Stack controls vertically (art on top)\n- Adjust sizing/padding for narrow space\n- Test with Win11 vertical taskbar tweaks"
+  },
+  {
+    "id": "199ee253-d35b-4ab6-83da-7d91c91c580f",
+    "nameEn": "Reorder media player in context menu",
+    "nameRu": "",
+    "descriptionEn": "Reposition the media player toggle within the taskbar's right-click context menu for quicker, more intuitive access.",
+    "descriptionRu": "",
+    "version": "0.1.0",
+    "status": "in-progress",
+    "notes": ""
   }
 ]
