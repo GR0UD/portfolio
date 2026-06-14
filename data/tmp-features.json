@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "id": "00000000-0000-0000-0000-000000000001",
+    "nameEn": "Hello",
+    "nameRu": "Привет",
+    "descriptionEn": "Welcome! This is your first feature card.",
+    "descriptionRu": "Привет! Это твоя первая карточка.",
+    "version": "0.1.0",
+    "status": "in-progress",
+    "notes": "# How to use this page\n\nThis board tracks features and ideas for the Taskbar Media Player project.\n\n## Basics\n\n- **Add a feature** — click the **+** button in the top right.\n- **Mark as done** — click the circle on the left edge of a card.\n- **Open notes** — click anywhere else on the card to open this panel.\n- **Switch language** — click the **EN / RU** button to change the display language.\n- **Filter** — use the *In Progress / Done* tabs to switch views.\n- **Layout** — switch between card and list view with the layout buttons.\n\n## Writing notes\n\nThis editor supports basic markdown:\n\n- **bold**, *italic*, ~~strikethrough~~\n- `inline code` and ``` code blocks ```\n- [links](https://example.com)\n- lists, headers, and `---` dividers\n\nClick **Edit** to write, then **Save** to persist your changes to GitHub."
+  }
+]

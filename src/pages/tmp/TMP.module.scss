@@ -1,7 +1,6 @@
 @use "@styles/base/variables.scss" as *;
 
 .page {
-  // Single frosted-glass look, matching the main site's hero chrome
   --tmp-surface: rgba(255, 255, 255, 0.1);
   --tmp-surface-hover: rgba(255, 255, 255, 0.18);
   --tmp-border: rgba(255, 255, 255, 0.18);
@@ -43,14 +42,31 @@
   backdrop-filter: blur(28px);
 }
 
-.content {
+// Outer shell splits horizontally when panel is open
+.shell {
   position: relative;
   z-index: $z-content;
   display: flex;
-  flex-direction: column;
-  gap: $spacing-xl;
   min-height: 100dvh;
-  padding: 2rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  flex: 1;
+  min-width: 0;
+  transition: flex $transition-default;
+}
+
+// Right-side markdown panel
+.markdownPanel {
+  flex: 0 0 560px;
+  min-height: 100dvh;
+  background-color: rgba(255, 255, 255, 0.06);
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(28px);
+  overflow: hidden;
 }
 
 .header {
@@ -59,16 +75,8 @@
   justify-content: space-between;
   gap: $spacing-md;
   flex-wrap: wrap;
-  margin-inline: -$spacing-lg;
-  padding-inline: $spacing-lg;
-  padding-bottom: $spacing-md;
+  padding: $spacing-lg;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.title {
-  font-size: $font-size-title;
-  font-weight: $font-weight-semibold;
-  margin: 0;
 }
 
 .actions {
@@ -155,10 +163,56 @@
   background-color: var(--tmp-badge);
 }
 
+// Layout toggle buttons (cards/list)
+.layoutToggle {
+  display: inline-flex;
+  gap: 0.25rem;
+  padding: 0.3rem;
+  background-color: var(--tmp-surface);
+  border: 1px solid var(--tmp-border);
+  border-radius: 999px;
+  backdrop-filter: $blur-glass;
+}
+
+.layoutBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 0.85rem;
+  color: var(--tmp-text-muted);
+  background-color: transparent;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background-color $transition-default,
+    color $transition-default;
+
+  &:hover {
+    color: var(--tmp-text);
+  }
+
+  &.active {
+    color: var(--tmp-text);
+    background-color: var(--tmp-surface-hover);
+  }
+}
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
   gap: $spacing-lg;
+  justify-content: start;
+  padding: $spacing-lg;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  padding: $spacing-lg;
 }
 
 .empty {
@@ -169,12 +223,12 @@
   color: var(--tmp-text-muted);
 }
 
-@media screen and (max-width: 768px) {
-  .content {
-    padding: $spacing-lg;
-  }
-
-  .title {
-    font-size: $font-size-h2;
+@media screen and (max-width: 960px) {
+  .markdownPanel {
+    position: fixed;
+    inset: 0;
+    flex: none;
+    z-index: 55;
+    border-left: none;
   }
 }

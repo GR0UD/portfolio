@@ -1,11 +1,11 @@
 @use "@styles/base/variables.scss" as *;
 
+// ─── Base card (shared) ────────────────────────────────────────────────────
+
 .card {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  gap: $spacing-xs;
-  padding: $spacing-md;
-  text-align: left;
+  align-items: center;
   font-family: inherit;
   background-color: var(--tmp-surface);
   border: 1px solid var(--tmp-border);
@@ -13,7 +13,7 @@
   backdrop-filter: $blur-glass;
   box-shadow: $shadow-small;
   color: var(--tmp-text);
-  cursor: pointer;
+  overflow: hidden;
   transition:
     background-color $transition-default,
     border-color $transition-default;
@@ -24,28 +24,27 @@
   }
 }
 
+// ─── Card layout ───────────────────────────────────────────────────────────
+
+.cardMain {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  flex: 1;
+  min-width: 0;
+  min-height: 110px;
+  padding: $spacing-md;
+  text-align: left;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 .header {
   display: flex;
   align-items: center;
   gap: $spacing-sm;
-}
-
-.check {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: 1.5rem;
-  height: 1.5rem;
-  font-size: 0.7rem;
-  color: transparent;
-  background-color: transparent;
-  border: 1px solid var(--tmp-border-hover);
-  border-radius: $border-radius-full;
-  transition:
-    background-color $transition-default,
-    border-color $transition-default,
-    color $transition-default;
 }
 
 .title {
@@ -53,6 +52,9 @@
   font-size: $font-size-subtitle;
   font-weight: $font-weight-semibold;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .version {
@@ -73,15 +75,51 @@
   line-height: $line-height-tight;
   color: var(--tmp-text-muted);
   margin: 0;
+  text-align: left;
 }
 
-.done {
-  .check {
-    color: #06281c;
-    background-color: var(--tmp-accent);
-    border-color: var(--tmp-accent);
+.doneDate {
+  font-size: $font-size-tiny;
+  font-weight: $font-weight-medium;
+  letter-spacing: $letter-spacing-tag;
+  color: var(--tmp-text-muted);
+}
+
+// ─── List layout overrides ─────────────────────────────────────────────────
+
+.listItem {
+  border-radius: $border-radius;
+
+  .cardMain {
+    flex-direction: row;
+    align-items: center;
+    gap: $spacing-md;
+    min-height: unset;
+    padding: 0.6rem $spacing-md;
   }
 
+  .header {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .title {
+    font-size: $font-size-nav;
+  }
+
+  .description {
+    flex-shrink: 0;
+    max-width: 38%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+  }
+}
+
+// ─── Done state ────────────────────────────────────────────────────────────
+
+.done {
   .title {
     text-decoration: line-through;
     color: var(--tmp-text-muted);

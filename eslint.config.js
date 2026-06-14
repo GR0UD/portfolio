@@ -31,6 +31,12 @@ export default [
       ],
     },
   },
+  {
+    files: ["vite.config.js"],
+    languageOptions: {
+      globals: { ...globals.browser, ...globals.node },
+    },
+  },
   ...tseslint.configs.recommended.map((config) => ({
     ...config,
     files: ["**/*.{ts,tsx}"],

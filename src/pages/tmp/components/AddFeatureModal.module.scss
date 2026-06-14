@@ -86,24 +86,48 @@
   color: var(--tmp-text-muted);
 }
 
-.langRow {
-  display: flex;
-  align-items: flex-start;
-  gap: $spacing-xs;
+.langSwitch {
+  display: inline-flex;
+  align-self: center;
+  gap: 0.25rem;
+  padding: 0.3rem;
+  background-color: var(--tmp-surface);
+  border: 1px solid var(--tmp-border);
+  border-radius: 999px;
+  backdrop-filter: $blur-glass;
 }
 
-.langTag {
-  flex-shrink: 0;
-  width: 2.25rem;
-  padding: 0.55rem 0;
-  font-size: $font-size-tiny;
-  font-weight: $font-weight-semibold;
+.langSwitchBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.5rem;
+  padding: 0.45rem 1.2rem;
+  font-family: inherit;
+  font-size: $font-size-small;
+  font-weight: $font-weight-medium;
   letter-spacing: $letter-spacing-tag;
-  text-align: center;
   color: var(--tmp-text-muted);
-  background-color: var(--tmp-badge);
-  border: 1px solid var(--tmp-border);
-  border-radius: $border-radius;
+  background-color: transparent;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background-color $transition-default,
+    color $transition-default;
+
+  &:hover {
+    color: var(--tmp-text);
+  }
+
+  &.active {
+    color: var(--tmp-text);
+    background-color: var(--tmp-surface-hover);
+  }
+
+  &.hasError {
+    color: #e0584f;
+  }
 }
 
 .input,

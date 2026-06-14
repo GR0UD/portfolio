@@ -22,6 +22,8 @@ function normalize(f: RawFeature, status: FeatureStatus): Feature {
     descriptionRu: f.descriptionRu ?? "",
     version: f.version ?? "0.0.0",
     status,
+    notes: f.notes ?? "",
+    doneAt: f.doneAt,
   };
 }
 
@@ -79,6 +81,7 @@ export function useTmpFeatures(t: (key: TmpTranslationKey) => string) {
       descriptionRu: input.descriptionRu,
       version: `${input.major}.${input.minor}.${input.patch}`,
       status: "in-progress",
+      notes: "",
     };
 
     setFeatures((prev) => [...prev, optimistic]);
@@ -110,17 +113,70 @@ export function useTmpFeatures(t: (key: TmpTranslationKey) => string) {
     }
   };
 
-  const toggleStatus = (id: string) => {
+  const toggleStatus = async (id: string) => {
+    let nextStatus: FeatureStatus = "in-progress";
+    let nextDoneAt: string | null = null;
+
     setFeatures((prev) =>
       prev.map((f) => {
         if (f.id !== id) return f;
-        const next: FeatureStatus =
-          f.status === "done" ? "in-progress" : "done";
-        saveStatus(id, next);
-        return { ...f, status: next };
+        nextStatus = f.status === "done" ? "in-progress" : "done";
+        nextDoneAt = nextStatus === "done" ? new Date().toISOString() : null;
+        saveStatus(id, nextStatus);
+        return { ...f, status: nextStatus, doneAt: nextDoneAt ?? undefined };
       }),
     );
+
+    // Persist to GitHub (best-effort, local already updated)
+    try {
+      await fetch(API_URL, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id, status: nextStatus, doneAt: nextDoneAt }),
+      });
+    } catch {
+      // silent — local state is already updated
+    }
   };
 
-  return { features, loading, addFeature, toggleStatus };
+  const updateNotes = async (id: string, notes: string) => {
+    // Optimistic local update
+    setFeatures((prev) => prev.map((f) => (f.id === id ? { ...f, notes } : f)));
+
+    try {
+      const res = await fetch(API_URL, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id, notes }),
+      });
+
+      if (!res.ok) throw new Error("notes save failed");
+    } catch {
+      toast.warn(t("saveError"), {
+        position: "bottom-right",
+        autoClose: 5000,
+      });
+    }
+  };
+
+  const deleteFeature = async (id: string) => {
+    setFeatures((prev) => prev.filter((f) => f.id !== id));
+
+    try {
+      const res = await fetch(API_URL, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id }),
+      });
+
+      if (!res.ok) throw new Error("delete failed");
+    } catch {
+      toast.warn(t("saveError"), {
+        position: "bottom-right",
+        autoClose: 5000,
+      });
+    }
+  };
+
+  return { features, loading, addFeature, toggleStatus, updateNotes, deleteFeature };
 }

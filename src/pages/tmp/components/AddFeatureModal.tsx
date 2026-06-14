@@ -22,6 +22,7 @@ interface Props {
 }
 
 const AddFeatureModal = ({ t, onClose, onSubmit }: Props) => {
+  const [formLang, setFormLang] = useState<"en" | "ru">("en");
   const [nameEn, setNameEn] = useState("");
   const [nameRu, setNameRu] = useState("");
   const [descriptionEn, setDescriptionEn] = useState("");
@@ -66,6 +67,8 @@ const AddFeatureModal = ({ t, onClose, onSubmit }: Props) => {
   };
 
   const hasVersionError = errors.major || errors.minor || errors.patch;
+  const hasEnError = errors.nameEn || errors.descriptionEn;
+  const hasRuError = errors.nameRu || errors.descriptionRu;
 
   return (
     <div className={styles.backdrop} onClick={onClose}>
@@ -82,10 +85,42 @@ const AddFeatureModal = ({ t, onClose, onSubmit }: Props) => {
           </button>
         </div>
         <form className={styles.form} onSubmit={handleSubmit}>
+          <div className={styles.langSwitch} role="tablist">
+            <button
+              type="button"
+              role="tab"
+              aria-selected={formLang === "en"}
+              className={[
+                styles.langSwitchBtn,
+                formLang === "en" ? styles.active : "",
+                hasEnError ? styles.hasError : "",
+              ]
+                .filter(Boolean)
+                .join(" ")}
+              onClick={() => setFormLang("en")}
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={formLang === "ru"}
+              className={[
+                styles.langSwitchBtn,
+                formLang === "ru" ? styles.active : "",
+                hasRuError ? styles.hasError : "",
+              ]
+                .filter(Boolean)
+                .join(" ")}
+              onClick={() => setFormLang("ru")}
+            >
+              RU
+            </button>
+          </div>
+
           <div className={styles.field}>
             <span className={styles.label}>{t("featureNameLabel")}</span>
-            <div className={styles.langRow}>
-              <span className={styles.langTag}>EN</span>
+            {formLang === "en" ? (
               <input
                 type="text"
                 value={nameEn}
@@ -94,9 +129,7 @@ const AddFeatureModal = ({ t, onClose, onSubmit }: Props) => {
                 className={`${styles.input} ${errors.nameEn ? styles.invalid : ""}`}
                 maxLength={80}
               />
-            </div>
-            <div className={styles.langRow}>
-              <span className={styles.langTag}>RU</span>
+            ) : (
               <input
                 type="text"
                 value={nameRu}
@@ -105,33 +138,30 @@ const AddFeatureModal = ({ t, onClose, onSubmit }: Props) => {
                 className={`${styles.input} ${errors.nameRu ? styles.invalid : ""}`}
                 maxLength={80}
               />
-            </div>
+            )}
           </div>
 
           <div className={styles.field}>
             <span className={styles.label}>{t("descriptionLabel")}</span>
-            <div className={styles.langRow}>
-              <span className={styles.langTag}>EN</span>
+            {formLang === "en" ? (
               <textarea
                 value={descriptionEn}
                 onChange={(e) => setDescriptionEn(e.target.value)}
                 placeholder="Describe what this feature does..."
                 className={`${styles.textarea} ${errors.descriptionEn ? styles.invalid : ""}`}
                 maxLength={500}
-                rows={2}
+                rows={3}
               />
-            </div>
-            <div className={styles.langRow}>
-              <span className={styles.langTag}>RU</span>
+            ) : (
               <textarea
                 value={descriptionRu}
                 onChange={(e) => setDescriptionRu(e.target.value)}
                 placeholder="Опишите, что делает эта функция..."
                 className={`${styles.textarea} ${errors.descriptionRu ? styles.invalid : ""}`}
                 maxLength={500}
-                rows={2}
+                rows={3}
               />
-            </div>
+            )}
           </div>
 
           <div className={styles.field}>
