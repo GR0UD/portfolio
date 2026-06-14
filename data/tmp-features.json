@@ -28,5 +28,15 @@
     "version": "0.1.0",
     "status": "in-progress",
     "notes": "## Code Modularization\n\nSplit the monolith into focused modules:\n\n- `render/` — drawing & layout\n- `audio/` — media session + metadata\n- `config/` — settings schema & persistence\n- `hooks/` — Windhawk hook setup/teardown\n\nGoal: easier debugging and adding features without touching unrelated code."
+  },
+  {
+    "id": "71bbcff9-db2c-45ff-a1c3-2ec42c35bb0f",
+    "nameEn": "Display on a specific monitor",
+    "nameRu": "",
+    "descriptionEn": "Add a setting to pin the media player widget to a chosen monitor in multi-monitor setups.",
+    "descriptionRu": "",
+    "version": "0.1.0",
+    "status": "in-progress",
+    "notes": ""
   }
 ]
