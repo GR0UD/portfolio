@@ -6,9 +6,8 @@
     "descriptionEn": "Render a live audio spectrum or waveform visualizer in the taskbar using Direct2D/DirectWrite for smooth, GPU-accelerated graphics.",
     "descriptionRu": "",
     "version": "0.1.0",
-    "status": "done",
-    "notes": "## Audio Visualizer\n\nReal-time spectrum/waveform render behind or beside the controls.\n\n- Use **Direct2D** for drawing, **DirectWrite** for labels\n- Capture audio via WASAPI loopback\n- Keep render loop cheap to avoid taskbar lag\n- Style options: bars, wave, mirrored",
-    "doneAt": "2026-06-14T18:13:05.200Z"
+    "status": "in-progress",
+    "notes": "## Audio Visualizer\n\nReal-time spectrum/waveform render behind or beside the controls.\n\n- Use **Direct2D** for drawing, **DirectWrite** for labels\n- Capture audio via WASAPI loopback\n- Keep render loop cheap to avoid taskbar lag\n- Style options: bars, wave, mirrored"
   },
   {
     "id": "81ea55b8-4a3e-45ca-8088-4e7e4781913a",
