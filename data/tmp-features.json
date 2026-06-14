@@ -8,5 +8,15 @@
     "version": "1.0.0",
     "status": "in-progress",
     "notes": ""
+  },
+  {
+    "id": "4f78d1c9-0d78-44c7-b7b7-c76249edba0c",
+    "nameEn": "Audio Visualizer (Using DW/D2)",
+    "nameRu": "",
+    "descriptionEn": "Render a live audio spectrum or waveform visualizer in the taskbar using Direct2D/DirectWrite for smooth, GPU-accelerated graphics.",
+    "descriptionRu": "",
+    "version": "0.1.0",
+    "status": "in-progress",
+    "notes": ""
   }
 ]
