@@ -47,6 +47,6 @@
     "descriptionRu": "",
     "version": "0.1.0",
     "status": "in-progress",
-    "notes": ""
+    "notes": "## Vertical Taskbar Support\n\nAdapt layout when the taskbar is docked left/right.\n\n- Detect taskbar orientation\n- Stack controls vertically (art on top)\n- Adjust sizing/padding for narrow space\n- Test with Win11 vertical taskbar tweaks"
   }
 ]
