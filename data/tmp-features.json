@@ -58,5 +58,15 @@
     "version": "0.1.0",
     "status": "in-progress",
     "notes": "## Context Menu Position\n\nMove the player toggle in the right-click menu.\n\n- Currently buried near the bottom\n- Move closer to top, near other taskbar tweaks\n- Group with other Windhawk entries if present"
+  },
+  {
+    "id": "43faa116-0946-4b8d-a1cb-2e1b286ed658",
+    "nameEn": "Movable containers",
+    "nameRu": "",
+    "descriptionEn": "Let each UI element (art, controls, title) be freely dragged and repositioned anywhere within the taskbar player.",
+    "descriptionRu": "",
+    "version": "0.1.0",
+    "status": "in-progress",
+    "notes": ""
   }
 ]
