@@ -153,14 +153,27 @@
   }
 }
 
-.tabCount {
-  min-width: 1.4rem;
-  padding: 0 0.4rem;
+.tabsGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.activeCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  font-family: inherit;
   font-size: $font-size-tiny;
-  line-height: 1.4rem;
-  text-align: center;
+  font-weight: $font-weight-medium;
+  color: var(--tmp-text);
+  background-color: var(--tmp-surface);
+  border: 1px solid var(--tmp-border);
   border-radius: $border-radius-full;
-  background-color: var(--tmp-badge);
+  backdrop-filter: $blur-glass;
 }
 
 // Layout toggle buttons (cards/list)

@@ -105,27 +105,30 @@ export default function TmpPage() {
         <div className={styles.shell}>
           <div className={styles.content}>
             <header className={styles.header}>
-              <div className={styles.tabs} role="tablist">
-                <button
-                  type="button"
-                  role="tab"
-                  aria-selected={filter === "in-progress"}
-                  className={`${styles.tab} ${filter === "in-progress" ? styles.active : ""}`}
-                  onClick={() => setFilter("in-progress")}
-                >
-                  {t("inProgress")}
-                  <span className={styles.tabCount}>{inProgressCount}</span>
-                </button>
-                <button
-                  type="button"
-                  role="tab"
-                  aria-selected={filter === "done"}
-                  className={`${styles.tab} ${filter === "done" ? styles.active : ""}`}
-                  onClick={() => setFilter("done")}
-                >
-                  {t("done")}
-                  <span className={styles.tabCount}>{doneCount}</span>
-                </button>
+              <div className={styles.tabsGroup}>
+                <div className={styles.tabs} role="tablist">
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={filter === "in-progress"}
+                    className={`${styles.tab} ${filter === "in-progress" ? styles.active : ""}`}
+                    onClick={() => setFilter("in-progress")}
+                  >
+                    {t("inProgress")}
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={filter === "done"}
+                    className={`${styles.tab} ${filter === "done" ? styles.active : ""}`}
+                    onClick={() => setFilter("done")}
+                  >
+                    {t("done")}
+                  </button>
+                </div>
+                <span className={styles.activeCount}>
+                  {filter === "in-progress" ? inProgressCount : doneCount}
+                </span>
               </div>
 
               <div className={styles.actions}>
