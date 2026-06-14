@@ -20,15 +20,17 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
+    "types": ["node"],
 
     /* Path aliases */
+    "ignoreDeprecations": "6.0",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
       "@styles/*": ["./src/styles/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "api"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
 

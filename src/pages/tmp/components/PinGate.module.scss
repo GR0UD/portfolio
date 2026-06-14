@@ -1,0 +1,98 @@
+@use "@styles/base/variables.scss" as *;
+
+.gate {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-lg;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-md;
+  width: 100%;
+  max-width: 360px;
+  padding: $spacing-xl;
+  text-align: center;
+  background-color: var(--tmp-surface);
+  border: 1px solid var(--tmp-border);
+  border-radius: $border-radius-lg;
+  backdrop-filter: $blur-glass;
+  color: var(--tmp-text);
+  box-shadow: $shadow-medium;
+
+  h2 {
+    font-size: $font-size-h3;
+    font-weight: $font-weight-semibold;
+  }
+
+  p {
+    font-size: $font-size-small;
+    color: var(--tmp-text-muted);
+    margin: 0;
+  }
+}
+
+.digits {
+  display: flex;
+  justify-content: center;
+  gap: $spacing-xs;
+  width: 100%;
+}
+
+.digit {
+  width: 100%;
+  max-width: 3rem;
+  aspect-ratio: 3 / 4;
+  padding: 0;
+  font-family: inherit;
+  font-size: $font-size-h3;
+  font-weight: $font-weight-medium;
+  text-align: center;
+  background-color: var(--tmp-input-bg);
+  color: var(--tmp-text);
+  border: 1px solid var(--tmp-border);
+  border-radius: $border-radius;
+  backdrop-filter: $blur-glass;
+  transition:
+    border-color $transition-default,
+    background-color $transition-default;
+
+  &:focus {
+    outline: none;
+    border-color: var(--tmp-border-hover);
+    background-color: var(--tmp-surface-hover);
+  }
+}
+
+.error {
+  font-size: $font-size-tiny;
+  color: #e0584f;
+  margin: 0;
+}
+
+.submit {
+  width: 100%;
+  padding: $button-padding;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-nav;
+  color: var(--tmp-text);
+  background-color: var(--tmp-surface);
+  border: 1px solid var(--tmp-border);
+  border-radius: $border-radius;
+  backdrop-filter: $blur-glass;
+  cursor: pointer;
+  transition:
+    background-color $transition-default,
+    border-color $transition-default;
+
+  &:hover {
+    background-color: var(--tmp-surface-hover);
+    border-color: var(--tmp-border-hover);
+  }
+}

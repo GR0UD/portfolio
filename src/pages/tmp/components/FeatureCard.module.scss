@@ -1,0 +1,89 @@
+@use "@styles/base/variables.scss" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  padding: $spacing-md;
+  text-align: left;
+  font-family: inherit;
+  background-color: var(--tmp-surface);
+  border: 1px solid var(--tmp-border);
+  border-radius: $border-radius-lg;
+  backdrop-filter: $blur-glass;
+  box-shadow: $shadow-small;
+  color: var(--tmp-text);
+  cursor: pointer;
+  transition:
+    background-color $transition-default,
+    border-color $transition-default;
+
+  &:hover {
+    background-color: var(--tmp-surface-hover);
+    border-color: var(--tmp-border-hover);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 0.7rem;
+  color: transparent;
+  background-color: transparent;
+  border: 1px solid var(--tmp-border-hover);
+  border-radius: $border-radius-full;
+  transition:
+    background-color $transition-default,
+    border-color $transition-default,
+    color $transition-default;
+}
+
+.title {
+  flex: 1;
+  font-size: $font-size-subtitle;
+  font-weight: $font-weight-semibold;
+  margin: 0;
+}
+
+.version {
+  flex-shrink: 0;
+  padding: 0.25rem 0.6rem;
+  font-size: $font-size-tiny;
+  font-weight: $font-weight-medium;
+  letter-spacing: $letter-spacing-tag;
+  color: var(--tmp-text);
+  background-color: var(--tmp-badge);
+  border: 1px solid var(--tmp-border);
+  border-radius: $border-radius;
+}
+
+.description {
+  font-size: $font-size-small;
+  font-weight: $font-weight-light;
+  line-height: $line-height-tight;
+  color: var(--tmp-text-muted);
+  margin: 0;
+}
+
+.done {
+  .check {
+    color: #06281c;
+    background-color: var(--tmp-accent);
+    border-color: var(--tmp-accent);
+  }
+
+  .title {
+    text-decoration: line-through;
+    color: var(--tmp-text-muted);
+  }
+}

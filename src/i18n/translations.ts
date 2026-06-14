@@ -57,7 +57,6 @@ export const translations = {
 
     // Contact
     contactTitle: "Contact",
-    contactAvailable: "Available for freelance & full-time opportunities",
     contactInfoTitle: "Got a Project in Mind?",
     contactInfoDescription:
       "Need a fast, pixel-perfect website or a full-stack web app built right? I write clean, maintainable code and care about the details. Drop a message and let's talk.",
@@ -148,7 +147,6 @@ export const translations = {
 
     // Contact
     contactTitle: "Kontakt",
-    contactAvailable: "Tilgængelig for freelance & fuldtidsstillinger",
     contactInfoTitle: "Har du et projekt i tankerne?",
     contactInfoDescription:
       "Har du brug for et hurtigt, pixel-perfekt website eller en full-stack webapp bygget rigtigt? Jeg skriver ren, vedligeholdelsesvenlig kode og er opmærksom på detaljerne. Send en besked, så tager vi en snak.",
@@ -239,7 +237,6 @@ export const translations = {
 
     // Contact
     contactTitle: "Kontakt",
-    contactAvailable: "Verfügbar für Freelance & Vollzeitstellen",
     contactInfoTitle: "Hast du ein Projekt im Kopf?",
     contactInfoDescription:
       "Brauchst du eine schnelle, pixelgenaue Website oder eine Full-Stack-Webapp, die wirklich funktioniert? Ich schreibe sauberen, wartbaren Code und achte auf die Details. Schreib mir und wir reden.",

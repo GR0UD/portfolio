@@ -10,9 +10,6 @@ import ScrollDownButton from "../components/ScrollDownButton/ScrollDownButton";
 import { projectsData } from "../data/projects";
 import { useTranslation } from "../i18n/TranslationContext";
 import type { TranslationKey } from "../i18n/translations";
-import { getCETimezone } from "../utilities/getCETimezone";
-
-const ceTimezone = getCETimezone();
 
 export default function Home() {
   const { t } = useTranslation();

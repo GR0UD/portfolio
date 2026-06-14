@@ -60,14 +60,11 @@ export default defineConfig({
     assetsInlineLimit: 4096,
   },
   server: {
-    host: "127.0.0.1",
+    host: true,
     port: 3000,
     strictPort: true,
     hmr: {
       overlay: true,
-    },
-    headers: {
-      "Cache-Control": "public, max-age=31536000",
     },
   },
 });

@@ -1,4 +1,4 @@
-import { useRoutes } from "react-router-dom";
+import { useRoutes, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { lazy, Suspense, useEffect } from "react";
@@ -37,17 +37,26 @@ function App() {
   ); // Changes every 3 seconds
 
   const element = useRoutes(routes);
+  const location = useLocation();
+
+  // Standalone pages (e.g. /tmp) render without the main-site chrome
+  const isStandalone = location.pathname.startsWith("/tmp");
+
   return (
     <TranslationProvider>
-      <Header />
+      {!isStandalone && <Header />}
       {element}
-      <Suspense fallback={null}>
-        <Footer />
-      </Suspense>
-      <Intro />
-      <Suspense fallback={null}>
-        <ScrollToTop />
-      </Suspense>
+      {!isStandalone && (
+        <>
+          <Suspense fallback={null}>
+            <Footer />
+          </Suspense>
+          <Intro />
+          <Suspense fallback={null}>
+            <ScrollToTop />
+          </Suspense>
+        </>
+      )}
       <ToastContainer />
       <Analytics />
       <SpeedInsights />

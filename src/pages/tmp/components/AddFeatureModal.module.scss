@@ -1,0 +1,207 @@
+@use "@styles/base/variables.scss" as *;
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-lg;
+  background-color: var(--tmp-modal-backdrop);
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  width: 100%;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: $spacing-xl;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--tmp-border-hover);
+  border-radius: $border-radius-lg;
+  backdrop-filter: blur(28px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  color: var(--tmp-text);
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-sm;
+  padding-bottom: $spacing-md;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.title {
+  font-size: $font-size-h3;
+  font-weight: $font-weight-semibold;
+  margin: 0;
+}
+
+.close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: $font-size-icon;
+  color: var(--tmp-text-muted);
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: $border-radius-full;
+  cursor: pointer;
+  transition:
+    color $transition-default,
+    background-color $transition-default,
+    border-color $transition-default;
+
+  &:hover {
+    color: var(--tmp-text);
+    background-color: var(--tmp-surface-hover);
+    border-color: var(--tmp-border);
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.label {
+  font-size: $font-size-small;
+  font-weight: $font-weight-medium;
+  color: var(--tmp-text-muted);
+}
+
+.langRow {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-xs;
+}
+
+.langTag {
+  flex-shrink: 0;
+  width: 2.25rem;
+  padding: 0.55rem 0;
+  font-size: $font-size-tiny;
+  font-weight: $font-weight-semibold;
+  letter-spacing: $letter-spacing-tag;
+  text-align: center;
+  color: var(--tmp-text-muted);
+  background-color: var(--tmp-badge);
+  border: 1px solid var(--tmp-border);
+  border-radius: $border-radius;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: $input-padding;
+  font-family: inherit;
+  font-size: $font-size-nav;
+  color: var(--tmp-text);
+  background-color: var(--tmp-input-bg);
+  border: 1px solid var(--tmp-border);
+  border-radius: $border-radius;
+  transition: border-color $transition-default;
+
+  &:focus {
+    outline: none;
+    border-color: var(--tmp-border-hover);
+  }
+
+  &::placeholder {
+    color: var(--tmp-text-muted);
+  }
+
+  &.invalid {
+    border-color: #e0584f;
+  }
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 5rem;
+  line-height: $line-height-tight;
+}
+
+.version {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+
+  &.invalid .versionInput {
+    border-color: #e0584f;
+  }
+}
+
+.dot {
+  color: var(--tmp-text-muted);
+}
+
+.versionInput {
+  width: 3.75rem;
+  height: 3.75rem;
+  padding: 0;
+  font-family: inherit;
+  font-size: $font-size-h4;
+  font-weight: $font-weight-medium;
+  text-align: center;
+  color: var(--tmp-text);
+  background-color: var(--tmp-input-bg);
+  border: 1px solid var(--tmp-border);
+  border-radius: $border-radius;
+  backdrop-filter: $blur-glass;
+  transition:
+    border-color $transition-default,
+    background-color $transition-default;
+
+  // Hide number spinner arrows so each box stays a clean square
+  appearance: textfield;
+  -moz-appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--tmp-border-hover);
+    background-color: var(--tmp-surface-hover);
+  }
+}
+
+.create {
+  width: 100%;
+  margin-top: $spacing-xs;
+  padding: 1rem 1.4rem;
+  font-family: inherit;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-nav;
+  color: #06281c;
+  background-color: var(--tmp-accent);
+  border: 1px solid var(--tmp-accent);
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: filter $transition-default;
+
+  &:hover {
+    filter: brightness(1.08);
+  }
+}
