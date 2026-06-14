@@ -57,6 +57,6 @@
     "descriptionRu": "",
     "version": "0.1.0",
     "status": "in-progress",
-    "notes": ""
+    "notes": "## Context Menu Position\n\nMove the player toggle in the right-click menu.\n\n- Currently buried near the bottom\n- Move closer to top, near other taskbar tweaks\n- Group with other Windhawk entries if present"
   }
 ]
