@@ -70,5 +70,15 @@
     "status": "done",
     "notes": "The auto-hide function only seems to work when I set it to 1 second. I was trying to set to 5 or 10 seconds, but when I do that, it never hides. It only works when set to 1 second. https://github.com/Salyts/Taskbar-Fluent-Media-Player/issues/5",
     "doneAt": "2026-06-22T12:33:58.816Z"
+  },
+  {
+    "id": "3adcc963-f209-4a49-8d39-0c2b1991d472",
+    "nameEn": "fix bug",
+    "nameRu": "",
+    "descriptionEn": "https://discord.com/channels/923944342991818753/1508829079187619840/1518643141413175346",
+    "descriptionRu": "",
+    "version": "0.4.0",
+    "status": "in-progress",
+    "notes": ""
   }
 ]
