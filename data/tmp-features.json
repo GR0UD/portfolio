@@ -89,6 +89,6 @@
     "descriptionRu": "",
     "version": "1.4.0",
     "status": "in-progress",
-    "notes": ""
+    "notes": "btw setting this to 0 does not work "
   }
 ]
