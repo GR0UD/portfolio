@@ -59,5 +59,15 @@
     "version": "0.1.0",
     "status": "in-progress",
     "notes": "## Movable Containers\n\nFree-form layout instead of fixed slots.\n\n- Drag art, controls, and title independently\n- Persist positions per monitor/profile\n- Optional snap-to-grid\n- Drag handles only shown in \"edit layout\" mode"
+  },
+  {
+    "id": "f98fdf59-322d-4586-87b8-8c77b442f505",
+    "nameEn": "Fix bug",
+    "nameRu": "",
+    "descriptionEn": "The auto-hide function only seems to work when I set it to 1 second. I was trying to set to 5 or 10 seconds, but when I do that, it never hides. It only works when set to 1 second. https://github.com/Salyts/Taskbar-Fluent-Media-Player/issues/5",
+    "descriptionRu": "",
+    "version": "1.4.0",
+    "status": "in-progress",
+    "notes": ""
   }
 ]
