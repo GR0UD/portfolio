@@ -80,5 +80,15 @@
     "version": "0.4.0",
     "status": "in-progress",
     "notes": "https://discord.com/channels/923944342991818753/1508829079187619840/1518643141413175346"
+  },
+  {
+    "id": "c41b94ae-90a9-47f8-95c0-f2cdf8fb2ea6",
+    "nameEn": "fix bug",
+    "nameRu": "",
+    "descriptionEn": "btw setting this to 0 does not work",
+    "descriptionRu": "",
+    "version": "1.4.0",
+    "status": "in-progress",
+    "notes": ""
   }
 ]
