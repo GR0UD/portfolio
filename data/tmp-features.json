@@ -88,7 +88,8 @@
     "descriptionEn": "btw setting this to 0 does not work",
     "descriptionRu": "",
     "version": "1.4.0",
-    "status": "in-progress",
-    "notes": "btw setting this to 0 does not work \n\nhttps://discord.com/channels/923944342991818753/1508829079187619840/1518692629888503880"
+    "status": "done",
+    "notes": "btw setting this to 0 does not work \n\nhttps://discord.com/channels/923944342991818753/1508829079187619840/1518692629888503880",
+    "doneAt": "2026-07-02T21:03:34.880Z"
   }
 ]
