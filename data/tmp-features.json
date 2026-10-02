@@ -27,8 +27,9 @@
     "descriptionEn": "Add a setting to pin the media player widget to a chosen monitor in multi-monitor setups for better display placement.",
     "descriptionRu": "",
     "version": "0.1.0",
-    "status": "in-progress",
-    "notes": "## Monitor Pinning\n\nChoose which monitor's taskbar shows the player.\n\n- Setting: monitor index or \"primary\"/\"active\"\n- React to plug/unplug and display changes\n- Fall back to primary if chosen monitor disconnects"
+    "status": "done",
+    "notes": "## Monitor Pinning\n\nChoose which monitor's taskbar shows the player.\n\n- Setting: monitor index or \"primary\"/\"active\"\n- React to plug/unplug and display changes\n- Fall back to primary if chosen monitor disconnects",
+    "doneAt": "2026-10-02T10:15:56.894Z"
   },
   {
     "id": "8231f76f-cc24-41af-821f-8b1cce9ad75e",
