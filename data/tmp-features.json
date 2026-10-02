@@ -47,8 +47,9 @@
     "descriptionEn": "Reposition the media player toggle within the taskbar's right-click context menu so it's much quicker and easier to find daily.",
     "descriptionRu": "",
     "version": "0.1.0",
-    "status": "in-progress",
-    "notes": "## Context Menu Position\n\nMove the player toggle in the right-click menu.\n\n- Currently buried near the bottom\n- Move closer to top, near other taskbar tweaks\n- Group with other Windhawk entries if present"
+    "status": "done",
+    "notes": "## Context Menu Position\n\nMove the player toggle in the right-click menu.\n\n- Currently buried near the bottom\n- Move closer to top, near other taskbar tweaks\n- Group with other Windhawk entries if present",
+    "doneAt": "2026-10-02T10:15:52.814Z"
   },
   {
     "id": "43faa116-0946-4b8d-a1cb-2e1b286ed658",
